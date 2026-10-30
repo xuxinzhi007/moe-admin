@@ -1,0 +1,48 @@
+/**
+ * Moe Admin styles entry (imported only from main.tsx).
+ * Put new styles in tokens / layout / components / feature / pages; do not append to legacy.
+ *
+ * Do not name a CSS folder "domains": Vite postcss-import on Windows fails
+ * @import './domains/...' and falls back to cwd (ENOENT: moe-admin/domains/...).
+ */
+
+/* tokens */
+@import './tokens/colors.css';
+@import './tokens/typography.css';
+@import './tokens/spacing.css';
+@import './tokens/motion.css';
+
+/* base */
+@import './base/reset.css';
+@import './base/utilities.css';
+
+/* layout */
+@import './layout/chrome-v3.css';
+
+/* components */
+@import './components/buttons.css';
+@import './components/panels.css';
+@import './components/tags.css';
+@import './components/drawers.css';
+@import './components/toolbar.css';
+@import './components/admin-filters.css';
+@import './components/gift-catalog.css';
+@import './components/platform-page.css';
+@import './components/list-table.css';
+@import './components/bot-flow.css';
+@import './components/brain-rpg.css';
+
+/* feature (cross-page; was planned as domains/) */
+@import './feature/brain.css';
+@import './feature/data-domain-map.css';
+@import './feature/codegraph.css';
+
+/* pages — login shell first, soft-particles overrides hero */
+@import './pages/login.css';
+@import './components/soft-particles.css';
+@import './pages/landing-feedback.css';
+@import './pages/analytics.css';
+@import './pages/ai-workbench.css';
+
+/* legacy monolith — remaining shell / platform / data-catalog / moe-tools */
+@import './legacy/moe-admin-theme.css';

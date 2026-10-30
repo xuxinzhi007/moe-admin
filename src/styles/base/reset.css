@@ -1,0 +1,29 @@
+/* extracted from legacy · Sprint D */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  height: 100%;
+}
+
+body:has(.app-shell) {
+  overflow: hidden;
+}
+
+body {
+  font-family: var(--font-ui);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+  font-size: var(--text-body);
+}
+
+a {
+  color: var(--accent);
+}

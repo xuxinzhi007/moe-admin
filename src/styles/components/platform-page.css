@@ -1,0 +1,433 @@
+/**
+ * 平台治理页视觉补齐（V3 Soft Violet）。
+ * SSOT: moe-admin/DESIGN.md
+ */
+
+/* —— 概览容器节奏 —— */
+.platform-overview {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.platform-overview > .page-message,
+.platform-overview > .admin-page-message {
+  margin-bottom: 0;
+}
+
+/* —— 下划线 Tab —— */
+.platform-tab-rail--line {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  margin-bottom: 20px;
+  width: 100%;
+  border-bottom: 1px solid var(--hairline, var(--border));
+  background: transparent;
+}
+
+.platform-tab-rail--line .platform-tab-pill {
+  width: auto;
+  min-width: 0;
+  flex: 0 0 auto;
+  flex-direction: row;
+  align-items: baseline;
+  gap: 8px;
+  padding: 10px 16px 12px;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  transform: none;
+  color: var(--ink-muted, var(--muted));
+}
+
+.platform-tab-rail--line .platform-tab-pill:hover {
+  border-color: transparent;
+  border-bottom-color: rgba(107, 95, 193, 0.35);
+  transform: none;
+  background: rgba(107, 95, 193, 0.04);
+  color: var(--brand-violet-deep, var(--accent2));
+}
+
+.platform-tab-rail--line .platform-tab-pill.is-active {
+  border-color: transparent;
+  border-bottom-color: var(--brand-violet, var(--accent));
+  background: transparent;
+  box-shadow: none;
+  color: var(--brand-violet-deep, var(--accent2));
+}
+
+.platform-tab-rail--line .platform-tab-label {
+  font-weight: 600;
+  font-size: 13px;
+  color: inherit;
+}
+
+.platform-tab-rail--line .platform-tab-hint {
+  display: none;
+  color: var(--ink-muted, var(--muted));
+}
+
+@media (min-width: 960px) {
+  .platform-tab-rail--line .platform-tab-hint {
+    display: inline;
+    font-size: 11px;
+    font-weight: 400;
+  }
+}
+
+/* —— 连接状态条 —— */
+.platform-status-strip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 24px;
+  width: 100%;
+  padding: 14px 18px;
+  border-radius: var(--radius-md, 12px);
+  border: 1px solid var(--hairline, var(--border));
+  background: linear-gradient(180deg, var(--surface, #fff) 0%, var(--surface-soft, #f8f9fc) 100%);
+  box-shadow: var(--shadow-card, 0 1px 3px rgba(15, 23, 42, 0.06));
+}
+
+.platform-status-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  padding-right: 4px;
+}
+
+.platform-status-item + .platform-status-item {
+  padding-left: 20px;
+  border-left: 1px solid var(--hairline, var(--border));
+}
+
+.platform-status-item .label {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--ink-muted, var(--muted));
+  white-space: nowrap;
+}
+
+.platform-status-item .platform-status-meta {
+  font-size: 12px;
+  font-family: var(--font-mono, ui-monospace, Menlo, Consolas, monospace);
+  color: var(--ink-muted, var(--muted));
+  max-width: 260px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: 2px 8px;
+  border-radius: 6px;
+  background: rgba(107, 95, 193, 0.06);
+  border: 1px solid rgba(107, 95, 193, 0.1);
+}
+
+.platform-status-actions {
+  margin-left: auto;
+  display: inline-flex;
+  gap: 8px;
+}
+
+/* —— 面板：压低旧 theme 的重阴影 —— */
+.platform-panel {
+  padding: 20px 22px 22px;
+  border-radius: var(--radius-md, 12px);
+  border: 1px solid var(--hairline, var(--border));
+  background: var(--surface, var(--panel));
+  box-shadow: var(--shadow-card, 0 1px 3px rgba(15, 23, 42, 0.05));
+}
+
+.platform-section-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--hairline, var(--border));
+}
+
+.platform-section-head h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--ink, var(--text));
+}
+
+.platform-section-head .muted,
+.platform-section-head p {
+  margin: 4px 0 0;
+  font-size: 12px;
+  color: var(--ink-muted, var(--muted));
+}
+
+/* —— 连接摘要格子 —— */
+.platform-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin: 0;
+}
+
+.platform-summary-cell {
+  margin: 0;
+  padding: 12px 14px;
+  border-radius: var(--radius-sm, 8px);
+  background: var(--surface-soft, #f8f9fc);
+  border: 1px solid transparent;
+  min-width: 0;
+}
+
+.platform-summary-cell dt {
+  margin: 0;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--ink-muted, var(--muted));
+}
+
+.platform-summary-cell dd {
+  margin: 6px 0 0;
+  font-size: 13px;
+  line-height: 1.45;
+  color: var(--ink, var(--text));
+  word-break: break-all;
+  font-family: var(--font-mono, ui-monospace, Menlo, Consolas, monospace);
+}
+
+.platform-summary-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid var(--hairline, var(--border));
+}
+
+/* —— 三列相关入口 —— */
+.platform-related-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  width: 100%;
+}
+
+.platform-related-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  width: 100%;
+  min-height: 112px;
+  padding: 16px 18px;
+  border: 1px solid var(--hairline, var(--border));
+  border-radius: var(--radius-md, 12px);
+  background: var(--surface, #fff);
+  box-shadow: var(--shadow-card, 0 1px 3px rgba(15, 23, 42, 0.04));
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 150ms ease, background 150ms ease, box-shadow 150ms ease;
+  font: inherit;
+  color: inherit;
+  overflow: hidden;
+}
+
+.platform-related-card::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: rgba(107, 95, 193, 0.25);
+  border-radius: 3px 0 0 3px;
+  transition: background 150ms ease;
+}
+
+.platform-related-card:hover {
+  border-color: rgba(107, 95, 193, 0.28);
+  background: linear-gradient(180deg, #fff 0%, rgba(107, 95, 193, 0.04) 100%);
+  box-shadow: var(--shadow-lift, 0 4px 16px rgba(107, 95, 193, 0.1));
+}
+
+.platform-related-card:hover::before {
+  background: var(--brand-violet, #6b5fc1);
+}
+
+.platform-related-card:focus-visible {
+  outline: 2px solid rgba(107, 95, 193, 0.45);
+  outline-offset: 2px;
+}
+
+.platform-related-card .related-kicker {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--brand-violet, var(--accent));
+}
+
+.platform-related-card .related-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--ink, var(--text));
+}
+
+.platform-related-card .related-desc {
+  flex: 1;
+  font-size: 12px;
+  color: var(--ink-muted, var(--muted));
+  line-height: 1.45;
+}
+
+.platform-related-card .related-go {
+  margin-top: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--brand-violet-deep, var(--accent2));
+}
+
+/* —— 配置表单 / 预览 —— */
+.platform-panel .config-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px 18px;
+}
+
+.platform-panel .config-form-grid .form-field {
+  margin: 0;
+}
+
+.platform-panel .config-form-grid input,
+.platform-panel .config-form-grid select,
+.platform-panel .config-form-grid textarea {
+  border-radius: var(--radius-sm, 8px);
+  border-color: var(--hairline, var(--border));
+  background: var(--surface-soft, #f8f9fc);
+}
+
+.platform-panel .config-form-grid input:focus,
+.platform-panel .config-form-grid select:focus,
+.platform-panel .config-form-grid textarea:focus {
+  background: var(--surface, #fff);
+  border-color: rgba(107, 95, 193, 0.45);
+  box-shadow: 0 0 0 3px rgba(107, 95, 193, 0.12);
+  outline: none;
+}
+
+.platform-panel .config-preview {
+  margin-top: 18px;
+  padding: 12px 14px;
+  border-radius: var(--radius-sm, 8px);
+  background: var(--surface-soft, #f8f9fc);
+  border: 1px solid var(--hairline, var(--border));
+}
+
+.platform-panel .config-preview pre {
+  margin: 0;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: #151821;
+  color: #e8ecf4;
+  font-size: 12px;
+  line-height: 1.5;
+  overflow: auto;
+  max-height: 220px;
+}
+
+.platform-panel-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+/* —— 媒体预览网格 —— */
+.platform-panel .media-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 12px;
+}
+
+.platform-panel .media-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 10px;
+  border-radius: var(--radius-sm, 8px);
+  border: 1px solid var(--hairline, var(--border));
+  background: var(--surface-soft, #f8f9fc);
+  min-width: 0;
+}
+
+.platform-panel .media-thumb {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 8px;
+  overflow: hidden;
+  background: rgba(107, 95, 193, 0.06);
+  border: 1px solid var(--hairline, var(--border));
+}
+
+.platform-panel .media-thumb img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.platform-panel .media-name {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--ink, var(--text));
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.platform-panel .media-info .muted {
+  font-size: 11px;
+}
+
+/* —— 本页 DataEnvBar 稍收一点 —— */
+.admin-page .data-env-bar {
+  border-radius: var(--radius-md, 12px);
+  border-color: var(--hairline, var(--border));
+  background: linear-gradient(180deg, var(--surface, #fff), var(--surface-soft, #f8f9fc));
+  box-shadow: none;
+}
+
+@media (max-width: 860px) {
+  .platform-related-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .platform-summary-grid,
+  .platform-panel .config-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .platform-status-item + .platform-status-item {
+    padding-left: 0;
+    border-left: none;
+  }
+
+  .platform-status-actions {
+    margin-left: 0;
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .platform-related-card,
+  .platform-related-card::before {
+    transition: none;
+  }
+}

@@ -1,0 +1,4843 @@
+{
+  "schemaVersion": 1,
+  "domain": "flutter",
+  "generatedAt": "2026-09-08T11:22:52.607Z",
+  "nodes": [
+    {
+      "weight": 4,
+      "id": "root:flutter",
+      "kind": "root",
+      "label": "Flutter App",
+      "summary": "routes → pages → domain services",
+      "ref_id": "lib/app/app_routes.dart"
+    },
+    {
+      "weight": 3,
+      "id": "layer:routes",
+      "kind": "layer",
+      "label": "routes",
+      "summary": "buildAppRoutes()",
+      "ref_id": "lib/app/app_routes.dart"
+    },
+    {
+      "weight": 3,
+      "id": "layer:services",
+      "kind": "layer",
+      "label": "services",
+      "summary": "lib/services",
+      "ref_id": "lib/services"
+    },
+    {
+      "weight": 2,
+      "id": "flags:feature",
+      "kind": "flags",
+      "label": "FeatureFlags",
+      "summary": "lib/constants/feature_flags.dart",
+      "ref_id": "lib/constants/feature_flags.dart"
+    },
+    {
+      "weight": 2,
+      "id": "route:/login",
+      "kind": "route",
+      "label": "/login",
+      "summary": "FeatureFlags.liveGiftPk",
+      "ref_id": "lib/app/app_routes.dart",
+      "meta": {
+        "gated": "liveGiftPk"
+      }
+    },
+    {
+      "weight": 1,
+      "id": "page:lib/app/app_routes.dart",
+      "kind": "page",
+      "label": "app_routes",
+      "summary": "lib/app/app_routes.dart",
+      "ref_id": "lib/app/app_routes.dart"
+    },
+    {
+      "weight": 2,
+      "id": "route:/register",
+      "kind": "route",
+      "label": "/register",
+      "summary": "FeatureFlags.liveGiftPk",
+      "ref_id": "lib/app/app_routes.dart",
+      "meta": {
+        "gated": "liveGiftPk"
+      }
+    },
+    {
+      "weight": 2,
+      "id": "route:/home",
+      "kind": "route",
+      "label": "/home",
+      "summary": "FeatureFlags.liveGiftPk",
+      "ref_id": "lib/app/app_routes.dart",
+      "meta": {
+        "gated": "liveGiftPk"
+      }
+    },
+    {
+      "weight": 1,
+      "id": "page:lib/pages/feed/home_page.dart",
+      "kind": "page",
+      "label": "home_page",
+      "summary": "lib/pages/feed/home_page.dart",
+      "ref_id": "lib/pages/feed/home_page.dart"
+    },
+    {
+      "weight": 2,
+      "id": "route:/battle/room",
+      "kind": "route",
+      "label": "/battle/room",
+      "summary": "FeatureFlags.liveGiftPk",
+      "ref_id": "lib/app/app_routes.dart",
+      "meta": {
+        "gated": "liveGiftPk"
+      }
+    },
+    {
+      "weight": 2,
+      "id": "route:/battle",
+      "kind": "route",
+      "label": "/battle",
+      "summary": "FeatureFlags.liveGiftPk",
+      "ref_id": "lib/app/app_routes.dart",
+      "meta": {
+        "gated": "liveGiftPk"
+      }
+    },
+    {
+      "weight": 1,
+      "id": "route:/profile",
+      "kind": "route",
+      "label": "/profile",
+      "summary": "always",
+      "ref_id": "lib/app/app_routes.dart",
+      "meta": {
+        "gated": null
+      }
+    },
+    {
+      "weight": 1,
+      "id": "route:/achievements",
+      "kind": "route",
+      "label": "/achievements",
+      "summary": "always",
+      "ref_id": "lib/app/app_routes.dart",
+      "meta": {
+        "gated": null
+      }
+    },
+    {
+      "weight": 1,
+      "id": "route:/settings",
+      "kind": "route",
+      "label": "/settings",
+      "summary": "always",
+      "ref_id": "lib/app/app_routes.dart",
+      "meta": {
+        "gated": null
+      }
+    },
+    {
+      "weight": 1,
+      "id": "page:lib/pages/settings/settings_page.dart",
+      "kind": "page",
+      "label": "settings_page",
+      "summary": "lib/pages/settings/settings_page.dart",
+      "ref_id": "lib/pages/settings/settings_page.dart"
+    },
+    {
+      "weight": 1,
+      "id": "route:/virtual-avatar-settings",
+      "kind": "route",
+      "label": "/virtual-avatar-settings",
+      "summary": "always",
+      "ref_id": "lib/app/app_routes.dart",
+      "meta": {
+        "gated": null
+      }
+    },
+    {
+      "weight": 1,
+      "id": "route:/message-retention-settings",
+      "kind": "route",
+      "label": "/message-retention-settings",
+      "summary": "always",
+      "ref_id": "lib/app/app_routes.dart",
+      "meta": {
+        "gated": null
+      }
+    },
+    {
+      "weight": 1,
+      "id": "route:/companion-settings",
+      "kind": "route",
+      "label": "/companion-settings",
+      "summary": "always",
+      "ref_id": "lib/app/app_routes.dart",
+      "meta": {
+        "gated": null
+      }
+    },
+    {
+      "weight": 1,
+      "id": "route:/checkin",
+      "kind": "route",
+      "label": "/checkin",
+      "summary": "always",
+      "ref_id": "lib/app/app_routes.dart",
+      "meta": {
+        "gated": null
+      }
+    },
+    {
+      "weight": 1,
+      "id": "route:/create-post",
+      "kind": "route",
+      "label": "/create-post",
+      "summary": "always",
+      "ref_id": "lib/app/app_routes.dart",
+      "meta": {
+        "gated": null
+      }
+    },
+    {
+      "weight": 1,
+      "id": "route:/comments",
+      "kind": "route",
+      "label": "/comments",
+      "summary": "always",
+      "ref_id": "lib/app/app_routes.dart",
+      "meta": {
+        "gated": null
+      }
+    },
+    {
+      "weight": 1,
+      "id": "route:/edit-profile",
+      "kind": "route",
+      "label": "/edit-profile",
+      "summary": "always",
+      "ref_id": "lib/app/app_routes.dart",
+      "meta": {
+        "gated": null
+      }
+    },
+    {
+      "weight": 1,
+      "id": "route:/vip-center",
+      "kind": "route",
+      "label": "/vip-center",
+      "summary": "always",
+      "ref_id": "lib/app/app_routes.dart",
+      "meta": {
+        "gated": null
+      }
+    },
+    {
+      "weight": 1,
+      "id": "route:/vip-purchase",
+      "kind": "route",
+      "label": "/vip-purchase",
+      "summary": "always",
+      "ref_id": "lib/app/app_routes.dart",
+      "meta": {
+        "gated": null
+      }
+    },
+    {
+      "weight": 1,
+      "id": "route:/vip-orders",
+      "kind": "route",
+      "label": "/vip-orders",
+      "summary": "always",
+      "ref_id": "lib/app/app_routes.dart",
+      "meta": {
+        "gated": null
+      }
+    },
+    {
+      "weight": 1,
+      "id": "route:/orders",
+      "kind": "route",
+      "label": "/orders",
+      "summary": "always",
+      "ref_id": "lib/app/app_routes.dart",
+      "meta": {
+        "gated": null
+      }
+    },
+    {
+      "weight": 1,
+      "id": "route:/vip-history",
+      "kind": "route",
+      "label": "/vip-history",
+      "summary": "always",
+      "ref_id": "lib/app/app_routes.dart",
+      "meta": {
+        "gated": null
+      }
+    },
+    {
+      "weight": 1,
+      "id": "route:/forgot-password",
+      "kind": "route",
+      "label": "/forgot-password",
+      "summary": "always",
+      "ref_id": "lib/app/app_routes.dart",
+      "meta": {
+        "gated": null
+      }
+    },
+    {
+      "weight": 1,
+      "id": "route:/verify-code",
+      "kind": "route",
+      "label": "/verify-code",
+      "summary": "always",
+      "ref_id": "lib/app/app_routes.dart",
+      "meta": {
+        "gated": null
+      }
+    },
+    {
+      "weight": 2,
+      "id": "route:/reset-password",
+      "kind": "route",
+      "label": "/reset-password",
+      "summary": "FeatureFlags.showGachaFeatures",
+      "ref_id": "lib/app/app_routes.dart",
+      "meta": {
+        "gated": "showGachaFeatures"
+      }
+    },
+    {
+      "weight": 2,
+      "id": "route:/notifications",
+      "kind": "route",
+      "label": "/notifications",
+      "summary": "FeatureFlags.showGachaFeatures",
+      "ref_id": "lib/app/app_routes.dart",
+      "meta": {
+        "gated": "showGachaFeatures"
+      }
+    },
+    {
+      "weight": 2,
+      "id": "route:/announcements",
+      "kind": "route",
+      "label": "/announcements",
+      "summary": "FeatureFlags.showGachaFeatures",
+      "ref_id": "lib/app/app_routes.dart",
+      "meta": {
+        "gated": "showGachaFeatures"
+      }
+    },
+    {
+      "weight": 2,
+      "id": "route:/wallet",
+      "kind": "route",
+      "label": "/wallet",
+      "summary": "FeatureFlags.showGachaFeatures",
+      "ref_id": "lib/app/app_routes.dart",
+      "meta": {
+        "gated": "showGachaFeatures"
+      }
+    },
+    {
+      "weight": 2,
+      "id": "route:/recharge",
+      "kind": "route",
+      "label": "/recharge",
+      "summary": "FeatureFlags.showGachaFeatures",
+      "ref_id": "lib/app/app_routes.dart",
+      "meta": {
+        "gated": "showGachaFeatures"
+      }
+    },
+    {
+      "weight": 2,
+      "id": "route:/gacha",
+      "kind": "route",
+      "label": "/gacha",
+      "summary": "FeatureFlags.showGachaFeatures",
+      "ref_id": "lib/app/app_routes.dart",
+      "meta": {
+        "gated": "showGachaFeatures"
+      }
+    },
+    {
+      "weight": 1,
+      "id": "route:/user-profile",
+      "kind": "route",
+      "label": "/user-profile",
+      "summary": "always",
+      "ref_id": "lib/app/app_routes.dart",
+      "meta": {
+        "gated": null
+      }
+    },
+    {
+      "weight": 1,
+      "id": "route:/cloud-gallery",
+      "kind": "route",
+      "label": "/cloud-gallery",
+      "summary": "always",
+      "ref_id": "lib/app/app_routes.dart",
+      "meta": {
+        "gated": null
+      }
+    },
+    {
+      "weight": 1,
+      "id": "route:/topic-posts",
+      "kind": "route",
+      "label": "/topic-posts",
+      "summary": "always",
+      "ref_id": "lib/app/app_routes.dart",
+      "meta": {
+        "gated": null
+      }
+    },
+    {
+      "weight": 1,
+      "id": "route:/friends",
+      "kind": "route",
+      "label": "/friends",
+      "summary": "always",
+      "ref_id": "lib/app/app_routes.dart",
+      "meta": {
+        "gated": null
+      }
+    },
+    {
+      "weight": 1,
+      "id": "route:/community",
+      "kind": "route",
+      "label": "/community",
+      "summary": "always",
+      "ref_id": "lib/app/app_routes.dart",
+      "meta": {
+        "gated": null
+      }
+    },
+    {
+      "weight": 1,
+      "id": "route:/community/group",
+      "kind": "route",
+      "label": "/community/group",
+      "summary": "always",
+      "ref_id": "lib/app/app_routes.dart",
+      "meta": {
+        "gated": null
+      }
+    },
+    {
+      "weight": 1,
+      "id": "route:/post-detail",
+      "kind": "route",
+      "label": "/post-detail",
+      "summary": "always",
+      "ref_id": "lib/app/app_routes.dart",
+      "meta": {
+        "gated": null
+      }
+    },
+    {
+      "weight": 1,
+      "id": "route:/messages",
+      "kind": "route",
+      "label": "/messages",
+      "summary": "always",
+      "ref_id": "lib/app/app_routes.dart",
+      "meta": {
+        "gated": null
+      }
+    },
+    {
+      "weight": 1,
+      "id": "route:/ai-chat",
+      "kind": "route",
+      "label": "/ai-chat",
+      "summary": "always",
+      "ref_id": "lib/app/app_routes.dart",
+      "meta": {
+        "gated": null
+      }
+    },
+    {
+      "weight": 1,
+      "id": "page:lib/pages/companion/companion_chat_page.dart",
+      "kind": "page",
+      "label": "companion_chat_page",
+      "summary": "lib/pages/companion/companion_chat_page.dart",
+      "ref_id": "lib/pages/companion/companion_chat_page.dart"
+    },
+    {
+      "weight": 1,
+      "id": "route:/ai-memories",
+      "kind": "route",
+      "label": "/ai-memories",
+      "summary": "always",
+      "ref_id": "lib/app/app_routes.dart",
+      "meta": {
+        "gated": null
+      }
+    },
+    {
+      "weight": 1,
+      "id": "page:lib/pages/companion/companion_memories_page.dart",
+      "kind": "page",
+      "label": "companion_memories_page",
+      "summary": "lib/pages/companion/companion_memories_page.dart",
+      "ref_id": "lib/pages/companion/companion_memories_page.dart"
+    },
+    {
+      "weight": 2,
+      "id": "route:/direct-chat",
+      "kind": "route",
+      "label": "/direct-chat",
+      "summary": "FeatureFlags.showLifeEngine",
+      "ref_id": "lib/app/app_routes.dart",
+      "meta": {
+        "gated": "showLifeEngine"
+      }
+    },
+    {
+      "weight": 2,
+      "id": "route:/scan",
+      "kind": "route",
+      "label": "/scan",
+      "summary": "FeatureFlags.showLifeEngine",
+      "ref_id": "lib/app/app_routes.dart",
+      "meta": {
+        "gated": "showLifeEngine"
+      }
+    },
+    {
+      "weight": 2,
+      "id": "route:/user-qr-code",
+      "kind": "route",
+      "label": "/user-qr-code",
+      "summary": "FeatureFlags.showLifeEngine",
+      "ref_id": "lib/app/app_routes.dart",
+      "meta": {
+        "gated": "showLifeEngine"
+      }
+    },
+    {
+      "weight": 2,
+      "id": "route:/life/world",
+      "kind": "route",
+      "label": "/life/world",
+      "summary": "FeatureFlags.showLifeEngine",
+      "ref_id": "lib/app/app_routes.dart",
+      "meta": {
+        "gated": "showLifeEngine"
+      }
+    },
+    {
+      "weight": 1,
+      "id": "page:lib/pages/life/life_world_page.dart",
+      "kind": "page",
+      "label": "life_world_page",
+      "summary": "lib/pages/life/life_world_page.dart",
+      "ref_id": "lib/pages/life/life_world_page.dart"
+    },
+    {
+      "weight": 2,
+      "id": "route:/pet/home",
+      "kind": "route",
+      "label": "/pet/home",
+      "summary": "FeatureFlags.arenaGamePrototype",
+      "ref_id": "lib/app/app_routes.dart",
+      "meta": {
+        "gated": "arenaGamePrototype"
+      }
+    },
+    {
+      "weight": 2,
+      "id": "route:/game/arena",
+      "kind": "route",
+      "label": "/game/arena",
+      "summary": "FeatureFlags.arenaGamePrototype",
+      "ref_id": "lib/app/app_routes.dart",
+      "meta": {
+        "gated": "arenaGamePrototype"
+      }
+    },
+    {
+      "weight": 2,
+      "id": "route:/game/arena/home",
+      "kind": "route",
+      "label": "/game/arena/home",
+      "summary": "FeatureFlags.arenaGamePrototype",
+      "ref_id": "lib/app/app_routes.dart",
+      "meta": {
+        "gated": "arenaGamePrototype"
+      }
+    },
+    {
+      "weight": 2,
+      "id": "route:/game-network/lab",
+      "kind": "route",
+      "label": "/game-network/lab",
+      "summary": "FeatureFlags.showGameNetworkLab",
+      "ref_id": "lib/app/app_routes.dart",
+      "meta": {
+        "gated": "showGameNetworkLab"
+      }
+    },
+    {
+      "weight": 2,
+      "id": "route:/life/detail",
+      "kind": "route",
+      "label": "/life/detail",
+      "summary": "FeatureFlags.showLifeEngine",
+      "ref_id": "lib/app/app_routes.dart",
+      "meta": {
+        "gated": "showLifeEngine"
+      }
+    },
+    {
+      "weight": 1,
+      "id": "service:achievement_hooks",
+      "kind": "service",
+      "label": "achievement_hooks",
+      "summary": "lib/services/achievement_hooks.dart",
+      "ref_id": "lib/services/achievement_hooks.dart"
+    },
+    {
+      "weight": 1,
+      "id": "service:achievement_service",
+      "kind": "service",
+      "label": "achievement_service",
+      "summary": "lib/services/achievement_service.dart",
+      "ref_id": "lib/services/achievement_service.dart"
+    },
+    {
+      "weight": 1,
+      "id": "service:ai_agent_cloud_service",
+      "kind": "service",
+      "label": "ai_agent_cloud_service",
+      "summary": "lib/services/ai_agent_cloud_service.dart",
+      "ref_id": "lib/services/ai_agent_cloud_service.dart"
+    },
+    {
+      "weight": 1,
+      "id": "service:ai_agent_draft_factory",
+      "kind": "service",
+      "label": "ai_agent_draft_factory",
+      "summary": "lib/services/ai_agent_draft_factory.dart",
+      "ref_id": "lib/services/ai_agent_draft_factory.dart"
+    },
+    {
+      "weight": 1,
+      "id": "service:ai_agent_usage_service",
+      "kind": "service",
+      "label": "ai_agent_usage_service",
+      "summary": "lib/services/ai_agent_usage_service.dart",
+      "ref_id": "lib/services/ai_agent_usage_service.dart"
+    },
+    {
+      "weight": 1,
+      "id": "service:ai_character_card_service",
+      "kind": "service",
+      "label": "ai_character_card_service",
+      "summary": "lib/services/ai_character_card_service.dart",
+      "ref_id": "lib/services/ai_character_card_service.dart"
+    },
+    {
+      "weight": 1,
+      "id": "service:ai_character_card_storage",
+      "kind": "service",
+      "label": "ai_character_card_storage",
+      "summary": "lib/services/ai_character_card_storage.dart",
+      "ref_id": "lib/services/ai_character_card_storage.dart"
+    },
+    {
+      "weight": 1,
+      "id": "service:ai_character_card_storage_io",
+      "kind": "service",
+      "label": "ai_character_card_storage_io",
+      "summary": "lib/services/ai_character_card_storage_io.dart",
+      "ref_id": "lib/services/ai_character_card_storage_io.dart"
+    },
+    {
+      "weight": 1,
+      "id": "service:ai_character_card_storage_stub",
+      "kind": "service",
+      "label": "ai_character_card_storage_stub",
+      "summary": "lib/services/ai_character_card_storage_stub.dart",
+      "ref_id": "lib/services/ai_character_card_storage_stub.dart"
+    },
+    {
+      "weight": 1,
+      "id": "service:ai_chat_context_builder",
+      "kind": "service",
+      "label": "ai_chat_context_builder",
+      "summary": "lib/services/ai_chat_context_builder.dart",
+      "ref_id": "lib/services/ai_chat_context_builder.dart"
+    },
+    {
+      "weight": 1,
+      "id": "service:ai_chat_gateway_service",
+      "kind": "service",
+      "label": "ai_chat_gateway_service",
+      "summary": "lib/services/ai_chat_gateway_service.dart",
+      "ref_id": "lib/services/ai_chat_gateway_service.dart"
+    },
+    {
+      "weight": 1,
+      "id": "service:ai_chat_session_prefs",
+      "kind": "service",
+      "label": "ai_chat_session_prefs",
+      "summary": "lib/services/ai_chat_session_prefs.dart",
+      "ref_id": "lib/services/ai_chat_session_prefs.dart"
+    },
+    {
+      "weight": 1,
+      "id": "service:ai_cloud_config_service",
+      "kind": "service",
+      "label": "ai_cloud_config_service",
+      "summary": "lib/services/ai_cloud_config_service.dart",
+      "ref_id": "lib/services/ai_cloud_config_service.dart"
+    },
+    {
+      "weight": 1,
+      "id": "service:ai_db_service",
+      "kind": "service",
+      "label": "ai_db_service",
+      "summary": "lib/services/ai_db_service.dart",
+      "ref_id": "lib/services/ai_db_service.dart"
+    },
+    {
+      "weight": 1,
+      "id": "service:ai_inference_service",
+      "kind": "service",
+      "label": "ai_inference_service",
+      "summary": "lib/services/ai_inference_service.dart",
+      "ref_id": "lib/services/ai_inference_service.dart"
+    },
+    {
+      "weight": 1,
+      "id": "service:ai_lorebook_service",
+      "kind": "service",
+      "label": "ai_lorebook_service",
+      "summary": "lib/services/ai_lorebook_service.dart",
+      "ref_id": "lib/services/ai_lorebook_service.dart"
+    },
+    {
+      "weight": 1,
+      "id": "service:ai_model_list_parser",
+      "kind": "service",
+      "label": "ai_model_list_parser",
+      "summary": "lib/services/ai_model_list_parser.dart",
+      "ref_id": "lib/services/ai_model_list_parser.dart"
+    },
+    {
+      "weight": 1,
+      "id": "service:ai_models_cache_service",
+      "kind": "service",
+      "label": "ai_models_cache_service",
+      "summary": "lib/services/ai_models_cache_service.dart",
+      "ref_id": "lib/services/ai_models_cache_service.dart"
+    },
+    {
+      "weight": 1,
+      "id": "service:ai_prompt_defaults",
+      "kind": "service",
+      "label": "ai_prompt_defaults",
+      "summary": "lib/services/ai_prompt_defaults.dart",
+      "ref_id": "lib/services/ai_prompt_defaults.dart"
+    },
+    {
+      "weight": 1,
+      "id": "service:ai_provider_connectivity_cache",
+      "kind": "service",
+      "label": "ai_provider_connectivity_cache",
+      "summary": "lib/services/ai_provider_connectivity_cache.dart",
+      "ref_id": "lib/services/ai_provider_connectivity_cache.dart"
+    },
+    {
+      "weight": 1,
+      "id": "service:ai_provider_detector",
+      "kind": "service",
+      "label": "ai_provider_detector",
+      "summary": "lib/services/ai_provider_detector.dart",
+      "ref_id": "lib/services/ai_provider_detector.dart"
+    },
+    {
+      "weight": 1,
+      "id": "service:ai_provider_service",
+      "kind": "service",
+      "label": "ai_provider_service",
+      "summary": "lib/services/ai_provider_service.dart",
+      "ref_id": "lib/services/ai_provider_service.dart"
+    },
+    {
+      "weight": 1,
+      "id": "service:ai_provider_usage_service",
+      "kind": "service",
+      "label": "ai_provider_usage_service",
+      "summary": "lib/services/ai_provider_usage_service.dart",
+      "ref_id": "lib/services/ai_provider_usage_service.dart"
+    },
+    {
+      "weight": 1,
+      "id": "service:ai_roleplay_prompt_builder",
+      "kind": "service",
+      "label": "ai_roleplay_prompt_builder",
+      "summary": "lib/services/ai_roleplay_prompt_builder.dart",
+      "ref_id": "lib/services/ai_roleplay_prompt_builder.dart"
+    },
+    {
+      "weight": 1,
+      "id": "service:ai_starter_templates",
+      "kind": "service",
+      "label": "ai_starter_templates",
+      "summary": "lib/services/ai_starter_templates.dart",
+      "ref_id": "lib/services/ai_starter_templates.dart"
+    },
+    {
+      "weight": 1,
+      "id": "service:ai_tool_runtime",
+      "kind": "service",
+      "label": "ai_tool_runtime",
+      "summary": "lib/services/ai_tool_runtime.dart",
+      "ref_id": "lib/services/ai_tool_runtime.dart"
+    },
+    {
+      "weight": 1,
+      "id": "service:ai_tts_helper",
+      "kind": "service",
+      "label": "ai_tts_helper",
+      "summary": "lib/services/ai_tts_helper.dart",
+      "ref_id": "lib/services/ai_tts_helper.dart"
+    },
+    {
+      "weight": 1,
+      "id": "service:ai_user_persona_service",
+      "kind": "service",
+      "label": "ai_user_persona_service",
+      "summary": "lib/services/ai_user_persona_service.dart",
+      "ref_id": "lib/services/ai_user_persona_service.dart"
+    },
+    {
+      "weight": 1,
+      "id": "service:announcement_service",
+      "kind": "service",
+      "label": "announcement_service",
+      "summary": "lib/services/announcement_service.dart",
+      "ref_id": "lib/services/announcement_service.dart"
+    },
+    {
+      "weight": 1,
+      "id": "service:api_client",
+      "kind": "service",
+      "label": "api_client",
+      "summary": "lib/services/api_client.dart",
+      "ref_id": "lib/services/api_client.dart"
+    },
+    {
+      "weight": 1,
+      "id": "service:api_response",
+      "kind": "service",
+      "label": "api_response",
+      "summary": "lib/services/api_response.dart",
+      "ref_id": "lib/services/api_response.dart"
+    },
+    {
+      "weight": 1,
+      "id": "service:api_service",
+      "kind": "service",
+      "label": "api_service",
+      "summary": "lib/services/api_service.dart",
+      "ref_id": "lib/services/api_service.dart"
+    },
+    {
+      "weight": 1,
+      "id": "service:app_release_service",
+      "kind": "service",
+      "label": "app_release_service",
+      "summary": "lib/services/app_release_service.dart",
+      "ref_id": "lib/services/app_release_service.dart"
+    },
+    {
+      "weight": 1,
+      "id": "service:app_storage_service",
+      "kind": "service",
+      "label": "app_storage_service",
+      "summary": "lib/services/app_storage_service.dart",
+      "ref_id": "lib/services/app_storage_service.dart"
+    },
+    {
+      "weight": 1,
+      "id": "service:app_storage_service_io",
+      "kind": "service",
+      "label": "app_storage_service_io",
+      "summary": "lib/services/app_storage_service_io.dart",
+      "ref_id": "lib/services/app_storage_service_io.dart"
+    },
+    {
+      "weight": 1,
+      "id": "service:app_storage_service_stub",
+      "kind": "service",
+      "label": "app_storage_service_stub",
+      "summary": "lib/services/app_storage_service_stub.dart",
+      "ref_id": "lib/services/app_storage_service_stub.dart"
+    },
+    {
+      "weight": 1,
+      "id": "service:arena_service",
+      "kind": "service",
+      "label": "arena_service",
+      "summary": "lib/services/arena_service.dart",
+      "ref_id": "lib/services/arena_service.dart"
+    },
+    {
+      "weight": 1,
+      "id": "service:auth_flow_service",
+      "kind": "service",
+      "label": "auth_flow_service",
+      "summary": "lib/services/auth_flow_service.dart",
+      "ref_id": "lib/services/auth_flow_service.dart"
+    },
+    {
+      "weight": 1,
+      "id": "service:avatar_asset_service",
+      "kind": "service",
+      "label": "avatar_asset_service",
+      "summary": "lib/services/avatar_asset_service.dart",
+      "ref_id": "lib/services/avatar_asset_service.dart"
+    },
+    {
+      "weight": 1,
+      "id": "service:avatar_service",
+      "kind": "service",
+      "label": "avatar_service",
+      "summary": "lib/services/avatar_service.dart",
+      "ref_id": "lib/services/avatar_service.dart"
+    },
+    {
+      "weight": 1,
+      "id": "service:battle_service",
+      "kind": "service",
+      "label": "battle_service",
+      "summary": "lib/services/battle_service.dart",
+      "ref_id": "lib/services/battle_service.dart"
+    },
+    {
+      "weight": 1,
+      "id": "service:battle_ws_service",
+      "kind": "service",
+      "label": "battle_ws_service",
+      "summary": "lib/services/battle_ws_service.dart",
+      "ref_id": "lib/services/battle_ws_service.dart"
+    },
+    {
+      "weight": 1,
+      "id": "service:behavior_analytics_service",
+      "kind": "service",
+      "label": "behavior_analytics_service",
+      "summary": "lib/services/behavior_analytics_service.dart",
+      "ref_id": "lib/services/behavior_analytics_service.dart"
+    },
+    {
+      "weight": 1,
+      "id": "service:camera_permission_service",
+      "kind": "service",
+      "label": "camera_permission_service",
+      "summary": "lib/services/camera_permission_service.dart",
+      "ref_id": "lib/services/camera_permission_service.dart"
+    },
+    {
+      "weight": 1,
+      "id": "service:chat_push_service",
+      "kind": "service",
+      "label": "chat_push_service",
+      "summary": "lib/services/chat_push_service.dart",
+      "ref_id": "lib/services/chat_push_service.dart"
+    },
+    {
+      "weight": 1,
+      "id": "service:chat_service",
+      "kind": "service",
+      "label": "chat_service",
+      "summary": "lib/services/chat_service.dart",
+      "ref_id": "lib/services/chat_service.dart"
+    },
+    {
+      "weight": 1,
+      "id": "service:commerce_service",
+      "kind": "service",
+      "label": "commerce_service",
+      "summary": "lib/services/commerce_service.dart",
+      "ref_id": "lib/services/commerce_service.dart"
+    },
+    {
+      "weight": 1,
+      "id": "service:community_service",
+      "kind": "service",
+      "label": "community_service",
+      "summary": "lib/services/community_service.dart",
+      "ref_id": "lib/services/community_service.dart"
+    },
+    {
+      "weight": 1,
+      "id": "service:companion_character_card_import",
+      "kind": "service",
+      "label": "companion_character_card_import",
+      "summary": "lib/services/companion_character_card_import.dart",
+      "ref_id": "lib/services/companion_character_card_import.dart"
+    },
+    {
+      "weight": 1,
+      "id": "service:companion_chat_launcher",
+      "kind": "service",
+      "label": "companion_chat_launcher",
+      "summary": "lib/services/companion_chat_launcher.dart",
+      "ref_id": "lib/services/companion_chat_launcher.dart"
+    },
+    {
+      "weight": 1,
+      "id": "service:companion_interaction_coordinator",
+      "kind": "service",
+      "label": "companion_interaction_coordinator",
+      "summary": "lib/services/companion_interaction_coordinator.dart",
+      "ref_id": "lib/services/companion_interaction_coordinator.dart"
+    },
+    {
+      "weight": 1,
+      "id": "service:companion_service",
+      "kind": "service",
+      "label": "companion_service",
+      "summary": "lib/services/companion_service.dart",
+      "ref_id": "lib/services/companion_service.dart"
+    },
+    {
+      "weight": 1,
+      "id": "service:companion_ws_service",
+      "kind": "service",
+      "label": "companion_ws_service",
+      "summary": "lib/services/companion_ws_service.dart",
+      "ref_id": "lib/services/companion_ws_service.dart"
+    },
+    {
+      "weight": 1,
+      "id": "service:daily_growth_service",
+      "kind": "service",
+      "label": "daily_growth_service",
+      "summary": "lib/services/daily_growth_service.dart",
+      "ref_id": "lib/services/daily_growth_service.dart"
+    },
+    {
+      "weight": 1,
+      "id": "service:daily_quote_service",
+      "kind": "service",
+      "label": "daily_quote_service",
+      "summary": "lib/services/daily_quote_service.dart",
+      "ref_id": "lib/services/daily_quote_service.dart"
+    },
+    {
+      "weight": 1,
+      "id": "service:device_service",
+      "kind": "service",
+      "label": "device_service",
+      "summary": "lib/services/device_service.dart",
+      "ref_id": "lib/services/device_service.dart"
+    },
+    {
+      "weight": 1,
+      "id": "service:direct_chat_local_reader",
+      "kind": "service",
+      "label": "direct_chat_local_reader",
+      "summary": "lib/services/direct_chat_local_reader.dart",
+      "ref_id": "lib/services/direct_chat_local_reader.dart"
+    },
+    {
+      "weight": 1,
+      "id": "service:direct_chat_sync_bus",
+      "kind": "service",
+      "label": "direct_chat_sync_bus",
+      "summary": "lib/services/direct_chat_sync_bus.dart",
+      "ref_id": "lib/services/direct_chat_sync_bus.dart"
+    },
+    {
+      "weight": 1,
+      "id": "service:emoji_service",
+      "kind": "service",
+      "label": "emoji_service",
+      "summary": "lib/services/emoji_service.dart",
+      "ref_id": "lib/services/emoji_service.dart"
+    },
+    {
+      "weight": 1,
+      "id": "service:enhanced_logger",
+      "kind": "service",
+      "label": "enhanced_logger",
+      "summary": "lib/services/enhanced_logger.dart",
+      "ref_id": "lib/services/enhanced_logger.dart"
+    },
+    {
+      "weight": 1,
+      "id": "service:friend_request_sync",
+      "kind": "service",
+      "label": "friend_request_sync",
+      "summary": "lib/services/friend_request_sync.dart",
+      "ref_id": "lib/services/friend_request_sync.dart"
+    },
+    {
+      "weight": 1,
+      "id": "service:gallery_service",
+      "kind": "service",
+      "label": "gallery_service",
+      "summary": "lib/services/gallery_service.dart",
+      "ref_id": "lib/services/gallery_service.dart"
+    },
+    {
+      "weight": 1,
+      "id": "service:game_network_service",
+      "kind": "service",
+      "label": "game_network_service",
+      "summary": "lib/services/game_network_service.dart",
+      "ref_id": "lib/services/game_network_service.dart"
+    },
+    {
+      "weight": 1,
+      "id": "service:game_service",
+      "kind": "service",
+      "label": "game_service",
+      "summary": "lib/services/game_service.dart",
+      "ref_id": "lib/services/game_service.dart"
+    },
+    {
+      "weight": 1,
+      "id": "service:gift_catalog_service",
+      "kind": "service",
+      "label": "gift_catalog_service",
+      "summary": "lib/services/gift_catalog_service.dart",
+      "ref_id": "lib/services/gift_catalog_service.dart"
+    },
+    {
+      "weight": 1,
+      "id": "service:life_cache_service",
+      "kind": "service",
+      "label": "life_cache_service",
+      "summary": "lib/services/life_cache_service.dart",
+      "ref_id": "lib/services/life_cache_service.dart"
+    },
+    {
+      "weight": 1,
+      "id": "service:life_service",
+      "kind": "service",
+      "label": "life_service",
+      "summary": "lib/services/life_service.dart",
+      "ref_id": "lib/services/life_service.dart"
+    },
+    {
+      "weight": 1,
+      "id": "service:life_ws_service",
+      "kind": "service",
+      "label": "life_ws_service",
+      "summary": "lib/services/life_ws_service.dart",
+      "ref_id": "lib/services/life_ws_service.dart"
+    },
+    {
+      "weight": 1,
+      "id": "service:like_state_manager",
+      "kind": "service",
+      "label": "like_state_manager",
+      "summary": "lib/services/like_state_manager.dart",
+      "ref_id": "lib/services/like_state_manager.dart"
+    },
+    {
+      "weight": 1,
+      "id": "service:llm_api_service",
+      "kind": "service",
+      "label": "llm_api_service",
+      "summary": "lib/services/llm_api_service.dart",
+      "ref_id": "lib/services/llm_api_service.dart"
+    },
+    {
+      "weight": 1,
+      "id": "service:llm_endpoint_config",
+      "kind": "service",
+      "label": "llm_endpoint_config",
+      "summary": "lib/services/llm_endpoint_config.dart",
+      "ref_id": "lib/services/llm_endpoint_config.dart"
+    },
+    {
+      "weight": 1,
+      "id": "service:llm_response_parser",
+      "kind": "service",
+      "label": "llm_response_parser",
+      "summary": "lib/services/llm_response_parser.dart",
+      "ref_id": "lib/services/llm_response_parser.dart"
+    },
+    {
+      "weight": 1,
+      "id": "service:match_suggestion_service",
+      "kind": "service",
+      "label": "match_suggestion_service",
+      "summary": "lib/services/match_suggestion_service.dart",
+      "ref_id": "lib/services/match_suggestion_service.dart"
+    },
+    {
+      "weight": 1,
+      "id": "service:notification_preferences",
+      "kind": "service",
+      "label": "notification_preferences",
+      "summary": "lib/services/notification_preferences.dart",
+      "ref_id": "lib/services/notification_preferences.dart"
+    },
+    {
+      "weight": 1,
+      "id": "service:notification_service",
+      "kind": "service",
+      "label": "notification_service",
+      "summary": "lib/services/notification_service.dart",
+      "ref_id": "lib/services/notification_service.dart"
+    },
+    {
+      "weight": 1,
+      "id": "service:post_service",
+      "kind": "service",
+      "label": "post_service",
+      "summary": "lib/services/post_service.dart",
+      "ref_id": "lib/services/post_service.dart"
+    },
+    {
+      "weight": 1,
+      "id": "service:presence_service",
+      "kind": "service",
+      "label": "presence_service",
+      "summary": "lib/services/presence_service.dart",
+      "ref_id": "lib/services/presence_service.dart"
+    },
+    {
+      "weight": 1,
+      "id": "service:push_delivery_capabilities",
+      "kind": "service",
+      "label": "push_delivery_capabilities",
+      "summary": "lib/services/push_delivery_capabilities.dart",
+      "ref_id": "lib/services/push_delivery_capabilities.dart"
+    },
+    {
+      "weight": 1,
+      "id": "service:push_notification_service",
+      "kind": "service",
+      "label": "push_notification_service",
+      "summary": "lib/services/push_notification_service.dart",
+      "ref_id": "lib/services/push_notification_service.dart"
+    },
+    {
+      "weight": 1,
+      "id": "service:qr_code_service",
+      "kind": "service",
+      "label": "qr_code_service",
+      "summary": "lib/services/qr_code_service.dart",
+      "ref_id": "lib/services/qr_code_service.dart"
+    },
+    {
+      "weight": 1,
+      "id": "service:remote_control_service",
+      "kind": "service",
+      "label": "remote_control_service",
+      "summary": "lib/services/remote_control_service.dart",
+      "ref_id": "lib/services/remote_control_service.dart"
+    },
+    {
+      "weight": 1,
+      "id": "service:rive_bootstrap",
+      "kind": "service",
+      "label": "rive_bootstrap",
+      "summary": "lib/services/rive_bootstrap.dart",
+      "ref_id": "lib/services/rive_bootstrap.dart"
+    },
+    {
+      "weight": 1,
+      "id": "service:startup_update_preferences",
+      "kind": "service",
+      "label": "startup_update_preferences",
+      "summary": "lib/services/startup_update_preferences.dart",
+      "ref_id": "lib/services/startup_update_preferences.dart"
+    },
+    {
+      "weight": 1,
+      "id": "service:startup_update_service",
+      "kind": "service",
+      "label": "startup_update_service",
+      "summary": "lib/services/startup_update_service.dart",
+      "ref_id": "lib/services/startup_update_service.dart"
+    },
+    {
+      "weight": 1,
+      "id": "service:task_execution_engine",
+      "kind": "service",
+      "label": "task_execution_engine",
+      "summary": "lib/services/task_execution_engine.dart",
+      "ref_id": "lib/services/task_execution_engine.dart"
+    },
+    {
+      "weight": 1,
+      "id": "service:update_service",
+      "kind": "service",
+      "label": "update_service",
+      "summary": "lib/services/update_service.dart",
+      "ref_id": "lib/services/update_service.dart"
+    },
+    {
+      "weight": 1,
+      "id": "service:user_service",
+      "kind": "service",
+      "label": "user_service",
+      "summary": "lib/services/user_service.dart",
+      "ref_id": "lib/services/user_service.dart"
+    },
+    {
+      "weight": 1,
+      "id": "service:voice_message_service",
+      "kind": "service",
+      "label": "voice_message_service",
+      "summary": "lib/services/voice_message_service.dart",
+      "ref_id": "lib/services/voice_message_service.dart"
+    },
+    {
+      "weight": 1,
+      "id": "service:weather_service",
+      "kind": "service",
+      "label": "weather_service",
+      "summary": "lib/services/weather_service.dart",
+      "ref_id": "lib/services/weather_service.dart"
+    },
+    {
+      "weight": 1,
+      "id": "service:wechat_sdk_service",
+      "kind": "service",
+      "label": "wechat_sdk_service",
+      "summary": "lib/services/wechat_sdk_service.dart",
+      "ref_id": "lib/services/wechat_sdk_service.dart"
+    },
+    {
+      "weight": 1,
+      "id": "service:ws_channel_connector",
+      "kind": "service",
+      "label": "ws_channel_connector",
+      "summary": "lib/services/ws_channel_connector.dart",
+      "ref_id": "lib/services/ws_channel_connector.dart"
+    },
+    {
+      "weight": 1,
+      "id": "service:ws_channel_connector_io",
+      "kind": "service",
+      "label": "ws_channel_connector_io",
+      "summary": "lib/services/ws_channel_connector_io.dart",
+      "ref_id": "lib/services/ws_channel_connector_io.dart"
+    },
+    {
+      "weight": 1,
+      "id": "service:ws_channel_connector_stub",
+      "kind": "service",
+      "label": "ws_channel_connector_stub",
+      "summary": "lib/services/ws_channel_connector_stub.dart",
+      "ref_id": "lib/services/ws_channel_connector_stub.dart"
+    },
+    {
+      "weight": 1,
+      "id": "service:ws_channel_connector_web",
+      "kind": "service",
+      "label": "ws_channel_connector_web",
+      "summary": "lib/services/ws_channel_connector_web.dart",
+      "ref_id": "lib/services/ws_channel_connector_web.dart"
+    },
+    {
+      "weight": 1,
+      "id": "page:lib/pages/settings/companion_settings_page.dart",
+      "kind": "page",
+      "label": "companion_settings_page",
+      "summary": "lib/pages/settings/companion_settings_page.dart",
+      "ref_id": "lib/pages/settings/companion_settings_page.dart"
+    },
+    {
+      "weight": 1,
+      "id": "page:lib/pages/settings/message_retention_settings_page.dart",
+      "kind": "page",
+      "label": "message_retention_settings_page",
+      "summary": "lib/pages/settings/message_retention_settings_page.dart",
+      "ref_id": "lib/pages/settings/message_retention_settings_page.dart"
+    },
+    {
+      "weight": 1,
+      "id": "page:lib/pages/settings/widgets/feishu_bind_sheet.dart",
+      "kind": "page",
+      "label": "feishu_bind_sheet",
+      "summary": "lib/pages/settings/widgets/feishu_bind_sheet.dart",
+      "ref_id": "lib/pages/settings/widgets/feishu_bind_sheet.dart"
+    },
+    {
+      "weight": 1,
+      "id": "page:lib/pages/settings/modules/about_module.dart",
+      "kind": "page",
+      "label": "about_module",
+      "summary": "lib/pages/settings/modules/about_module.dart",
+      "ref_id": "lib/pages/settings/modules/about_module.dart"
+    },
+    {
+      "weight": 1,
+      "id": "page:lib/pages/settings/modules/account_security_module.dart",
+      "kind": "page",
+      "label": "account_security_module",
+      "summary": "lib/pages/settings/modules/account_security_module.dart",
+      "ref_id": "lib/pages/settings/modules/account_security_module.dart"
+    },
+    {
+      "weight": 1,
+      "id": "page:lib/pages/settings/modules/device_storage_module.dart",
+      "kind": "page",
+      "label": "device_storage_module",
+      "summary": "lib/pages/settings/modules/device_storage_module.dart",
+      "ref_id": "lib/pages/settings/modules/device_storage_module.dart"
+    },
+    {
+      "weight": 1,
+      "id": "page:lib/pages/scan/scan_page.dart",
+      "kind": "page",
+      "label": "scan_page",
+      "summary": "lib/pages/scan/scan_page.dart",
+      "ref_id": "lib/pages/scan/scan_page.dart"
+    },
+    {
+      "weight": 1,
+      "id": "page:lib/pages/profile/edit_profile_page.dart",
+      "kind": "page",
+      "label": "edit_profile_page",
+      "summary": "lib/pages/profile/edit_profile_page.dart",
+      "ref_id": "lib/pages/profile/edit_profile_page.dart"
+    },
+    {
+      "weight": 1,
+      "id": "page:lib/pages/profile/followers_page.dart",
+      "kind": "page",
+      "label": "followers_page",
+      "summary": "lib/pages/profile/followers_page.dart",
+      "ref_id": "lib/pages/profile/followers_page.dart"
+    },
+    {
+      "weight": 1,
+      "id": "page:lib/pages/profile/following_page.dart",
+      "kind": "page",
+      "label": "following_page",
+      "summary": "lib/pages/profile/following_page.dart",
+      "ref_id": "lib/pages/profile/following_page.dart"
+    },
+    {
+      "weight": 1,
+      "id": "page:lib/pages/profile/friends_page.dart",
+      "kind": "page",
+      "label": "friends_page",
+      "summary": "lib/pages/profile/friends_page.dart",
+      "ref_id": "lib/pages/profile/friends_page.dart"
+    },
+    {
+      "weight": 1,
+      "id": "page:lib/pages/profile/profile_page.dart",
+      "kind": "page",
+      "label": "profile_page",
+      "summary": "lib/pages/profile/profile_page.dart",
+      "ref_id": "lib/pages/profile/profile_page.dart"
+    },
+    {
+      "weight": 1,
+      "id": "page:lib/pages/profile/user_profile_page.dart",
+      "kind": "page",
+      "label": "user_profile_page",
+      "summary": "lib/pages/profile/user_profile_page.dart",
+      "ref_id": "lib/pages/profile/user_profile_page.dart"
+    },
+    {
+      "weight": 1,
+      "id": "page:lib/pages/profile/user_qr_code_page.dart",
+      "kind": "page",
+      "label": "user_qr_code_page",
+      "summary": "lib/pages/profile/user_qr_code_page.dart",
+      "ref_id": "lib/pages/profile/user_qr_code_page.dart"
+    },
+    {
+      "weight": 1,
+      "id": "page:lib/pages/profile/widgets/add_friend_bottom_sheet.dart",
+      "kind": "page",
+      "label": "add_friend_bottom_sheet",
+      "summary": "lib/pages/profile/widgets/add_friend_bottom_sheet.dart",
+      "ref_id": "lib/pages/profile/widgets/add_friend_bottom_sheet.dart"
+    },
+    {
+      "weight": 1,
+      "id": "page:lib/pages/notifications/notification_center_page.dart",
+      "kind": "page",
+      "label": "notification_center_page",
+      "summary": "lib/pages/notifications/notification_center_page.dart",
+      "ref_id": "lib/pages/notifications/notification_center_page.dart"
+    },
+    {
+      "weight": 1,
+      "id": "page:lib/pages/game_network/game_network_lab_page.dart",
+      "kind": "page",
+      "label": "game_network_lab_page",
+      "summary": "lib/pages/game_network/game_network_lab_page.dart",
+      "ref_id": "lib/pages/game_network/game_network_lab_page.dart"
+    },
+    {
+      "weight": 1,
+      "id": "page:lib/pages/gallery/cloud_gallery_page.dart",
+      "kind": "page",
+      "label": "cloud_gallery_page",
+      "summary": "lib/pages/gallery/cloud_gallery_page.dart",
+      "ref_id": "lib/pages/gallery/cloud_gallery_page.dart"
+    },
+    {
+      "weight": 1,
+      "id": "page:lib/pages/feed/comments_page.dart",
+      "kind": "page",
+      "label": "comments_page",
+      "summary": "lib/pages/feed/comments_page.dart",
+      "ref_id": "lib/pages/feed/comments_page.dart"
+    },
+    {
+      "weight": 1,
+      "id": "page:lib/pages/feed/comments_viewmodel.dart",
+      "kind": "page",
+      "label": "comments_viewmodel",
+      "summary": "lib/pages/feed/comments_viewmodel.dart",
+      "ref_id": "lib/pages/feed/comments_viewmodel.dart"
+    },
+    {
+      "weight": 1,
+      "id": "page:lib/pages/feed/create_post_page.dart",
+      "kind": "page",
+      "label": "create_post_page",
+      "summary": "lib/pages/feed/create_post_page.dart",
+      "ref_id": "lib/pages/feed/create_post_page.dart"
+    },
+    {
+      "weight": 1,
+      "id": "page:lib/pages/feed/create_post_viewmodel.dart",
+      "kind": "page",
+      "label": "create_post_viewmodel",
+      "summary": "lib/pages/feed/create_post_viewmodel.dart",
+      "ref_id": "lib/pages/feed/create_post_viewmodel.dart"
+    },
+    {
+      "weight": 1,
+      "id": "page:lib/pages/feed/home_feed_viewmodel.dart",
+      "kind": "page",
+      "label": "home_feed_viewmodel",
+      "summary": "lib/pages/feed/home_feed_viewmodel.dart",
+      "ref_id": "lib/pages/feed/home_feed_viewmodel.dart"
+    },
+    {
+      "weight": 1,
+      "id": "page:lib/pages/feed/topic_posts_page.dart",
+      "kind": "page",
+      "label": "topic_posts_page",
+      "summary": "lib/pages/feed/topic_posts_page.dart",
+      "ref_id": "lib/pages/feed/topic_posts_page.dart"
+    },
+    {
+      "weight": 1,
+      "id": "page:lib/pages/discover/discover_match_tab.dart",
+      "kind": "page",
+      "label": "discover_match_tab",
+      "summary": "lib/pages/discover/discover_match_tab.dart",
+      "ref_id": "lib/pages/discover/discover_match_tab.dart"
+    },
+    {
+      "weight": 1,
+      "id": "page:lib/pages/companion/companion_memories_viewmodel.dart",
+      "kind": "page",
+      "label": "companion_memories_viewmodel",
+      "summary": "lib/pages/companion/companion_memories_viewmodel.dart",
+      "ref_id": "lib/pages/companion/companion_memories_viewmodel.dart"
+    },
+    {
+      "weight": 1,
+      "id": "page:lib/pages/companion/memory_conflict_card.dart",
+      "kind": "page",
+      "label": "memory_conflict_card",
+      "summary": "lib/pages/companion/memory_conflict_card.dart",
+      "ref_id": "lib/pages/companion/memory_conflict_card.dart"
+    },
+    {
+      "weight": 1,
+      "id": "page:lib/pages/community/community_home_page.dart",
+      "kind": "page",
+      "label": "community_home_page",
+      "summary": "lib/pages/community/community_home_page.dart",
+      "ref_id": "lib/pages/community/community_home_page.dart"
+    },
+    {
+      "weight": 1,
+      "id": "page:lib/pages/community/community_post_detail_page.dart",
+      "kind": "page",
+      "label": "community_post_detail_page",
+      "summary": "lib/pages/community/community_post_detail_page.dart",
+      "ref_id": "lib/pages/community/community_post_detail_page.dart"
+    },
+    {
+      "weight": 1,
+      "id": "page:lib/pages/community/community_posts_feed.dart",
+      "kind": "page",
+      "label": "community_posts_feed",
+      "summary": "lib/pages/community/community_posts_feed.dart",
+      "ref_id": "lib/pages/community/community_posts_feed.dart"
+    },
+    {
+      "weight": 1,
+      "id": "page:lib/pages/community/interest_group_detail_page.dart",
+      "kind": "page",
+      "label": "interest_group_detail_page",
+      "summary": "lib/pages/community/interest_group_detail_page.dart",
+      "ref_id": "lib/pages/community/interest_group_detail_page.dart"
+    },
+    {
+      "weight": 1,
+      "id": "page:lib/pages/community/interest_groups_page.dart",
+      "kind": "page",
+      "label": "interest_groups_page",
+      "summary": "lib/pages/community/interest_groups_page.dart",
+      "ref_id": "lib/pages/community/interest_groups_page.dart"
+    },
+    {
+      "weight": 1,
+      "id": "page:lib/pages/commerce/gacha_page.dart",
+      "kind": "page",
+      "label": "gacha_page",
+      "summary": "lib/pages/commerce/gacha_page.dart",
+      "ref_id": "lib/pages/commerce/gacha_page.dart"
+    },
+    {
+      "weight": 1,
+      "id": "page:lib/pages/commerce/inventory_page.dart",
+      "kind": "page",
+      "label": "inventory_page",
+      "summary": "lib/pages/commerce/inventory_page.dart",
+      "ref_id": "lib/pages/commerce/inventory_page.dart"
+    },
+    {
+      "weight": 1,
+      "id": "page:lib/pages/commerce/order_center_page.dart",
+      "kind": "page",
+      "label": "order_center_page",
+      "summary": "lib/pages/commerce/order_center_page.dart",
+      "ref_id": "lib/pages/commerce/order_center_page.dart"
+    },
+    {
+      "weight": 1,
+      "id": "page:lib/pages/commerce/recharge_page.dart",
+      "kind": "page",
+      "label": "recharge_page",
+      "summary": "lib/pages/commerce/recharge_page.dart",
+      "ref_id": "lib/pages/commerce/recharge_page.dart"
+    },
+    {
+      "weight": 1,
+      "id": "page:lib/pages/commerce/vip_center_page.dart",
+      "kind": "page",
+      "label": "vip_center_page",
+      "summary": "lib/pages/commerce/vip_center_page.dart",
+      "ref_id": "lib/pages/commerce/vip_center_page.dart"
+    },
+    {
+      "weight": 1,
+      "id": "page:lib/pages/commerce/vip_history_page.dart",
+      "kind": "page",
+      "label": "vip_history_page",
+      "summary": "lib/pages/commerce/vip_history_page.dart",
+      "ref_id": "lib/pages/commerce/vip_history_page.dart"
+    },
+    {
+      "weight": 1,
+      "id": "page:lib/pages/commerce/vip_order_confirm_page.dart",
+      "kind": "page",
+      "label": "vip_order_confirm_page",
+      "summary": "lib/pages/commerce/vip_order_confirm_page.dart",
+      "ref_id": "lib/pages/commerce/vip_order_confirm_page.dart"
+    },
+    {
+      "weight": 1,
+      "id": "page:lib/pages/commerce/vip_orders_page.dart",
+      "kind": "page",
+      "label": "vip_orders_page",
+      "summary": "lib/pages/commerce/vip_orders_page.dart",
+      "ref_id": "lib/pages/commerce/vip_orders_page.dart"
+    },
+    {
+      "weight": 1,
+      "id": "page:lib/pages/commerce/vip_purchase_page.dart",
+      "kind": "page",
+      "label": "vip_purchase_page",
+      "summary": "lib/pages/commerce/vip_purchase_page.dart",
+      "ref_id": "lib/pages/commerce/vip_purchase_page.dart"
+    },
+    {
+      "weight": 1,
+      "id": "page:lib/pages/commerce/wallet_page.dart",
+      "kind": "page",
+      "label": "wallet_page",
+      "summary": "lib/pages/commerce/wallet_page.dart",
+      "ref_id": "lib/pages/commerce/wallet_page.dart"
+    },
+    {
+      "weight": 1,
+      "id": "page:lib/pages/checkin/checkin_page.dart",
+      "kind": "page",
+      "label": "checkin_page",
+      "summary": "lib/pages/checkin/checkin_page.dart",
+      "ref_id": "lib/pages/checkin/checkin_page.dart"
+    },
+    {
+      "weight": 1,
+      "id": "page:lib/pages/checkin/user_level_page.dart",
+      "kind": "page",
+      "label": "user_level_page",
+      "summary": "lib/pages/checkin/user_level_page.dart",
+      "ref_id": "lib/pages/checkin/user_level_page.dart"
+    },
+    {
+      "weight": 1,
+      "id": "page:lib/pages/chat/conversations_page.dart",
+      "kind": "page",
+      "label": "conversations_page",
+      "summary": "lib/pages/chat/conversations_page.dart",
+      "ref_id": "lib/pages/chat/conversations_page.dart"
+    },
+    {
+      "weight": 1,
+      "id": "page:lib/pages/chat/conversations_viewmodel.dart",
+      "kind": "page",
+      "label": "conversations_viewmodel",
+      "summary": "lib/pages/chat/conversations_viewmodel.dart",
+      "ref_id": "lib/pages/chat/conversations_viewmodel.dart"
+    },
+    {
+      "weight": 1,
+      "id": "page:lib/pages/chat/direct_chat_page.dart",
+      "kind": "page",
+      "label": "direct_chat_page",
+      "summary": "lib/pages/chat/direct_chat_page.dart",
+      "ref_id": "lib/pages/chat/direct_chat_page.dart"
+    },
+    {
+      "weight": 1,
+      "id": "page:lib/pages/chat/direct_chat_viewmodel.dart",
+      "kind": "page",
+      "label": "direct_chat_viewmodel",
+      "summary": "lib/pages/chat/direct_chat_viewmodel.dart",
+      "ref_id": "lib/pages/chat/direct_chat_viewmodel.dart"
+    },
+    {
+      "weight": 1,
+      "id": "page:lib/pages/chat/message_center_page.dart",
+      "kind": "page",
+      "label": "message_center_page",
+      "summary": "lib/pages/chat/message_center_page.dart",
+      "ref_id": "lib/pages/chat/message_center_page.dart"
+    },
+    {
+      "weight": 1,
+      "id": "page:lib/pages/chat/voice_call_page.dart",
+      "kind": "page",
+      "label": "voice_call_page",
+      "summary": "lib/pages/chat/voice_call_page.dart",
+      "ref_id": "lib/pages/chat/voice_call_page.dart"
+    },
+    {
+      "weight": 1,
+      "id": "page:lib/pages/chat/voice_call_receiving_page.dart",
+      "kind": "page",
+      "label": "voice_call_receiving_page",
+      "summary": "lib/pages/chat/voice_call_receiving_page.dart",
+      "ref_id": "lib/pages/chat/voice_call_receiving_page.dart"
+    },
+    {
+      "weight": 1,
+      "id": "page:lib/pages/battle/live_pk_room_page.dart",
+      "kind": "page",
+      "label": "live_pk_room_page",
+      "summary": "lib/pages/battle/live_pk_room_page.dart",
+      "ref_id": "lib/pages/battle/live_pk_room_page.dart"
+    },
+    {
+      "weight": 1,
+      "id": "page:lib/pages/autoglm/autoglm_config_page.dart",
+      "kind": "page",
+      "label": "autoglm_config_page",
+      "summary": "lib/pages/autoglm/autoglm_config_page.dart",
+      "ref_id": "lib/pages/autoglm/autoglm_config_page.dart"
+    },
+    {
+      "weight": 1,
+      "id": "page:lib/pages/autoglm/autoglm_task_page.dart",
+      "kind": "page",
+      "label": "autoglm_task_page",
+      "summary": "lib/pages/autoglm/autoglm_task_page.dart",
+      "ref_id": "lib/pages/autoglm/autoglm_task_page.dart"
+    },
+    {
+      "weight": 1,
+      "id": "page:lib/pages/auth/feishu_login_page.dart",
+      "kind": "page",
+      "label": "feishu_login_page",
+      "summary": "lib/pages/auth/feishu_login_page.dart",
+      "ref_id": "lib/pages/auth/feishu_login_page.dart"
+    },
+    {
+      "weight": 1,
+      "id": "page:lib/pages/auth/forgot_password_page.dart",
+      "kind": "page",
+      "label": "forgot_password_page",
+      "summary": "lib/pages/auth/forgot_password_page.dart",
+      "ref_id": "lib/pages/auth/forgot_password_page.dart"
+    },
+    {
+      "weight": 1,
+      "id": "page:lib/pages/auth/login_page.dart",
+      "kind": "page",
+      "label": "login_page",
+      "summary": "lib/pages/auth/login_page.dart",
+      "ref_id": "lib/pages/auth/login_page.dart"
+    },
+    {
+      "weight": 1,
+      "id": "page:lib/pages/auth/register_page.dart",
+      "kind": "page",
+      "label": "register_page",
+      "summary": "lib/pages/auth/register_page.dart",
+      "ref_id": "lib/pages/auth/register_page.dart"
+    },
+    {
+      "weight": 1,
+      "id": "page:lib/pages/auth/reset_password_page.dart",
+      "kind": "page",
+      "label": "reset_password_page",
+      "summary": "lib/pages/auth/reset_password_page.dart",
+      "ref_id": "lib/pages/auth/reset_password_page.dart"
+    },
+    {
+      "weight": 1,
+      "id": "page:lib/pages/auth/verify_code_page.dart",
+      "kind": "page",
+      "label": "verify_code_page",
+      "summary": "lib/pages/auth/verify_code_page.dart",
+      "ref_id": "lib/pages/auth/verify_code_page.dart"
+    },
+    {
+      "weight": 1,
+      "id": "page:lib/pages/announcements/announcement_detail_page.dart",
+      "kind": "page",
+      "label": "announcement_detail_page",
+      "summary": "lib/pages/announcements/announcement_detail_page.dart",
+      "ref_id": "lib/pages/announcements/announcement_detail_page.dart"
+    },
+    {
+      "weight": 1,
+      "id": "page:lib/pages/announcements/announcements_page.dart",
+      "kind": "page",
+      "label": "announcements_page",
+      "summary": "lib/pages/announcements/announcements_page.dart",
+      "ref_id": "lib/pages/announcements/announcements_page.dart"
+    },
+    {
+      "weight": 1,
+      "id": "page:lib/pages/ai/agent_editor_page.dart",
+      "kind": "page",
+      "label": "agent_editor_page",
+      "summary": "lib/pages/ai/agent_editor_page.dart",
+      "ref_id": "lib/pages/ai/agent_editor_page.dart"
+    },
+    {
+      "weight": 1,
+      "id": "page:lib/pages/ai/agent_list_page.dart",
+      "kind": "page",
+      "label": "agent_list_page",
+      "summary": "lib/pages/ai/agent_list_page.dart",
+      "ref_id": "lib/pages/ai/agent_list_page.dart"
+    },
+    {
+      "weight": 1,
+      "id": "page:lib/pages/ai/ai_lorebook_editor_page.dart",
+      "kind": "page",
+      "label": "ai_lorebook_editor_page",
+      "summary": "lib/pages/ai/ai_lorebook_editor_page.dart",
+      "ref_id": "lib/pages/ai/ai_lorebook_editor_page.dart"
+    },
+    {
+      "weight": 1,
+      "id": "page:lib/pages/ai/ai_lorebooks_list_page.dart",
+      "kind": "page",
+      "label": "ai_lorebooks_list_page",
+      "summary": "lib/pages/ai/ai_lorebooks_list_page.dart",
+      "ref_id": "lib/pages/ai/ai_lorebooks_list_page.dart"
+    },
+    {
+      "weight": 1,
+      "id": "page:lib/pages/ai/ai_provider_profiles_page.dart",
+      "kind": "page",
+      "label": "ai_provider_profiles_page",
+      "summary": "lib/pages/ai/ai_provider_profiles_page.dart",
+      "ref_id": "lib/pages/ai/ai_provider_profiles_page.dart"
+    },
+    {
+      "weight": 1,
+      "id": "page:lib/pages/ai/character_card_plaza_page.dart",
+      "kind": "page",
+      "label": "character_card_plaza_page",
+      "summary": "lib/pages/ai/character_card_plaza_page.dart",
+      "ref_id": "lib/pages/ai/character_card_plaza_page.dart"
+    },
+    {
+      "weight": 1,
+      "id": "page:lib/pages/ai/chat_page.dart",
+      "kind": "page",
+      "label": "chat_page",
+      "summary": "lib/pages/ai/chat_page.dart",
+      "ref_id": "lib/pages/ai/chat_page.dart"
+    },
+    {
+      "weight": 1,
+      "id": "page:lib/pages/ai/companion_hub_page.dart",
+      "kind": "page",
+      "label": "companion_hub_page",
+      "summary": "lib/pages/ai/companion_hub_page.dart",
+      "ref_id": "lib/pages/ai/companion_hub_page.dart"
+    },
+    {
+      "weight": 1,
+      "id": "page:lib/pages/ai/companion_hub_viewmodel.dart",
+      "kind": "page",
+      "label": "companion_hub_viewmodel",
+      "summary": "lib/pages/ai/companion_hub_viewmodel.dart",
+      "ref_id": "lib/pages/ai/companion_hub_viewmodel.dart"
+    },
+    {
+      "weight": 1,
+      "id": "page:lib/pages/ai/content_generation_page.dart",
+      "kind": "page",
+      "label": "content_generation_page",
+      "summary": "lib/pages/ai/content_generation_page.dart",
+      "ref_id": "lib/pages/ai/content_generation_page.dart"
+    },
+    {
+      "weight": 1,
+      "id": "page:lib/pages/ai/game_play_viewmodel.dart",
+      "kind": "page",
+      "label": "game_play_viewmodel",
+      "summary": "lib/pages/ai/game_play_viewmodel.dart",
+      "ref_id": "lib/pages/ai/game_play_viewmodel.dart"
+    },
+    {
+      "weight": 1,
+      "id": "page:lib/pages/ai/llm_model_config_page.dart",
+      "kind": "page",
+      "label": "llm_model_config_page",
+      "summary": "lib/pages/ai/llm_model_config_page.dart",
+      "ref_id": "lib/pages/ai/llm_model_config_page.dart"
+    },
+    {
+      "weight": 1,
+      "id": "page:lib/pages/ai/state/lorebooks_list_controller.dart",
+      "kind": "page",
+      "label": "lorebooks_list_controller",
+      "summary": "lib/pages/ai/state/lorebooks_list_controller.dart",
+      "ref_id": "lib/pages/ai/state/lorebooks_list_controller.dart"
+    },
+    {
+      "weight": 1,
+      "id": "page:lib/pages/achievements/achievements_page.dart",
+      "kind": "page",
+      "label": "achievements_page",
+      "summary": "lib/pages/achievements/achievements_page.dart",
+      "ref_id": "lib/pages/achievements/achievements_page.dart"
+    }
+  ],
+  "edges": [
+    {
+      "id": "e:root:flutter|contains|layer:routes",
+      "source": "root:flutter",
+      "target": "layer:routes",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:root:flutter|contains|layer:services",
+      "source": "root:flutter",
+      "target": "layer:services",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:root:flutter|contains|flags:feature",
+      "source": "root:flutter",
+      "target": "flags:feature",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:routes|registers|route:/login",
+      "source": "layer:routes",
+      "target": "route:/login",
+      "relation": "registers",
+      "weight": 1
+    },
+    {
+      "id": "e:flags:feature|gates|route:/login",
+      "source": "flags:feature",
+      "target": "route:/login",
+      "relation": "gates",
+      "weight": 1
+    },
+    {
+      "id": "e:route:/login|opens|page:lib/app/app_routes.dart",
+      "source": "route:/login",
+      "target": "page:lib/app/app_routes.dart",
+      "relation": "opens",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:routes|registers|route:/register",
+      "source": "layer:routes",
+      "target": "route:/register",
+      "relation": "registers",
+      "weight": 1
+    },
+    {
+      "id": "e:flags:feature|gates|route:/register",
+      "source": "flags:feature",
+      "target": "route:/register",
+      "relation": "gates",
+      "weight": 1
+    },
+    {
+      "id": "e:route:/register|opens|page:lib/app/app_routes.dart",
+      "source": "route:/register",
+      "target": "page:lib/app/app_routes.dart",
+      "relation": "opens",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:routes|registers|route:/home",
+      "source": "layer:routes",
+      "target": "route:/home",
+      "relation": "registers",
+      "weight": 1
+    },
+    {
+      "id": "e:flags:feature|gates|route:/home",
+      "source": "flags:feature",
+      "target": "route:/home",
+      "relation": "gates",
+      "weight": 1
+    },
+    {
+      "id": "e:route:/home|opens|page:lib/pages/feed/home_page.dart",
+      "source": "route:/home",
+      "target": "page:lib/pages/feed/home_page.dart",
+      "relation": "opens",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:routes|registers|route:/battle/room",
+      "source": "layer:routes",
+      "target": "route:/battle/room",
+      "relation": "registers",
+      "weight": 1
+    },
+    {
+      "id": "e:flags:feature|gates|route:/battle/room",
+      "source": "flags:feature",
+      "target": "route:/battle/room",
+      "relation": "gates",
+      "weight": 1
+    },
+    {
+      "id": "e:route:/battle/room|opens|page:lib/app/app_routes.dart",
+      "source": "route:/battle/room",
+      "target": "page:lib/app/app_routes.dart",
+      "relation": "opens",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:routes|registers|route:/battle",
+      "source": "layer:routes",
+      "target": "route:/battle",
+      "relation": "registers",
+      "weight": 1
+    },
+    {
+      "id": "e:flags:feature|gates|route:/battle",
+      "source": "flags:feature",
+      "target": "route:/battle",
+      "relation": "gates",
+      "weight": 1
+    },
+    {
+      "id": "e:route:/battle|opens|page:lib/app/app_routes.dart",
+      "source": "route:/battle",
+      "target": "page:lib/app/app_routes.dart",
+      "relation": "opens",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:routes|registers|route:/profile",
+      "source": "layer:routes",
+      "target": "route:/profile",
+      "relation": "registers",
+      "weight": 1
+    },
+    {
+      "id": "e:route:/profile|opens|page:lib/app/app_routes.dart",
+      "source": "route:/profile",
+      "target": "page:lib/app/app_routes.dart",
+      "relation": "opens",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:routes|registers|route:/achievements",
+      "source": "layer:routes",
+      "target": "route:/achievements",
+      "relation": "registers",
+      "weight": 1
+    },
+    {
+      "id": "e:route:/achievements|opens|page:lib/app/app_routes.dart",
+      "source": "route:/achievements",
+      "target": "page:lib/app/app_routes.dart",
+      "relation": "opens",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:routes|registers|route:/settings",
+      "source": "layer:routes",
+      "target": "route:/settings",
+      "relation": "registers",
+      "weight": 1
+    },
+    {
+      "id": "e:route:/settings|opens|page:lib/pages/settings/settings_page.dart",
+      "source": "route:/settings",
+      "target": "page:lib/pages/settings/settings_page.dart",
+      "relation": "opens",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:routes|registers|route:/virtual-avatar-settings",
+      "source": "layer:routes",
+      "target": "route:/virtual-avatar-settings",
+      "relation": "registers",
+      "weight": 1
+    },
+    {
+      "id": "e:route:/virtual-avatar-settings|opens|page:lib/app/app_routes.dart",
+      "source": "route:/virtual-avatar-settings",
+      "target": "page:lib/app/app_routes.dart",
+      "relation": "opens",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:routes|registers|route:/message-retention-settings",
+      "source": "layer:routes",
+      "target": "route:/message-retention-settings",
+      "relation": "registers",
+      "weight": 1
+    },
+    {
+      "id": "e:route:/message-retention-settings|opens|page:lib/app/app_routes.dart",
+      "source": "route:/message-retention-settings",
+      "target": "page:lib/app/app_routes.dart",
+      "relation": "opens",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:routes|registers|route:/companion-settings",
+      "source": "layer:routes",
+      "target": "route:/companion-settings",
+      "relation": "registers",
+      "weight": 1
+    },
+    {
+      "id": "e:route:/companion-settings|opens|page:lib/app/app_routes.dart",
+      "source": "route:/companion-settings",
+      "target": "page:lib/app/app_routes.dart",
+      "relation": "opens",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:routes|registers|route:/checkin",
+      "source": "layer:routes",
+      "target": "route:/checkin",
+      "relation": "registers",
+      "weight": 1
+    },
+    {
+      "id": "e:route:/checkin|opens|page:lib/app/app_routes.dart",
+      "source": "route:/checkin",
+      "target": "page:lib/app/app_routes.dart",
+      "relation": "opens",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:routes|registers|route:/create-post",
+      "source": "layer:routes",
+      "target": "route:/create-post",
+      "relation": "registers",
+      "weight": 1
+    },
+    {
+      "id": "e:route:/create-post|opens|page:lib/app/app_routes.dart",
+      "source": "route:/create-post",
+      "target": "page:lib/app/app_routes.dart",
+      "relation": "opens",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:routes|registers|route:/comments",
+      "source": "layer:routes",
+      "target": "route:/comments",
+      "relation": "registers",
+      "weight": 1
+    },
+    {
+      "id": "e:route:/comments|opens|page:lib/app/app_routes.dart",
+      "source": "route:/comments",
+      "target": "page:lib/app/app_routes.dart",
+      "relation": "opens",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:routes|registers|route:/edit-profile",
+      "source": "layer:routes",
+      "target": "route:/edit-profile",
+      "relation": "registers",
+      "weight": 1
+    },
+    {
+      "id": "e:route:/edit-profile|opens|page:lib/app/app_routes.dart",
+      "source": "route:/edit-profile",
+      "target": "page:lib/app/app_routes.dart",
+      "relation": "opens",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:routes|registers|route:/vip-center",
+      "source": "layer:routes",
+      "target": "route:/vip-center",
+      "relation": "registers",
+      "weight": 1
+    },
+    {
+      "id": "e:route:/vip-center|opens|page:lib/app/app_routes.dart",
+      "source": "route:/vip-center",
+      "target": "page:lib/app/app_routes.dart",
+      "relation": "opens",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:routes|registers|route:/vip-purchase",
+      "source": "layer:routes",
+      "target": "route:/vip-purchase",
+      "relation": "registers",
+      "weight": 1
+    },
+    {
+      "id": "e:route:/vip-purchase|opens|page:lib/app/app_routes.dart",
+      "source": "route:/vip-purchase",
+      "target": "page:lib/app/app_routes.dart",
+      "relation": "opens",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:routes|registers|route:/vip-orders",
+      "source": "layer:routes",
+      "target": "route:/vip-orders",
+      "relation": "registers",
+      "weight": 1
+    },
+    {
+      "id": "e:route:/vip-orders|opens|page:lib/app/app_routes.dart",
+      "source": "route:/vip-orders",
+      "target": "page:lib/app/app_routes.dart",
+      "relation": "opens",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:routes|registers|route:/orders",
+      "source": "layer:routes",
+      "target": "route:/orders",
+      "relation": "registers",
+      "weight": 1
+    },
+    {
+      "id": "e:route:/orders|opens|page:lib/app/app_routes.dart",
+      "source": "route:/orders",
+      "target": "page:lib/app/app_routes.dart",
+      "relation": "opens",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:routes|registers|route:/vip-history",
+      "source": "layer:routes",
+      "target": "route:/vip-history",
+      "relation": "registers",
+      "weight": 1
+    },
+    {
+      "id": "e:route:/vip-history|opens|page:lib/app/app_routes.dart",
+      "source": "route:/vip-history",
+      "target": "page:lib/app/app_routes.dart",
+      "relation": "opens",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:routes|registers|route:/forgot-password",
+      "source": "layer:routes",
+      "target": "route:/forgot-password",
+      "relation": "registers",
+      "weight": 1
+    },
+    {
+      "id": "e:route:/forgot-password|opens|page:lib/app/app_routes.dart",
+      "source": "route:/forgot-password",
+      "target": "page:lib/app/app_routes.dart",
+      "relation": "opens",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:routes|registers|route:/verify-code",
+      "source": "layer:routes",
+      "target": "route:/verify-code",
+      "relation": "registers",
+      "weight": 1
+    },
+    {
+      "id": "e:route:/verify-code|opens|page:lib/app/app_routes.dart",
+      "source": "route:/verify-code",
+      "target": "page:lib/app/app_routes.dart",
+      "relation": "opens",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:routes|registers|route:/reset-password",
+      "source": "layer:routes",
+      "target": "route:/reset-password",
+      "relation": "registers",
+      "weight": 1
+    },
+    {
+      "id": "e:flags:feature|gates|route:/reset-password",
+      "source": "flags:feature",
+      "target": "route:/reset-password",
+      "relation": "gates",
+      "weight": 1
+    },
+    {
+      "id": "e:route:/reset-password|opens|page:lib/app/app_routes.dart",
+      "source": "route:/reset-password",
+      "target": "page:lib/app/app_routes.dart",
+      "relation": "opens",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:routes|registers|route:/notifications",
+      "source": "layer:routes",
+      "target": "route:/notifications",
+      "relation": "registers",
+      "weight": 1
+    },
+    {
+      "id": "e:flags:feature|gates|route:/notifications",
+      "source": "flags:feature",
+      "target": "route:/notifications",
+      "relation": "gates",
+      "weight": 1
+    },
+    {
+      "id": "e:route:/notifications|opens|page:lib/app/app_routes.dart",
+      "source": "route:/notifications",
+      "target": "page:lib/app/app_routes.dart",
+      "relation": "opens",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:routes|registers|route:/announcements",
+      "source": "layer:routes",
+      "target": "route:/announcements",
+      "relation": "registers",
+      "weight": 1
+    },
+    {
+      "id": "e:flags:feature|gates|route:/announcements",
+      "source": "flags:feature",
+      "target": "route:/announcements",
+      "relation": "gates",
+      "weight": 1
+    },
+    {
+      "id": "e:route:/announcements|opens|page:lib/app/app_routes.dart",
+      "source": "route:/announcements",
+      "target": "page:lib/app/app_routes.dart",
+      "relation": "opens",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:routes|registers|route:/wallet",
+      "source": "layer:routes",
+      "target": "route:/wallet",
+      "relation": "registers",
+      "weight": 1
+    },
+    {
+      "id": "e:flags:feature|gates|route:/wallet",
+      "source": "flags:feature",
+      "target": "route:/wallet",
+      "relation": "gates",
+      "weight": 1
+    },
+    {
+      "id": "e:route:/wallet|opens|page:lib/app/app_routes.dart",
+      "source": "route:/wallet",
+      "target": "page:lib/app/app_routes.dart",
+      "relation": "opens",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:routes|registers|route:/recharge",
+      "source": "layer:routes",
+      "target": "route:/recharge",
+      "relation": "registers",
+      "weight": 1
+    },
+    {
+      "id": "e:flags:feature|gates|route:/recharge",
+      "source": "flags:feature",
+      "target": "route:/recharge",
+      "relation": "gates",
+      "weight": 1
+    },
+    {
+      "id": "e:route:/recharge|opens|page:lib/app/app_routes.dart",
+      "source": "route:/recharge",
+      "target": "page:lib/app/app_routes.dart",
+      "relation": "opens",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:routes|registers|route:/gacha",
+      "source": "layer:routes",
+      "target": "route:/gacha",
+      "relation": "registers",
+      "weight": 1
+    },
+    {
+      "id": "e:flags:feature|gates|route:/gacha",
+      "source": "flags:feature",
+      "target": "route:/gacha",
+      "relation": "gates",
+      "weight": 1
+    },
+    {
+      "id": "e:route:/gacha|opens|page:lib/app/app_routes.dart",
+      "source": "route:/gacha",
+      "target": "page:lib/app/app_routes.dart",
+      "relation": "opens",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:routes|registers|route:/user-profile",
+      "source": "layer:routes",
+      "target": "route:/user-profile",
+      "relation": "registers",
+      "weight": 1
+    },
+    {
+      "id": "e:route:/user-profile|opens|page:lib/app/app_routes.dart",
+      "source": "route:/user-profile",
+      "target": "page:lib/app/app_routes.dart",
+      "relation": "opens",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:routes|registers|route:/cloud-gallery",
+      "source": "layer:routes",
+      "target": "route:/cloud-gallery",
+      "relation": "registers",
+      "weight": 1
+    },
+    {
+      "id": "e:route:/cloud-gallery|opens|page:lib/app/app_routes.dart",
+      "source": "route:/cloud-gallery",
+      "target": "page:lib/app/app_routes.dart",
+      "relation": "opens",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:routes|registers|route:/topic-posts",
+      "source": "layer:routes",
+      "target": "route:/topic-posts",
+      "relation": "registers",
+      "weight": 1
+    },
+    {
+      "id": "e:route:/topic-posts|opens|page:lib/app/app_routes.dart",
+      "source": "route:/topic-posts",
+      "target": "page:lib/app/app_routes.dart",
+      "relation": "opens",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:routes|registers|route:/friends",
+      "source": "layer:routes",
+      "target": "route:/friends",
+      "relation": "registers",
+      "weight": 1
+    },
+    {
+      "id": "e:route:/friends|opens|page:lib/app/app_routes.dart",
+      "source": "route:/friends",
+      "target": "page:lib/app/app_routes.dart",
+      "relation": "opens",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:routes|registers|route:/community",
+      "source": "layer:routes",
+      "target": "route:/community",
+      "relation": "registers",
+      "weight": 1
+    },
+    {
+      "id": "e:route:/community|opens|page:lib/app/app_routes.dart",
+      "source": "route:/community",
+      "target": "page:lib/app/app_routes.dart",
+      "relation": "opens",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:routes|registers|route:/community/group",
+      "source": "layer:routes",
+      "target": "route:/community/group",
+      "relation": "registers",
+      "weight": 1
+    },
+    {
+      "id": "e:route:/community/group|opens|page:lib/app/app_routes.dart",
+      "source": "route:/community/group",
+      "target": "page:lib/app/app_routes.dart",
+      "relation": "opens",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:routes|registers|route:/post-detail",
+      "source": "layer:routes",
+      "target": "route:/post-detail",
+      "relation": "registers",
+      "weight": 1
+    },
+    {
+      "id": "e:route:/post-detail|opens|page:lib/app/app_routes.dart",
+      "source": "route:/post-detail",
+      "target": "page:lib/app/app_routes.dart",
+      "relation": "opens",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:routes|registers|route:/messages",
+      "source": "layer:routes",
+      "target": "route:/messages",
+      "relation": "registers",
+      "weight": 1
+    },
+    {
+      "id": "e:route:/messages|opens|page:lib/app/app_routes.dart",
+      "source": "route:/messages",
+      "target": "page:lib/app/app_routes.dart",
+      "relation": "opens",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:routes|registers|route:/ai-chat",
+      "source": "layer:routes",
+      "target": "route:/ai-chat",
+      "relation": "registers",
+      "weight": 1
+    },
+    {
+      "id": "e:route:/ai-chat|opens|page:lib/pages/companion/companion_chat_page.dart",
+      "source": "route:/ai-chat",
+      "target": "page:lib/pages/companion/companion_chat_page.dart",
+      "relation": "opens",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:routes|registers|route:/ai-memories",
+      "source": "layer:routes",
+      "target": "route:/ai-memories",
+      "relation": "registers",
+      "weight": 1
+    },
+    {
+      "id": "e:route:/ai-memories|opens|page:lib/pages/companion/companion_memories_page.dart",
+      "source": "route:/ai-memories",
+      "target": "page:lib/pages/companion/companion_memories_page.dart",
+      "relation": "opens",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:routes|registers|route:/direct-chat",
+      "source": "layer:routes",
+      "target": "route:/direct-chat",
+      "relation": "registers",
+      "weight": 1
+    },
+    {
+      "id": "e:flags:feature|gates|route:/direct-chat",
+      "source": "flags:feature",
+      "target": "route:/direct-chat",
+      "relation": "gates",
+      "weight": 1
+    },
+    {
+      "id": "e:route:/direct-chat|opens|page:lib/app/app_routes.dart",
+      "source": "route:/direct-chat",
+      "target": "page:lib/app/app_routes.dart",
+      "relation": "opens",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:routes|registers|route:/scan",
+      "source": "layer:routes",
+      "target": "route:/scan",
+      "relation": "registers",
+      "weight": 1
+    },
+    {
+      "id": "e:flags:feature|gates|route:/scan",
+      "source": "flags:feature",
+      "target": "route:/scan",
+      "relation": "gates",
+      "weight": 1
+    },
+    {
+      "id": "e:route:/scan|opens|page:lib/app/app_routes.dart",
+      "source": "route:/scan",
+      "target": "page:lib/app/app_routes.dart",
+      "relation": "opens",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:routes|registers|route:/user-qr-code",
+      "source": "layer:routes",
+      "target": "route:/user-qr-code",
+      "relation": "registers",
+      "weight": 1
+    },
+    {
+      "id": "e:flags:feature|gates|route:/user-qr-code",
+      "source": "flags:feature",
+      "target": "route:/user-qr-code",
+      "relation": "gates",
+      "weight": 1
+    },
+    {
+      "id": "e:route:/user-qr-code|opens|page:lib/app/app_routes.dart",
+      "source": "route:/user-qr-code",
+      "target": "page:lib/app/app_routes.dart",
+      "relation": "opens",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:routes|registers|route:/life/world",
+      "source": "layer:routes",
+      "target": "route:/life/world",
+      "relation": "registers",
+      "weight": 1
+    },
+    {
+      "id": "e:flags:feature|gates|route:/life/world",
+      "source": "flags:feature",
+      "target": "route:/life/world",
+      "relation": "gates",
+      "weight": 1
+    },
+    {
+      "id": "e:route:/life/world|opens|page:lib/pages/life/life_world_page.dart",
+      "source": "route:/life/world",
+      "target": "page:lib/pages/life/life_world_page.dart",
+      "relation": "opens",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:routes|registers|route:/pet/home",
+      "source": "layer:routes",
+      "target": "route:/pet/home",
+      "relation": "registers",
+      "weight": 1
+    },
+    {
+      "id": "e:flags:feature|gates|route:/pet/home",
+      "source": "flags:feature",
+      "target": "route:/pet/home",
+      "relation": "gates",
+      "weight": 1
+    },
+    {
+      "id": "e:route:/pet/home|opens|page:lib/app/app_routes.dart",
+      "source": "route:/pet/home",
+      "target": "page:lib/app/app_routes.dart",
+      "relation": "opens",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:routes|registers|route:/game/arena",
+      "source": "layer:routes",
+      "target": "route:/game/arena",
+      "relation": "registers",
+      "weight": 1
+    },
+    {
+      "id": "e:flags:feature|gates|route:/game/arena",
+      "source": "flags:feature",
+      "target": "route:/game/arena",
+      "relation": "gates",
+      "weight": 1
+    },
+    {
+      "id": "e:route:/game/arena|opens|page:lib/app/app_routes.dart",
+      "source": "route:/game/arena",
+      "target": "page:lib/app/app_routes.dart",
+      "relation": "opens",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:routes|registers|route:/game/arena/home",
+      "source": "layer:routes",
+      "target": "route:/game/arena/home",
+      "relation": "registers",
+      "weight": 1
+    },
+    {
+      "id": "e:flags:feature|gates|route:/game/arena/home",
+      "source": "flags:feature",
+      "target": "route:/game/arena/home",
+      "relation": "gates",
+      "weight": 1
+    },
+    {
+      "id": "e:route:/game/arena/home|opens|page:lib/app/app_routes.dart",
+      "source": "route:/game/arena/home",
+      "target": "page:lib/app/app_routes.dart",
+      "relation": "opens",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:routes|registers|route:/game-network/lab",
+      "source": "layer:routes",
+      "target": "route:/game-network/lab",
+      "relation": "registers",
+      "weight": 1
+    },
+    {
+      "id": "e:flags:feature|gates|route:/game-network/lab",
+      "source": "flags:feature",
+      "target": "route:/game-network/lab",
+      "relation": "gates",
+      "weight": 1
+    },
+    {
+      "id": "e:route:/game-network/lab|opens|page:lib/app/app_routes.dart",
+      "source": "route:/game-network/lab",
+      "target": "page:lib/app/app_routes.dart",
+      "relation": "opens",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:routes|registers|route:/life/detail",
+      "source": "layer:routes",
+      "target": "route:/life/detail",
+      "relation": "registers",
+      "weight": 1
+    },
+    {
+      "id": "e:flags:feature|gates|route:/life/detail",
+      "source": "flags:feature",
+      "target": "route:/life/detail",
+      "relation": "gates",
+      "weight": 1
+    },
+    {
+      "id": "e:route:/life/detail|opens|page:lib/app/app_routes.dart",
+      "source": "route:/life/detail",
+      "target": "page:lib/app/app_routes.dart",
+      "relation": "opens",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:services|contains|service:achievement_hooks",
+      "source": "layer:services",
+      "target": "service:achievement_hooks",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:services|contains|service:achievement_service",
+      "source": "layer:services",
+      "target": "service:achievement_service",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:services|contains|service:ai_agent_cloud_service",
+      "source": "layer:services",
+      "target": "service:ai_agent_cloud_service",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:services|contains|service:ai_agent_draft_factory",
+      "source": "layer:services",
+      "target": "service:ai_agent_draft_factory",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:services|contains|service:ai_agent_usage_service",
+      "source": "layer:services",
+      "target": "service:ai_agent_usage_service",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:services|contains|service:ai_character_card_service",
+      "source": "layer:services",
+      "target": "service:ai_character_card_service",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:services|contains|service:ai_character_card_storage",
+      "source": "layer:services",
+      "target": "service:ai_character_card_storage",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:services|contains|service:ai_character_card_storage_io",
+      "source": "layer:services",
+      "target": "service:ai_character_card_storage_io",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:services|contains|service:ai_character_card_storage_stub",
+      "source": "layer:services",
+      "target": "service:ai_character_card_storage_stub",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:services|contains|service:ai_chat_context_builder",
+      "source": "layer:services",
+      "target": "service:ai_chat_context_builder",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:services|contains|service:ai_chat_gateway_service",
+      "source": "layer:services",
+      "target": "service:ai_chat_gateway_service",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:services|contains|service:ai_chat_session_prefs",
+      "source": "layer:services",
+      "target": "service:ai_chat_session_prefs",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:services|contains|service:ai_cloud_config_service",
+      "source": "layer:services",
+      "target": "service:ai_cloud_config_service",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:services|contains|service:ai_db_service",
+      "source": "layer:services",
+      "target": "service:ai_db_service",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:services|contains|service:ai_inference_service",
+      "source": "layer:services",
+      "target": "service:ai_inference_service",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:services|contains|service:ai_lorebook_service",
+      "source": "layer:services",
+      "target": "service:ai_lorebook_service",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:services|contains|service:ai_model_list_parser",
+      "source": "layer:services",
+      "target": "service:ai_model_list_parser",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:services|contains|service:ai_models_cache_service",
+      "source": "layer:services",
+      "target": "service:ai_models_cache_service",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:services|contains|service:ai_prompt_defaults",
+      "source": "layer:services",
+      "target": "service:ai_prompt_defaults",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:services|contains|service:ai_provider_connectivity_cache",
+      "source": "layer:services",
+      "target": "service:ai_provider_connectivity_cache",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:services|contains|service:ai_provider_detector",
+      "source": "layer:services",
+      "target": "service:ai_provider_detector",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:services|contains|service:ai_provider_service",
+      "source": "layer:services",
+      "target": "service:ai_provider_service",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:services|contains|service:ai_provider_usage_service",
+      "source": "layer:services",
+      "target": "service:ai_provider_usage_service",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:services|contains|service:ai_roleplay_prompt_builder",
+      "source": "layer:services",
+      "target": "service:ai_roleplay_prompt_builder",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:services|contains|service:ai_starter_templates",
+      "source": "layer:services",
+      "target": "service:ai_starter_templates",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:services|contains|service:ai_tool_runtime",
+      "source": "layer:services",
+      "target": "service:ai_tool_runtime",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:services|contains|service:ai_tts_helper",
+      "source": "layer:services",
+      "target": "service:ai_tts_helper",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:services|contains|service:ai_user_persona_service",
+      "source": "layer:services",
+      "target": "service:ai_user_persona_service",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:services|contains|service:announcement_service",
+      "source": "layer:services",
+      "target": "service:announcement_service",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:services|contains|service:api_client",
+      "source": "layer:services",
+      "target": "service:api_client",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:services|contains|service:api_response",
+      "source": "layer:services",
+      "target": "service:api_response",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:services|contains|service:api_service",
+      "source": "layer:services",
+      "target": "service:api_service",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:services|contains|service:app_release_service",
+      "source": "layer:services",
+      "target": "service:app_release_service",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:services|contains|service:app_storage_service",
+      "source": "layer:services",
+      "target": "service:app_storage_service",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:services|contains|service:app_storage_service_io",
+      "source": "layer:services",
+      "target": "service:app_storage_service_io",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:services|contains|service:app_storage_service_stub",
+      "source": "layer:services",
+      "target": "service:app_storage_service_stub",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:services|contains|service:arena_service",
+      "source": "layer:services",
+      "target": "service:arena_service",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:services|contains|service:auth_flow_service",
+      "source": "layer:services",
+      "target": "service:auth_flow_service",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:services|contains|service:avatar_asset_service",
+      "source": "layer:services",
+      "target": "service:avatar_asset_service",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:services|contains|service:avatar_service",
+      "source": "layer:services",
+      "target": "service:avatar_service",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:services|contains|service:battle_service",
+      "source": "layer:services",
+      "target": "service:battle_service",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:services|contains|service:battle_ws_service",
+      "source": "layer:services",
+      "target": "service:battle_ws_service",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:services|contains|service:behavior_analytics_service",
+      "source": "layer:services",
+      "target": "service:behavior_analytics_service",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:services|contains|service:camera_permission_service",
+      "source": "layer:services",
+      "target": "service:camera_permission_service",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:services|contains|service:chat_push_service",
+      "source": "layer:services",
+      "target": "service:chat_push_service",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:services|contains|service:chat_service",
+      "source": "layer:services",
+      "target": "service:chat_service",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:services|contains|service:commerce_service",
+      "source": "layer:services",
+      "target": "service:commerce_service",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:services|contains|service:community_service",
+      "source": "layer:services",
+      "target": "service:community_service",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:services|contains|service:companion_character_card_import",
+      "source": "layer:services",
+      "target": "service:companion_character_card_import",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:services|contains|service:companion_chat_launcher",
+      "source": "layer:services",
+      "target": "service:companion_chat_launcher",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:services|contains|service:companion_interaction_coordinator",
+      "source": "layer:services",
+      "target": "service:companion_interaction_coordinator",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:services|contains|service:companion_service",
+      "source": "layer:services",
+      "target": "service:companion_service",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:services|contains|service:companion_ws_service",
+      "source": "layer:services",
+      "target": "service:companion_ws_service",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:services|contains|service:daily_growth_service",
+      "source": "layer:services",
+      "target": "service:daily_growth_service",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:services|contains|service:daily_quote_service",
+      "source": "layer:services",
+      "target": "service:daily_quote_service",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:services|contains|service:device_service",
+      "source": "layer:services",
+      "target": "service:device_service",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:services|contains|service:direct_chat_local_reader",
+      "source": "layer:services",
+      "target": "service:direct_chat_local_reader",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:services|contains|service:direct_chat_sync_bus",
+      "source": "layer:services",
+      "target": "service:direct_chat_sync_bus",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:services|contains|service:emoji_service",
+      "source": "layer:services",
+      "target": "service:emoji_service",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:services|contains|service:enhanced_logger",
+      "source": "layer:services",
+      "target": "service:enhanced_logger",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:services|contains|service:friend_request_sync",
+      "source": "layer:services",
+      "target": "service:friend_request_sync",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:services|contains|service:gallery_service",
+      "source": "layer:services",
+      "target": "service:gallery_service",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:services|contains|service:game_network_service",
+      "source": "layer:services",
+      "target": "service:game_network_service",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:services|contains|service:game_service",
+      "source": "layer:services",
+      "target": "service:game_service",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:services|contains|service:gift_catalog_service",
+      "source": "layer:services",
+      "target": "service:gift_catalog_service",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:services|contains|service:life_cache_service",
+      "source": "layer:services",
+      "target": "service:life_cache_service",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:services|contains|service:life_service",
+      "source": "layer:services",
+      "target": "service:life_service",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:services|contains|service:life_ws_service",
+      "source": "layer:services",
+      "target": "service:life_ws_service",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:services|contains|service:like_state_manager",
+      "source": "layer:services",
+      "target": "service:like_state_manager",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:services|contains|service:llm_api_service",
+      "source": "layer:services",
+      "target": "service:llm_api_service",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:services|contains|service:llm_endpoint_config",
+      "source": "layer:services",
+      "target": "service:llm_endpoint_config",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:services|contains|service:llm_response_parser",
+      "source": "layer:services",
+      "target": "service:llm_response_parser",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:services|contains|service:match_suggestion_service",
+      "source": "layer:services",
+      "target": "service:match_suggestion_service",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:services|contains|service:notification_preferences",
+      "source": "layer:services",
+      "target": "service:notification_preferences",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:services|contains|service:notification_service",
+      "source": "layer:services",
+      "target": "service:notification_service",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:services|contains|service:post_service",
+      "source": "layer:services",
+      "target": "service:post_service",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:services|contains|service:presence_service",
+      "source": "layer:services",
+      "target": "service:presence_service",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:services|contains|service:push_delivery_capabilities",
+      "source": "layer:services",
+      "target": "service:push_delivery_capabilities",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:services|contains|service:push_notification_service",
+      "source": "layer:services",
+      "target": "service:push_notification_service",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:services|contains|service:qr_code_service",
+      "source": "layer:services",
+      "target": "service:qr_code_service",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:services|contains|service:remote_control_service",
+      "source": "layer:services",
+      "target": "service:remote_control_service",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:services|contains|service:rive_bootstrap",
+      "source": "layer:services",
+      "target": "service:rive_bootstrap",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:services|contains|service:startup_update_preferences",
+      "source": "layer:services",
+      "target": "service:startup_update_preferences",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:services|contains|service:startup_update_service",
+      "source": "layer:services",
+      "target": "service:startup_update_service",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:services|contains|service:task_execution_engine",
+      "source": "layer:services",
+      "target": "service:task_execution_engine",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:services|contains|service:update_service",
+      "source": "layer:services",
+      "target": "service:update_service",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:services|contains|service:user_service",
+      "source": "layer:services",
+      "target": "service:user_service",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:services|contains|service:voice_message_service",
+      "source": "layer:services",
+      "target": "service:voice_message_service",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:services|contains|service:weather_service",
+      "source": "layer:services",
+      "target": "service:weather_service",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:services|contains|service:wechat_sdk_service",
+      "source": "layer:services",
+      "target": "service:wechat_sdk_service",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:services|contains|service:ws_channel_connector",
+      "source": "layer:services",
+      "target": "service:ws_channel_connector",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:services|contains|service:ws_channel_connector_io",
+      "source": "layer:services",
+      "target": "service:ws_channel_connector_io",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:services|contains|service:ws_channel_connector_stub",
+      "source": "layer:services",
+      "target": "service:ws_channel_connector_stub",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:layer:services|contains|service:ws_channel_connector_web",
+      "source": "layer:services",
+      "target": "service:ws_channel_connector_web",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/settings/companion_settings_page.dart|uses_service|service:companion_service",
+      "source": "page:lib/pages/settings/companion_settings_page.dart",
+      "target": "service:companion_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/settings/message_retention_settings_page.dart|uses_service|service:user_service",
+      "source": "page:lib/pages/settings/message_retention_settings_page.dart",
+      "target": "service:user_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/settings/settings_page.dart|uses_service|service:notification_preferences",
+      "source": "page:lib/pages/settings/settings_page.dart",
+      "target": "service:notification_preferences",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/settings/settings_page.dart|uses_service|service:startup_update_preferences",
+      "source": "page:lib/pages/settings/settings_page.dart",
+      "target": "service:startup_update_preferences",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/settings/widgets/feishu_bind_sheet.dart|uses_service|service:user_service",
+      "source": "page:lib/pages/settings/widgets/feishu_bind_sheet.dart",
+      "target": "service:user_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/settings/modules/about_module.dart|uses_service|service:user_service",
+      "source": "page:lib/pages/settings/modules/about_module.dart",
+      "target": "service:user_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/settings/modules/about_module.dart|uses_service|service:update_service",
+      "source": "page:lib/pages/settings/modules/about_module.dart",
+      "target": "service:update_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/settings/modules/account_security_module.dart|uses_service|service:device_service",
+      "source": "page:lib/pages/settings/modules/account_security_module.dart",
+      "target": "service:device_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/settings/modules/account_security_module.dart|uses_service|service:user_service",
+      "source": "page:lib/pages/settings/modules/account_security_module.dart",
+      "target": "service:user_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/settings/modules/device_storage_module.dart|uses_service|service:app_storage_service",
+      "source": "page:lib/pages/settings/modules/device_storage_module.dart",
+      "target": "service:app_storage_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/scan/scan_page.dart|uses_service|service:qr_code_service",
+      "source": "page:lib/pages/scan/scan_page.dart",
+      "target": "service:qr_code_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/scan/scan_page.dart|uses_service|service:camera_permission_service",
+      "source": "page:lib/pages/scan/scan_page.dart",
+      "target": "service:camera_permission_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/scan/scan_page.dart|uses_service|service:user_service",
+      "source": "page:lib/pages/scan/scan_page.dart",
+      "target": "service:user_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/profile/edit_profile_page.dart|uses_service|service:user_service",
+      "source": "page:lib/pages/profile/edit_profile_page.dart",
+      "target": "service:user_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/profile/followers_page.dart|uses_service|service:user_service",
+      "source": "page:lib/pages/profile/followers_page.dart",
+      "target": "service:user_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/profile/following_page.dart|uses_service|service:user_service",
+      "source": "page:lib/pages/profile/following_page.dart",
+      "target": "service:user_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/profile/friends_page.dart|uses_service|service:api_client",
+      "source": "page:lib/pages/profile/friends_page.dart",
+      "target": "service:api_client",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/profile/friends_page.dart|uses_service|service:friend_request_sync",
+      "source": "page:lib/pages/profile/friends_page.dart",
+      "target": "service:friend_request_sync",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/profile/friends_page.dart|uses_service|service:user_service",
+      "source": "page:lib/pages/profile/friends_page.dart",
+      "target": "service:user_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/profile/friends_page.dart|uses_service|service:presence_service",
+      "source": "page:lib/pages/profile/friends_page.dart",
+      "target": "service:presence_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/profile/profile_page.dart|uses_service|service:achievement_service",
+      "source": "page:lib/pages/profile/profile_page.dart",
+      "target": "service:achievement_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/profile/profile_page.dart|uses_service|service:commerce_service",
+      "source": "page:lib/pages/profile/profile_page.dart",
+      "target": "service:commerce_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/profile/profile_page.dart|uses_service|service:post_service",
+      "source": "page:lib/pages/profile/profile_page.dart",
+      "target": "service:post_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/profile/profile_page.dart|uses_service|service:user_service",
+      "source": "page:lib/pages/profile/profile_page.dart",
+      "target": "service:user_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/profile/user_profile_page.dart|uses_service|service:chat_service",
+      "source": "page:lib/pages/profile/user_profile_page.dart",
+      "target": "service:chat_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/profile/user_profile_page.dart|uses_service|service:post_service",
+      "source": "page:lib/pages/profile/user_profile_page.dart",
+      "target": "service:post_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/profile/user_profile_page.dart|uses_service|service:user_service",
+      "source": "page:lib/pages/profile/user_profile_page.dart",
+      "target": "service:user_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/profile/user_profile_page.dart|uses_service|service:achievement_service",
+      "source": "page:lib/pages/profile/user_profile_page.dart",
+      "target": "service:achievement_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/profile/user_profile_page.dart|uses_service|service:like_state_manager",
+      "source": "page:lib/pages/profile/user_profile_page.dart",
+      "target": "service:like_state_manager",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/profile/user_qr_code_page.dart|uses_service|service:qr_code_service",
+      "source": "page:lib/pages/profile/user_qr_code_page.dart",
+      "target": "service:qr_code_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/profile/widgets/add_friend_bottom_sheet.dart|uses_service|service:user_service",
+      "source": "page:lib/pages/profile/widgets/add_friend_bottom_sheet.dart",
+      "target": "service:user_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/notifications/notification_center_page.dart|uses_service|service:companion_chat_launcher",
+      "source": "page:lib/pages/notifications/notification_center_page.dart",
+      "target": "service:companion_chat_launcher",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/notifications/notification_center_page.dart|uses_service|service:companion_service",
+      "source": "page:lib/pages/notifications/notification_center_page.dart",
+      "target": "service:companion_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/life/life_world_page.dart|uses_service|service:game_service",
+      "source": "page:lib/pages/life/life_world_page.dart",
+      "target": "service:game_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/life/life_world_page.dart|uses_service|service:companion_chat_launcher",
+      "source": "page:lib/pages/life/life_world_page.dart",
+      "target": "service:companion_chat_launcher",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/life/life_world_page.dart|uses_service|service:companion_service",
+      "source": "page:lib/pages/life/life_world_page.dart",
+      "target": "service:companion_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/game_network/game_network_lab_page.dart|uses_service|service:game_network_service",
+      "source": "page:lib/pages/game_network/game_network_lab_page.dart",
+      "target": "service:game_network_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/gallery/cloud_gallery_page.dart|uses_service|service:api_response",
+      "source": "page:lib/pages/gallery/cloud_gallery_page.dart",
+      "target": "service:api_response",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/gallery/cloud_gallery_page.dart|uses_service|service:gallery_service",
+      "source": "page:lib/pages/gallery/cloud_gallery_page.dart",
+      "target": "service:gallery_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/feed/comments_page.dart|uses_service|service:achievement_hooks",
+      "source": "page:lib/pages/feed/comments_page.dart",
+      "target": "service:achievement_hooks",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/feed/comments_page.dart|uses_service|service:companion_service",
+      "source": "page:lib/pages/feed/comments_page.dart",
+      "target": "service:companion_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/feed/comments_page.dart|uses_service|service:like_state_manager",
+      "source": "page:lib/pages/feed/comments_page.dart",
+      "target": "service:like_state_manager",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/feed/comments_viewmodel.dart|uses_service|service:companion_service",
+      "source": "page:lib/pages/feed/comments_viewmodel.dart",
+      "target": "service:companion_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/feed/comments_viewmodel.dart|uses_service|service:post_service",
+      "source": "page:lib/pages/feed/comments_viewmodel.dart",
+      "target": "service:post_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/feed/comments_viewmodel.dart|uses_service|service:user_service",
+      "source": "page:lib/pages/feed/comments_viewmodel.dart",
+      "target": "service:user_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/feed/create_post_page.dart|uses_service|service:companion_service",
+      "source": "page:lib/pages/feed/create_post_page.dart",
+      "target": "service:companion_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/feed/create_post_page.dart|uses_service|service:achievement_hooks",
+      "source": "page:lib/pages/feed/create_post_page.dart",
+      "target": "service:achievement_hooks",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/feed/create_post_viewmodel.dart|uses_service|service:api_client",
+      "source": "page:lib/pages/feed/create_post_viewmodel.dart",
+      "target": "service:api_client",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/feed/create_post_viewmodel.dart|uses_service|service:community_service",
+      "source": "page:lib/pages/feed/create_post_viewmodel.dart",
+      "target": "service:community_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/feed/create_post_viewmodel.dart|uses_service|service:companion_service",
+      "source": "page:lib/pages/feed/create_post_viewmodel.dart",
+      "target": "service:companion_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/feed/create_post_viewmodel.dart|uses_service|service:post_service",
+      "source": "page:lib/pages/feed/create_post_viewmodel.dart",
+      "target": "service:post_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/feed/create_post_viewmodel.dart|uses_service|service:user_service",
+      "source": "page:lib/pages/feed/create_post_viewmodel.dart",
+      "target": "service:user_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/feed/home_feed_viewmodel.dart|uses_service|service:companion_service",
+      "source": "page:lib/pages/feed/home_feed_viewmodel.dart",
+      "target": "service:companion_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/feed/home_feed_viewmodel.dart|uses_service|service:companion_interaction_coordinator",
+      "source": "page:lib/pages/feed/home_feed_viewmodel.dart",
+      "target": "service:companion_interaction_coordinator",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/feed/home_feed_viewmodel.dart|uses_service|service:like_state_manager",
+      "source": "page:lib/pages/feed/home_feed_viewmodel.dart",
+      "target": "service:like_state_manager",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/feed/home_feed_viewmodel.dart|uses_service|service:post_service",
+      "source": "page:lib/pages/feed/home_feed_viewmodel.dart",
+      "target": "service:post_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/feed/home_page.dart|uses_service|service:post_service",
+      "source": "page:lib/pages/feed/home_page.dart",
+      "target": "service:post_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/feed/topic_posts_page.dart|uses_service|service:post_service",
+      "source": "page:lib/pages/feed/topic_posts_page.dart",
+      "target": "service:post_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/feed/topic_posts_page.dart|uses_service|service:like_state_manager",
+      "source": "page:lib/pages/feed/topic_posts_page.dart",
+      "target": "service:like_state_manager",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/discover/discover_match_tab.dart|uses_service|service:user_service",
+      "source": "page:lib/pages/discover/discover_match_tab.dart",
+      "target": "service:user_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/discover/discover_match_tab.dart|uses_service|service:chat_push_service",
+      "source": "page:lib/pages/discover/discover_match_tab.dart",
+      "target": "service:chat_push_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/discover/discover_match_tab.dart|uses_service|service:match_suggestion_service",
+      "source": "page:lib/pages/discover/discover_match_tab.dart",
+      "target": "service:match_suggestion_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/companion/companion_chat_page.dart|uses_service|service:ai_provider_connectivity_cache",
+      "source": "page:lib/pages/companion/companion_chat_page.dart",
+      "target": "service:ai_provider_connectivity_cache",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/companion/companion_chat_page.dart|uses_service|service:ai_provider_service",
+      "source": "page:lib/pages/companion/companion_chat_page.dart",
+      "target": "service:ai_provider_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/companion/companion_chat_page.dart|uses_service|service:ai_provider_usage_service",
+      "source": "page:lib/pages/companion/companion_chat_page.dart",
+      "target": "service:ai_provider_usage_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/companion/companion_chat_page.dart|uses_service|service:ai_tts_helper",
+      "source": "page:lib/pages/companion/companion_chat_page.dart",
+      "target": "service:ai_tts_helper",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/companion/companion_chat_page.dart|uses_service|service:companion_service",
+      "source": "page:lib/pages/companion/companion_chat_page.dart",
+      "target": "service:companion_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/companion/companion_chat_page.dart|uses_service|service:companion_interaction_coordinator",
+      "source": "page:lib/pages/companion/companion_chat_page.dart",
+      "target": "service:companion_interaction_coordinator",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/companion/companion_memories_page.dart|uses_service|service:companion_chat_launcher",
+      "source": "page:lib/pages/companion/companion_memories_page.dart",
+      "target": "service:companion_chat_launcher",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/companion/companion_memories_page.dart|uses_service|service:companion_service",
+      "source": "page:lib/pages/companion/companion_memories_page.dart",
+      "target": "service:companion_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/companion/companion_memories_viewmodel.dart|uses_service|service:companion_service",
+      "source": "page:lib/pages/companion/companion_memories_viewmodel.dart",
+      "target": "service:companion_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/companion/companion_memories_viewmodel.dart|uses_service|service:companion_interaction_coordinator",
+      "source": "page:lib/pages/companion/companion_memories_viewmodel.dart",
+      "target": "service:companion_interaction_coordinator",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/companion/memory_conflict_card.dart|uses_service|service:companion_service",
+      "source": "page:lib/pages/companion/memory_conflict_card.dart",
+      "target": "service:companion_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/community/community_home_page.dart|uses_service|service:companion_service",
+      "source": "page:lib/pages/community/community_home_page.dart",
+      "target": "service:companion_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/community/community_post_detail_page.dart|uses_service|service:api_client",
+      "source": "page:lib/pages/community/community_post_detail_page.dart",
+      "target": "service:api_client",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/community/community_post_detail_page.dart|uses_service|service:post_service",
+      "source": "page:lib/pages/community/community_post_detail_page.dart",
+      "target": "service:post_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/community/community_posts_feed.dart|uses_service|service:post_service",
+      "source": "page:lib/pages/community/community_posts_feed.dart",
+      "target": "service:post_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/community/interest_group_detail_page.dart|uses_service|service:api_client",
+      "source": "page:lib/pages/community/interest_group_detail_page.dart",
+      "target": "service:api_client",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/community/interest_group_detail_page.dart|uses_service|service:community_service",
+      "source": "page:lib/pages/community/interest_group_detail_page.dart",
+      "target": "service:community_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/community/interest_groups_page.dart|uses_service|service:community_service",
+      "source": "page:lib/pages/community/interest_groups_page.dart",
+      "target": "service:community_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/commerce/gacha_page.dart|uses_service|service:commerce_service",
+      "source": "page:lib/pages/commerce/gacha_page.dart",
+      "target": "service:commerce_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/commerce/gacha_page.dart|uses_service|service:user_service",
+      "source": "page:lib/pages/commerce/gacha_page.dart",
+      "target": "service:user_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/commerce/inventory_page.dart|uses_service|service:user_service",
+      "source": "page:lib/pages/commerce/inventory_page.dart",
+      "target": "service:user_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/commerce/inventory_page.dart|uses_service|service:enhanced_logger",
+      "source": "page:lib/pages/commerce/inventory_page.dart",
+      "target": "service:enhanced_logger",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/commerce/order_center_page.dart|uses_service|service:commerce_service",
+      "source": "page:lib/pages/commerce/order_center_page.dart",
+      "target": "service:commerce_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/commerce/recharge_page.dart|uses_service|service:commerce_service",
+      "source": "page:lib/pages/commerce/recharge_page.dart",
+      "target": "service:commerce_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/commerce/recharge_page.dart|uses_service|service:enhanced_logger",
+      "source": "page:lib/pages/commerce/recharge_page.dart",
+      "target": "service:enhanced_logger",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/commerce/vip_center_page.dart|uses_service|service:commerce_service",
+      "source": "page:lib/pages/commerce/vip_center_page.dart",
+      "target": "service:commerce_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/commerce/vip_history_page.dart|uses_service|service:commerce_service",
+      "source": "page:lib/pages/commerce/vip_history_page.dart",
+      "target": "service:commerce_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/commerce/vip_order_confirm_page.dart|uses_service|service:achievement_hooks",
+      "source": "page:lib/pages/commerce/vip_order_confirm_page.dart",
+      "target": "service:achievement_hooks",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/commerce/vip_order_confirm_page.dart|uses_service|service:api_client",
+      "source": "page:lib/pages/commerce/vip_order_confirm_page.dart",
+      "target": "service:api_client",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/commerce/vip_order_confirm_page.dart|uses_service|service:commerce_service",
+      "source": "page:lib/pages/commerce/vip_order_confirm_page.dart",
+      "target": "service:commerce_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/commerce/vip_orders_page.dart|uses_service|service:commerce_service",
+      "source": "page:lib/pages/commerce/vip_orders_page.dart",
+      "target": "service:commerce_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/commerce/vip_purchase_page.dart|uses_service|service:commerce_service",
+      "source": "page:lib/pages/commerce/vip_purchase_page.dart",
+      "target": "service:commerce_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/commerce/wallet_page.dart|uses_service|service:api_response",
+      "source": "page:lib/pages/commerce/wallet_page.dart",
+      "target": "service:api_response",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/commerce/wallet_page.dart|uses_service|service:commerce_service",
+      "source": "page:lib/pages/commerce/wallet_page.dart",
+      "target": "service:commerce_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/commerce/wallet_page.dart|uses_service|service:enhanced_logger",
+      "source": "page:lib/pages/commerce/wallet_page.dart",
+      "target": "service:enhanced_logger",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/checkin/checkin_page.dart|uses_service|service:achievement_hooks",
+      "source": "page:lib/pages/checkin/checkin_page.dart",
+      "target": "service:achievement_hooks",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/checkin/user_level_page.dart|uses_service|service:auth_flow_service",
+      "source": "page:lib/pages/checkin/user_level_page.dart",
+      "target": "service:auth_flow_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/checkin/user_level_page.dart|uses_service|service:achievement_service",
+      "source": "page:lib/pages/checkin/user_level_page.dart",
+      "target": "service:achievement_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/chat/conversations_page.dart|uses_service|service:chat_push_service",
+      "source": "page:lib/pages/chat/conversations_page.dart",
+      "target": "service:chat_push_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/chat/conversations_page.dart|uses_service|service:direct_chat_sync_bus",
+      "source": "page:lib/pages/chat/conversations_page.dart",
+      "target": "service:direct_chat_sync_bus",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/chat/conversations_page.dart|uses_service|service:presence_service",
+      "source": "page:lib/pages/chat/conversations_page.dart",
+      "target": "service:presence_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/chat/conversations_viewmodel.dart|uses_service|service:chat_push_service",
+      "source": "page:lib/pages/chat/conversations_viewmodel.dart",
+      "target": "service:chat_push_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/chat/conversations_viewmodel.dart|uses_service|service:chat_service",
+      "source": "page:lib/pages/chat/conversations_viewmodel.dart",
+      "target": "service:chat_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/chat/conversations_viewmodel.dart|uses_service|service:direct_chat_local_reader",
+      "source": "page:lib/pages/chat/conversations_viewmodel.dart",
+      "target": "service:direct_chat_local_reader",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/chat/conversations_viewmodel.dart|uses_service|service:direct_chat_sync_bus",
+      "source": "page:lib/pages/chat/conversations_viewmodel.dart",
+      "target": "service:direct_chat_sync_bus",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/chat/conversations_viewmodel.dart|uses_service|service:notification_service",
+      "source": "page:lib/pages/chat/conversations_viewmodel.dart",
+      "target": "service:notification_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/chat/conversations_viewmodel.dart|uses_service|service:user_service",
+      "source": "page:lib/pages/chat/conversations_viewmodel.dart",
+      "target": "service:user_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/chat/direct_chat_page.dart|uses_service|service:chat_service",
+      "source": "page:lib/pages/chat/direct_chat_page.dart",
+      "target": "service:chat_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/chat/direct_chat_page.dart|uses_service|service:user_service",
+      "source": "page:lib/pages/chat/direct_chat_page.dart",
+      "target": "service:user_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/chat/direct_chat_page.dart|uses_service|service:voice_message_service",
+      "source": "page:lib/pages/chat/direct_chat_page.dart",
+      "target": "service:voice_message_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/chat/direct_chat_page.dart|uses_service|service:chat_push_service",
+      "source": "page:lib/pages/chat/direct_chat_page.dart",
+      "target": "service:chat_push_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/chat/direct_chat_page.dart|uses_service|service:presence_service",
+      "source": "page:lib/pages/chat/direct_chat_page.dart",
+      "target": "service:presence_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/chat/direct_chat_viewmodel.dart|uses_service|service:api_client",
+      "source": "page:lib/pages/chat/direct_chat_viewmodel.dart",
+      "target": "service:api_client",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/chat/direct_chat_viewmodel.dart|uses_service|service:chat_push_service",
+      "source": "page:lib/pages/chat/direct_chat_viewmodel.dart",
+      "target": "service:chat_push_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/chat/direct_chat_viewmodel.dart|uses_service|service:chat_service",
+      "source": "page:lib/pages/chat/direct_chat_viewmodel.dart",
+      "target": "service:chat_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/chat/direct_chat_viewmodel.dart|uses_service|service:direct_chat_sync_bus",
+      "source": "page:lib/pages/chat/direct_chat_viewmodel.dart",
+      "target": "service:direct_chat_sync_bus",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/chat/message_center_page.dart|uses_service|service:friend_request_sync",
+      "source": "page:lib/pages/chat/message_center_page.dart",
+      "target": "service:friend_request_sync",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/chat/message_center_page.dart|uses_service|service:presence_service",
+      "source": "page:lib/pages/chat/message_center_page.dart",
+      "target": "service:presence_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/chat/message_center_page.dart|uses_service|service:user_service",
+      "source": "page:lib/pages/chat/message_center_page.dart",
+      "target": "service:user_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/chat/voice_call_page.dart|uses_service|service:chat_service",
+      "source": "page:lib/pages/chat/voice_call_page.dart",
+      "target": "service:chat_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/chat/voice_call_receiving_page.dart|uses_service|service:chat_service",
+      "source": "page:lib/pages/chat/voice_call_receiving_page.dart",
+      "target": "service:chat_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/chat/voice_call_receiving_page.dart|uses_service|service:chat_push_service",
+      "source": "page:lib/pages/chat/voice_call_receiving_page.dart",
+      "target": "service:chat_push_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/battle/live_pk_room_page.dart|uses_service|service:gift_catalog_service",
+      "source": "page:lib/pages/battle/live_pk_room_page.dart",
+      "target": "service:gift_catalog_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/autoglm/autoglm_config_page.dart|uses_service|service:enhanced_logger",
+      "source": "page:lib/pages/autoglm/autoglm_config_page.dart",
+      "target": "service:enhanced_logger",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/autoglm/autoglm_task_page.dart|uses_service|service:enhanced_logger",
+      "source": "page:lib/pages/autoglm/autoglm_task_page.dart",
+      "target": "service:enhanced_logger",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/autoglm/autoglm_task_page.dart|uses_service|service:task_execution_engine",
+      "source": "page:lib/pages/autoglm/autoglm_task_page.dart",
+      "target": "service:task_execution_engine",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/autoglm/autoglm_task_page.dart|uses_service|service:ai_inference_service",
+      "source": "page:lib/pages/autoglm/autoglm_task_page.dart",
+      "target": "service:ai_inference_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/auth/feishu_login_page.dart|uses_service|service:auth_flow_service",
+      "source": "page:lib/pages/auth/feishu_login_page.dart",
+      "target": "service:auth_flow_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/auth/forgot_password_page.dart|uses_service|service:auth_flow_service",
+      "source": "page:lib/pages/auth/forgot_password_page.dart",
+      "target": "service:auth_flow_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/auth/forgot_password_page.dart|uses_service|service:api_service",
+      "source": "page:lib/pages/auth/forgot_password_page.dart",
+      "target": "service:api_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/auth/login_page.dart|uses_service|service:auth_flow_service",
+      "source": "page:lib/pages/auth/login_page.dart",
+      "target": "service:auth_flow_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/auth/login_page.dart|uses_service|service:achievement_hooks",
+      "source": "page:lib/pages/auth/login_page.dart",
+      "target": "service:achievement_hooks",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/auth/login_page.dart|uses_service|service:daily_growth_service",
+      "source": "page:lib/pages/auth/login_page.dart",
+      "target": "service:daily_growth_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/auth/login_page.dart|uses_service|service:wechat_sdk_service",
+      "source": "page:lib/pages/auth/login_page.dart",
+      "target": "service:wechat_sdk_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/auth/register_page.dart|uses_service|service:achievement_hooks",
+      "source": "page:lib/pages/auth/register_page.dart",
+      "target": "service:achievement_hooks",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/auth/register_page.dart|uses_service|service:api_service",
+      "source": "page:lib/pages/auth/register_page.dart",
+      "target": "service:api_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/auth/register_page.dart|uses_service|service:auth_flow_service",
+      "source": "page:lib/pages/auth/register_page.dart",
+      "target": "service:auth_flow_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/auth/reset_password_page.dart|uses_service|service:auth_flow_service",
+      "source": "page:lib/pages/auth/reset_password_page.dart",
+      "target": "service:auth_flow_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/auth/reset_password_page.dart|uses_service|service:api_service",
+      "source": "page:lib/pages/auth/reset_password_page.dart",
+      "target": "service:api_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/auth/verify_code_page.dart|uses_service|service:auth_flow_service",
+      "source": "page:lib/pages/auth/verify_code_page.dart",
+      "target": "service:auth_flow_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/auth/verify_code_page.dart|uses_service|service:api_service",
+      "source": "page:lib/pages/auth/verify_code_page.dart",
+      "target": "service:api_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/announcements/announcement_detail_page.dart|uses_service|service:announcement_service",
+      "source": "page:lib/pages/announcements/announcement_detail_page.dart",
+      "target": "service:announcement_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/announcements/announcements_page.dart|uses_service|service:announcement_service",
+      "source": "page:lib/pages/announcements/announcements_page.dart",
+      "target": "service:announcement_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/ai/agent_editor_page.dart|uses_service|service:ai_db_service",
+      "source": "page:lib/pages/ai/agent_editor_page.dart",
+      "target": "service:ai_db_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/ai/agent_editor_page.dart|uses_service|service:ai_agent_cloud_service",
+      "source": "page:lib/pages/ai/agent_editor_page.dart",
+      "target": "service:ai_agent_cloud_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/ai/agent_editor_page.dart|uses_service|service:ai_chat_gateway_service",
+      "source": "page:lib/pages/ai/agent_editor_page.dart",
+      "target": "service:ai_chat_gateway_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/ai/agent_editor_page.dart|uses_service|service:ai_provider_service",
+      "source": "page:lib/pages/ai/agent_editor_page.dart",
+      "target": "service:ai_provider_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/ai/agent_editor_page.dart|uses_service|service:ai_starter_templates",
+      "source": "page:lib/pages/ai/agent_editor_page.dart",
+      "target": "service:ai_starter_templates",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/ai/agent_editor_page.dart|uses_service|service:ai_agent_draft_factory",
+      "source": "page:lib/pages/ai/agent_editor_page.dart",
+      "target": "service:ai_agent_draft_factory",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/ai/agent_editor_page.dart|uses_service|service:ai_prompt_defaults",
+      "source": "page:lib/pages/ai/agent_editor_page.dart",
+      "target": "service:ai_prompt_defaults",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/ai/agent_editor_page.dart|uses_service|service:llm_api_service",
+      "source": "page:lib/pages/ai/agent_editor_page.dart",
+      "target": "service:llm_api_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/ai/agent_list_page.dart|uses_service|service:ai_character_card_service",
+      "source": "page:lib/pages/ai/agent_list_page.dart",
+      "target": "service:ai_character_card_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/ai/agent_list_page.dart|uses_service|service:ai_chat_gateway_service",
+      "source": "page:lib/pages/ai/agent_list_page.dart",
+      "target": "service:ai_chat_gateway_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/ai/agent_list_page.dart|uses_service|service:ai_agent_cloud_service",
+      "source": "page:lib/pages/ai/agent_list_page.dart",
+      "target": "service:ai_agent_cloud_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/ai/agent_list_page.dart|uses_service|service:ai_provider_service",
+      "source": "page:lib/pages/ai/agent_list_page.dart",
+      "target": "service:ai_provider_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/ai/agent_list_page.dart|uses_service|service:ai_starter_templates",
+      "source": "page:lib/pages/ai/agent_list_page.dart",
+      "target": "service:ai_starter_templates",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/ai/agent_list_page.dart|uses_service|service:ai_agent_draft_factory",
+      "source": "page:lib/pages/ai/agent_list_page.dart",
+      "target": "service:ai_agent_draft_factory",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/ai/agent_list_page.dart|uses_service|service:ai_agent_usage_service",
+      "source": "page:lib/pages/ai/agent_list_page.dart",
+      "target": "service:ai_agent_usage_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/ai/agent_list_page.dart|uses_service|service:ai_models_cache_service",
+      "source": "page:lib/pages/ai/agent_list_page.dart",
+      "target": "service:ai_models_cache_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/ai/ai_lorebook_editor_page.dart|uses_service|service:ai_agent_cloud_service",
+      "source": "page:lib/pages/ai/ai_lorebook_editor_page.dart",
+      "target": "service:ai_agent_cloud_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/ai/ai_lorebooks_list_page.dart|uses_service|service:ai_agent_cloud_service",
+      "source": "page:lib/pages/ai/ai_lorebooks_list_page.dart",
+      "target": "service:ai_agent_cloud_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/ai/ai_lorebooks_list_page.dart|uses_service|service:ai_starter_templates",
+      "source": "page:lib/pages/ai/ai_lorebooks_list_page.dart",
+      "target": "service:ai_starter_templates",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/ai/ai_provider_profiles_page.dart|uses_service|service:ai_chat_gateway_service",
+      "source": "page:lib/pages/ai/ai_provider_profiles_page.dart",
+      "target": "service:ai_chat_gateway_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/ai/ai_provider_profiles_page.dart|uses_service|service:ai_cloud_config_service",
+      "source": "page:lib/pages/ai/ai_provider_profiles_page.dart",
+      "target": "service:ai_cloud_config_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/ai/ai_provider_profiles_page.dart|uses_service|service:ai_models_cache_service",
+      "source": "page:lib/pages/ai/ai_provider_profiles_page.dart",
+      "target": "service:ai_models_cache_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/ai/ai_provider_profiles_page.dart|uses_service|service:ai_provider_connectivity_cache",
+      "source": "page:lib/pages/ai/ai_provider_profiles_page.dart",
+      "target": "service:ai_provider_connectivity_cache",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/ai/ai_provider_profiles_page.dart|uses_service|service:ai_provider_detector",
+      "source": "page:lib/pages/ai/ai_provider_profiles_page.dart",
+      "target": "service:ai_provider_detector",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/ai/ai_provider_profiles_page.dart|uses_service|service:ai_provider_service",
+      "source": "page:lib/pages/ai/ai_provider_profiles_page.dart",
+      "target": "service:ai_provider_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/ai/ai_provider_profiles_page.dart|uses_service|service:api_service",
+      "source": "page:lib/pages/ai/ai_provider_profiles_page.dart",
+      "target": "service:api_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/ai/character_card_plaza_page.dart|uses_service|service:ai_agent_cloud_service",
+      "source": "page:lib/pages/ai/character_card_plaza_page.dart",
+      "target": "service:ai_agent_cloud_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/ai/character_card_plaza_page.dart|uses_service|service:ai_character_card_service",
+      "source": "page:lib/pages/ai/character_card_plaza_page.dart",
+      "target": "service:ai_character_card_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/ai/character_card_plaza_page.dart|uses_service|service:ai_starter_templates",
+      "source": "page:lib/pages/ai/character_card_plaza_page.dart",
+      "target": "service:ai_starter_templates",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/ai/chat_page.dart|uses_service|service:ai_prompt_defaults",
+      "source": "page:lib/pages/ai/chat_page.dart",
+      "target": "service:ai_prompt_defaults",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/ai/chat_page.dart|uses_service|service:llm_endpoint_config",
+      "source": "page:lib/pages/ai/chat_page.dart",
+      "target": "service:llm_endpoint_config",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/ai/chat_page.dart|uses_service|service:llm_api_service",
+      "source": "page:lib/pages/ai/chat_page.dart",
+      "target": "service:llm_api_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/ai/chat_page.dart|uses_service|service:ai_db_service",
+      "source": "page:lib/pages/ai/chat_page.dart",
+      "target": "service:ai_db_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/ai/chat_page.dart|uses_service|service:ai_agent_cloud_service",
+      "source": "page:lib/pages/ai/chat_page.dart",
+      "target": "service:ai_agent_cloud_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/ai/chat_page.dart|uses_service|service:ai_chat_context_builder",
+      "source": "page:lib/pages/ai/chat_page.dart",
+      "target": "service:ai_chat_context_builder",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/ai/chat_page.dart|uses_service|service:ai_chat_gateway_service",
+      "source": "page:lib/pages/ai/chat_page.dart",
+      "target": "service:ai_chat_gateway_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/ai/chat_page.dart|uses_service|service:ai_user_persona_service",
+      "source": "page:lib/pages/ai/chat_page.dart",
+      "target": "service:ai_user_persona_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/ai/chat_page.dart|uses_service|service:ai_chat_session_prefs",
+      "source": "page:lib/pages/ai/chat_page.dart",
+      "target": "service:ai_chat_session_prefs",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/ai/chat_page.dart|uses_service|service:ai_tts_helper",
+      "source": "page:lib/pages/ai/chat_page.dart",
+      "target": "service:ai_tts_helper",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/ai/companion_hub_page.dart|uses_service|service:api_client",
+      "source": "page:lib/pages/ai/companion_hub_page.dart",
+      "target": "service:api_client",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/ai/companion_hub_page.dart|uses_service|service:companion_character_card_import",
+      "source": "page:lib/pages/ai/companion_hub_page.dart",
+      "target": "service:companion_character_card_import",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/ai/companion_hub_page.dart|uses_service|service:companion_chat_launcher",
+      "source": "page:lib/pages/ai/companion_hub_page.dart",
+      "target": "service:companion_chat_launcher",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/ai/companion_hub_page.dart|uses_service|service:companion_service",
+      "source": "page:lib/pages/ai/companion_hub_page.dart",
+      "target": "service:companion_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/ai/companion_hub_viewmodel.dart|uses_service|service:companion_service",
+      "source": "page:lib/pages/ai/companion_hub_viewmodel.dart",
+      "target": "service:companion_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/ai/companion_hub_viewmodel.dart|uses_service|service:companion_interaction_coordinator",
+      "source": "page:lib/pages/ai/companion_hub_viewmodel.dart",
+      "target": "service:companion_interaction_coordinator",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/ai/companion_hub_viewmodel.dart|uses_service|service:life_service",
+      "source": "page:lib/pages/ai/companion_hub_viewmodel.dart",
+      "target": "service:life_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/ai/companion_hub_viewmodel.dart|uses_service|service:post_service",
+      "source": "page:lib/pages/ai/companion_hub_viewmodel.dart",
+      "target": "service:post_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/ai/content_generation_page.dart|uses_service|service:ai_chat_gateway_service",
+      "source": "page:lib/pages/ai/content_generation_page.dart",
+      "target": "service:ai_chat_gateway_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/ai/game_play_viewmodel.dart|uses_service|service:game_service",
+      "source": "page:lib/pages/ai/game_play_viewmodel.dart",
+      "target": "service:game_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/ai/llm_model_config_page.dart|uses_service|service:llm_api_service",
+      "source": "page:lib/pages/ai/llm_model_config_page.dart",
+      "target": "service:llm_api_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/ai/llm_model_config_page.dart|uses_service|service:llm_endpoint_config",
+      "source": "page:lib/pages/ai/llm_model_config_page.dart",
+      "target": "service:llm_endpoint_config",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/ai/state/lorebooks_list_controller.dart|uses_service|service:ai_agent_cloud_service",
+      "source": "page:lib/pages/ai/state/lorebooks_list_controller.dart",
+      "target": "service:ai_agent_cloud_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/ai/state/lorebooks_list_controller.dart|uses_service|service:ai_db_service",
+      "source": "page:lib/pages/ai/state/lorebooks_list_controller.dart",
+      "target": "service:ai_db_service",
+      "relation": "uses_service",
+      "weight": 1
+    },
+    {
+      "id": "e:page:lib/pages/achievements/achievements_page.dart|uses_service|service:achievement_service",
+      "source": "page:lib/pages/achievements/achievements_page.dart",
+      "target": "service:achievement_service",
+      "relation": "uses_service",
+      "weight": 1
+    }
+  ],
+  "stats": {
+    "nodeCount": 227,
+    "edgeCount": 410,
+    "routes": 47,
+    "services": 94,
+    "pageServiceLinks": 199
+  }
+}

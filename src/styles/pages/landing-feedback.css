@@ -1,0 +1,53 @@
+/* landing feedback · Sprint E from legacy */
+/* Landing feedback admin */
+.fb-panel .panel-body {
+  overflow-x: auto;
+}
+
+.fb-table .fb-snippet {
+  max-width: 320px;
+  color: var(--muted);
+}
+
+.fb-tag {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.fb-tag-feature {
+  background: rgba(127, 127, 213, 0.22);
+  color: var(--accent2);
+}
+
+.fb-tag-bug {
+  background: rgba(255, 107, 107, 0.18);
+  color: var(--danger);
+}
+
+.fb-tag-other {
+  background: rgba(145, 234, 228, 0.15);
+  color: var(--mint);
+}
+
+.fb-pager {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  border-top: 1px solid var(--border);
+}
+
+.fb-detail-content {
+  margin: 12px 0 0;
+  white-space: pre-wrap;
+  line-height: 1.6;
+  font-size: 14px;
+  padding: 12px 14px;
+  background: var(--panel2);
+  border-radius: 10px;
+  border: 1px solid var(--border);
+}
+

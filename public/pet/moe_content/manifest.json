@@ -1,0 +1,156 @@
+{
+  "specVersion": "1",
+  "packId": "moe-official-pet-v1",
+  "displayName": "Moe 官方养成包",
+  "publish": {
+    "version": "1.0.0",
+    "builtAt": "2026-08-01T00:00:00.000Z",
+    "minAppVersion": "1.0.0"
+  },
+  "avatar": {
+    "cellSize": 64,
+    "style": "soft_chibi",
+    "directionRows": ["up", "left", "down", "right"],
+    "animations": {
+      "walk": { "cols": 9, "rows": 4 },
+      "idle": { "cols": 2, "rows": 4 }
+    },
+    "animationPolicy": {
+      "source": "moe_official",
+      "description": "walk/idle 由官方 sheet 定义；新增 run/emote/sit 等仅在 manifest.animations 注册后 App 才播放，不依赖 ULPC 全集"
+    },
+    "composeOrder": ["body", "bottom", "top", "shoes", "head", "face", "hat", "hair"],
+    "base": {
+      "body": {
+        "walk": "layers/base/body_walk.png",
+        "idle": "layers/base/body_idle.png"
+      },
+      "head": {
+        "walk": "layers/base/head_walk.png",
+        "idle": "layers/base/head_idle.png"
+      },
+      "face": {
+        "walk": "layers/base/face_walk.png",
+        "idle": "layers/base/face_idle.png"
+      },
+      "hair": {
+        "walk": "layers/base/hair_walk.png",
+        "idle": "layers/base/hair_idle.png"
+      }
+    },
+    "slots": {
+      "hat": {},
+      "top": {
+        "top_basic": {
+          "walk": "layers/slots/top_basic_walk.png",
+          "idle": "layers/slots/top_basic_idle.png"
+        },
+        "top_hoodie": {
+          "walk": "layers/slots/top_basic_walk.png",
+          "idle": "layers/slots/top_basic_idle.png"
+        },
+        "top_tee": {
+          "walk": "layers/slots/top_basic_walk.png",
+          "idle": "layers/slots/top_basic_idle.png"
+        }
+      },
+      "bottom": {
+        "bottom_basic": {
+          "walk": "layers/slots/bottom_basic_walk.png",
+          "idle": "layers/slots/bottom_basic_idle.png"
+        },
+        "bottom_jeans": {
+          "walk": "layers/slots/bottom_basic_walk.png",
+          "idle": "layers/slots/bottom_basic_idle.png"
+        }
+      },
+      "shoes": {
+        "shoes_basic": {
+          "walk": "layers/slots/shoes_basic_walk.png",
+          "idle": "layers/slots/shoes_basic_idle.png"
+        },
+        "shoes_sneaker": {
+          "walk": "layers/slots/shoes_basic_walk.png",
+          "idle": "layers/slots/shoes_basic_idle.png"
+        }
+      }
+    }
+  },
+  "objects": {
+    "bed_basic": {
+      "id": "bed_basic",
+      "kind": "furniture",
+      "label": "基础床",
+      "asset": { "path": "objects/bed_basic.png" },
+      "scenes": ["living", "bedroom"],
+      "transform": { "anchor": "bottom_center", "defaultScale": 1 },
+      "interaction": {
+        "draggable": true,
+        "rotatable": true,
+        "scalable": true,
+        "pickupable": false,
+        "interactable": false
+      }
+    },
+    "table_wood": {
+      "id": "table_wood",
+      "kind": "furniture",
+      "label": "木桌",
+      "asset": { "path": "objects/table_wood.png" },
+      "scenes": ["living", "bedroom"],
+      "transform": { "anchor": "bottom_center", "defaultScale": 1 },
+      "interaction": {
+        "draggable": true,
+        "rotatable": true,
+        "scalable": true,
+        "pickupable": false,
+        "interactable": false
+      }
+    },
+    "lamp_basic": {
+      "id": "lamp_basic",
+      "kind": "furniture",
+      "label": "台灯",
+      "asset": { "path": "objects/lamp_basic.png" },
+      "scenes": ["living", "bedroom"],
+      "transform": { "anchor": "bottom_center", "defaultScale": 0.9 },
+      "interaction": {
+        "draggable": true,
+        "rotatable": true,
+        "scalable": true,
+        "pickupable": false,
+        "interactable": false
+      }
+    },
+    "rug_basic": {
+      "id": "rug_basic",
+      "kind": "furniture",
+      "label": "地毯",
+      "asset": { "path": "objects/rug_basic.png" },
+      "scenes": ["living", "bedroom"],
+      "transform": { "anchor": "center", "defaultScale": 1.1 },
+      "interaction": {
+        "draggable": true,
+        "rotatable": true,
+        "scalable": true,
+        "pickupable": false,
+        "interactable": false
+      }
+    },
+    "window_lace": {
+      "id": "window_lace",
+      "kind": "furniture",
+      "label": "蕾丝窗",
+      "asset": { "path": "objects/window_lace.png" },
+      "scenes": ["living", "bedroom"],
+      "transform": { "anchor": "center", "defaultScale": 1 },
+      "interaction": {
+        "draggable": true,
+        "rotatable": true,
+        "scalable": true,
+        "pickupable": false,
+        "interactable": false
+      }
+    }
+  }
+}

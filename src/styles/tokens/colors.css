@@ -1,0 +1,44 @@
+/**
+ * Moe Admin V3 — color tokens (design-only scaffold).
+ * P1 实施：在 index.css 引入并启用 legacy alias，再逐步替换 monolith。
+ * SSOT: moe-admin/DESIGN.md
+ */
+:root {
+  /* Brand */
+  --brand-violet: #6b5fc1;
+  --brand-violet-deep: #5548a8;
+  --brand-cyan: #34d3c8;
+  --brand-gold: #f3b74f;
+
+  /* Chrome (sidebar — soft light, 与 canvas 同系) */
+  --chrome-bg: #eef1f8;
+  --chrome-surface: #ffffff;
+  --chrome-border: #e2e6f0;
+  --chrome-text: #1a1d26;
+  --chrome-muted: #6b7280;
+
+  /* Workbench */
+  --canvas: #f4f6fb;
+  --surface: #ffffff;
+  --surface-soft: #f8f9fc;
+  --ink: #1a1d26;
+  --ink-muted: #6b7280;
+  --hairline: #e5e7ef;
+
+  /* Semantic */
+  --ok: #34c38f;
+  --warn: #ffb648;
+  --danger: #ff6b6b;
+  --info: #3d8bfd;
+
+  /* V2 compat aliases — remove after monolith migration */
+  --bg: var(--canvas);
+  --panel: var(--surface);
+  --panel2: var(--surface-soft);
+  --border: var(--hairline);
+  --accent: var(--brand-violet);
+  --accent2: var(--brand-violet-deep);
+  --mint: var(--brand-cyan);
+  --text: var(--ink);
+  --muted: var(--ink-muted);
+}

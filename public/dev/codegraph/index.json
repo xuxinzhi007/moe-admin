@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-09-08T11:22:52.609Z",
+  "domains": [
+    {
+      "id": "pet",
+      "label": "Pet 内容包",
+      "file": "pet.json",
+      "description": "admin 预览包 / Flutter 运行时包 → manifest → assets → consumers"
+    },
+    {
+      "id": "admin",
+      "label": "Admin 路由",
+      "file": "admin.json",
+      "description": "workspace → nav → App route → page → feature"
+    },
+    {
+      "id": "backend",
+      "label": "Backend API",
+      "file": "backend.json",
+      "description": "OpenAPI / proto → service → biz"
+    },
+    {
+      "id": "flutter",
+      "label": "Flutter",
+      "file": "flutter.json",
+      "description": "routes → pages → domain services"
+    }
+  ],
+  "outputs": {
+    "pet": "/Users/xuxinzhi/Documents/gowork/moe_social/moe-admin/public/dev/codegraph/pet.json",
+    "admin": "/Users/xuxinzhi/Documents/gowork/moe_social/moe-admin/public/dev/codegraph/admin.json",
+    "backend": "/Users/xuxinzhi/Documents/gowork/moe_social/moe-admin/public/dev/codegraph/backend.json",
+    "flutter": "/Users/xuxinzhi/Documents/gowork/moe_social/moe-admin/public/dev/codegraph/flutter.json"
+  }
+}

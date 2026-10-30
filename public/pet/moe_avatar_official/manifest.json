@@ -1,0 +1,40 @@
+{
+  "specVersion": "1",
+  "packId": "moe-official-soft-chibi-v1",
+  "displayName": "Moe 官方 · 软 Q 角色包 v1",
+  "cellSize": 128,
+  "style": "soft_chibi",
+  "directionRows": ["up", "left", "down", "right"],
+  "animations": {
+    "walk": { "cols": 9, "rows": 4 },
+    "idle": { "cols": 2, "rows": 4 }
+  },
+  "anchors": {
+    "origin": { "x": 64, "y": 124 },
+    "headCenter": { "x": 64, "y": 36 },
+    "torsoCenter": { "x": 64, "y": 72 }
+  },
+  "composeOrder": ["body", "bottom", "top", "shoes", "head", "face", "hat", "hair"],
+  "base": {
+    "body": { "walk": "layers/base/body.svg", "idle": "layers/base/body.svg" },
+    "head": { "walk": "layers/base/head.svg", "idle": "layers/base/head.svg" },
+    "face": { "walk": "layers/base/face.svg", "idle": "layers/base/face.svg" },
+    "hair": { "walk": "layers/base/hair.svg", "idle": "layers/base/hair.svg" }
+  },
+  "slots": {
+    "hat": {},
+    "top": {
+      "top_basic": { "walk": "layers/slots/top_basic.svg", "idle": "layers/slots/top_basic.svg", "label": "基础上衣" },
+      "top_hoodie": { "walk": "layers/slots/top_hoodie.svg", "idle": "layers/slots/top_hoodie.svg", "label": "云朵连帽衫" },
+      "top_tee": { "walk": "layers/slots/top_tee.svg", "idle": "layers/slots/top_tee.svg", "label": "柔软 T 恤" }
+    },
+    "bottom": {
+      "bottom_basic": { "walk": "layers/slots/bottom_basic.svg", "idle": "layers/slots/bottom_basic.svg", "label": "基础下装" },
+      "bottom_jeans": { "walk": "layers/slots/bottom_jeans.svg", "idle": "layers/slots/bottom_jeans.svg", "label": "蓝色牛仔裤" }
+    },
+    "shoes": {
+      "shoes_basic": { "walk": "layers/slots/shoes_basic.svg", "idle": "layers/slots/shoes_basic.svg", "label": "基础鞋" },
+      "shoes_sneaker": { "walk": "layers/slots/shoes_sneaker.svg", "idle": "layers/slots/shoes_sneaker.svg", "label": "薄荷运动鞋" }
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "specVersion": "1",
+  "packId": "moe-furniture-prototype-v1",
+  "kind": "furniture",
+  "displayName": "Moe 官方 · 家具原型",
+  "items": {
+    "bed_basic": {
+      "path": "items/bed_basic.png",
+      "label": "基础床",
+      "scenes": ["living", "bedroom"],
+      "defaultScale": 1,
+      "anchor": "bottom_center"
+    },
+    "table_wood": {
+      "path": "items/table_wood.png",
+      "label": "木桌",
+      "scenes": ["living", "bedroom"],
+      "defaultScale": 1,
+      "anchor": "bottom_center"
+    },
+    "lamp_basic": {
+      "path": "items/lamp_basic.png",
+      "label": "台灯",
+      "scenes": ["living", "bedroom"],
+      "defaultScale": 0.9,
+      "anchor": "bottom_center"
+    },
+    "rug_basic": {
+      "path": "items/rug_basic.png",
+      "label": "地毯",
+      "scenes": ["living", "bedroom"],
+      "defaultScale": 1.1,
+      "anchor": "center"
+    },
+    "window_lace": {
+      "path": "items/window_lace.png",
+      "label": "蕾丝窗",
+      "scenes": ["living", "bedroom"],
+      "defaultScale": 1,
+      "anchor": "center"
+    }
+  }
+}

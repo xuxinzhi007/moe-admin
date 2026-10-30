@@ -1,0 +1,181 @@
+/* panels · extracted from legacy · Sprint D */
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 16px;
+  overflow: hidden;
+}
+
+.panel-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.panel-head h3 {
+  margin: 0;
+  font-size: 14px;
+  flex: 1;
+}
+
+.panel-body {
+  padding: 14px 16px;
+}
+
+.env-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.env-card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.env-card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--border);
+}
+
+.env-card-head h3 {
+  margin: 0;
+  font-size: 14px;
+}
+
+.env-card-head .sub {
+  font-weight: normal;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.env-card-body {
+  padding: 12px 14px;
+}
+
+.env-kv {
+  margin: 0 0 12px;
+  font-size: 12px;
+}
+
+.env-kv-row {
+  display: grid;
+  grid-template-columns: 92px 1fr;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.env-kv dt {
+  color: var(--muted);
+  margin: 0;
+}
+
+.env-kv dd {
+  margin: 0;
+  word-break: break-word;
+}
+
+.env-actions {
+  margin-top: 8px;
+}
+
+.env-card-cloud {
+  border-color: rgba(145, 234, 228, 0.25);
+}
+
+/* —— App 版本 / 配置详情卡 —— */
+.config-cards {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 16px;
+}
+
+.config-card.panel {
+  margin-bottom: 0;
+}
+
+.config-dl {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 16px 20px;
+  margin: 0;
+}
+
+.config-dl-item {
+  min-width: 0;
+}
+
+.config-dl-item--wide {
+  grid-column: 1 / -1;
+}
+
+.config-dl dt {
+  margin: 0 0 4px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--ink-muted, var(--muted));
+}
+
+.config-dl dd {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--ink, var(--text));
+  word-break: break-word;
+}
+
+.config-dl-mono {
+  font-family: var(--font-mono, ui-monospace, Menlo, monospace);
+  font-size: 12px;
+}
+
+.config-dl-link {
+  font-family: var(--font-mono, ui-monospace, Menlo, monospace);
+  font-size: 12px;
+  line-height: 1.55;
+  color: var(--info, var(--accent));
+  text-decoration: none;
+}
+
+.config-dl-link:hover {
+  text-decoration: underline;
+}
+
+.config-hint {
+  margin: 12px 0 0;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.config-card .config-hint {
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid var(--hairline, var(--border));
+}
+
+.env-pre,
+.log-pre,
+.terminal pre {
+  font-family: ui-monospace, Menlo, monospace;
+  font-size: 11px;
+  line-height: 1.45;
+  background: var(--panel2);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 12px;
+  overflow: auto;
+  max-height: 200px;
+  white-space: pre-wrap;
+  word-break: break-word;
+}

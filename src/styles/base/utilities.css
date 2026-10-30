@@ -1,0 +1,121 @@
+/**
+ * Cross-page utilities (keep small; prefer component modules for UI blocks).
+ */
+
+.text-break-all {
+  word-break: break-all;
+}
+
+.text-pre-wrap {
+  white-space: pre-wrap;
+}
+
+.field-caption {
+  margin: 4px 0 0;
+  font-size: var(--text-micro);
+  color: var(--ink-muted);
+}
+
+.admin-hint {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.admin-hint-dismiss {
+  margin-left: auto;
+  padding: 2px 8px;
+  flex-shrink: 0;
+}
+
+.btn-row-spaced {
+  margin-top: 12px;
+}
+
+.checkbox-stack {
+  display: grid;
+  gap: 4px;
+}
+
+.checkbox-stack .checkbox-row {
+  margin-bottom: 0;
+}
+
+.topbar-user-tag {
+  font-size: var(--text-micro);
+}
+
+.settings-advanced {
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid var(--hairline);
+}
+
+.settings-advanced > summary {
+  cursor: pointer;
+  font-size: var(--text-caption);
+  color: var(--ink-muted);
+  margin-bottom: 10px;
+  user-select: none;
+}
+
+.settings-muted {
+  font-size: var(--text-micro);
+  color: var(--ink-muted);
+  margin: -6px 0 10px;
+  line-height: 1.5;
+}
+
+.settings-status {
+  font-size: var(--text-caption);
+  color: var(--ink-muted);
+  margin-top: 16px;
+}
+
+.settings-log {
+  margin-top: 10px;
+  max-height: 100px;
+}
+
+/* 任务队列：表格贴齐面板边缘 */
+.jobs-queue-panel .panel-body {
+  padding: 0;
+}
+
+/* 运营工作台待办卡片 */
+.admin-todo-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 12px;
+}
+
+.admin-todo-card {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 12px 14px;
+  border-radius: var(--radius-md, 12px);
+  border: 1px solid var(--hairline, #e5e7ef);
+  background: var(--surface-soft, #f8f9fc);
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.admin-todo-card:hover {
+  border-color: rgba(107, 95, 193, 0.35);
+  background: #fff;
+}
+
+.admin-todo-card strong {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.admin-todo-num {
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--brand-violet, #6b5fc1);
+  line-height: 1.2;
+}

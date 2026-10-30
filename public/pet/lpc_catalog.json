@@ -1,0 +1,108 @@
+{
+  "version": 2,
+  "comment": "LPC catalog SSOT。管理台编辑后同步到本文件 + assets/pet/lpc/layers/",
+  "base": {
+    "body": {
+      "walk": "assets/pet/lpc/layers/body_walk.png",
+      "idle": "assets/pet/lpc/layers/body_idle.png"
+    },
+    "head": {
+      "walk": "assets/pet/lpc/layers/head_walk.png",
+      "idle": "assets/pet/lpc/layers/head_idle.png"
+    },
+    "face": {
+      "walk": "assets/pet/lpc/layers/face_walk.png",
+      "idle": "assets/pet/lpc/layers/face_idle.png"
+    },
+    "hair": {
+      "walk": "assets/pet/lpc/layers/hair_walk.png",
+      "idle": "assets/pet/lpc/layers/hair_idle.png"
+    }
+  },
+  "slotLayers": {
+    "hat": {},
+    "top": {
+      "top_basic": {
+        "walk": ["assets/pet/lpc/layers/top_longsleeve_walk.png"],
+        "idle": ["assets/pet/lpc/layers/top_longsleeve_idle.png"]
+      },
+      "top_hoodie": {
+        "walk": ["assets/pet/lpc/layers/top_longsleeve_walk.png"],
+        "idle": ["assets/pet/lpc/layers/top_longsleeve_idle.png"]
+      },
+      "top_tee": {
+        "walk": ["assets/pet/lpc/layers/top_longsleeve_walk.png"],
+        "idle": ["assets/pet/lpc/layers/top_longsleeve_idle.png"]
+      },
+      "top_coat": {
+        "walk": ["assets/pet/lpc/layers/top_longsleeve_walk.png"],
+        "idle": ["assets/pet/lpc/layers/top_longsleeve_idle.png"]
+      },
+      "top_dress": {
+        "walk": ["assets/pet/lpc/layers/top_longsleeve_walk.png"],
+        "idle": ["assets/pet/lpc/layers/top_longsleeve_idle.png"]
+      },
+      "top_vest": {
+        "walk": ["assets/pet/lpc/layers/top_longsleeve_walk.png"],
+        "idle": ["assets/pet/lpc/layers/top_longsleeve_idle.png"]
+      }
+    },
+    "bottom": {
+      "bottom_basic": {
+        "walk": ["assets/pet/lpc/layers/bottom_teal_walk.png"],
+        "idle": ["assets/pet/lpc/layers/bottom_teal_idle.png"]
+      },
+      "bottom_skirt": {
+        "walk": ["assets/pet/lpc/layers/bottom_teal_walk.png"],
+        "idle": ["assets/pet/lpc/layers/bottom_teal_idle.png"]
+      },
+      "bottom_jeans": {
+        "walk": ["assets/pet/lpc/layers/bottom_teal_walk.png"],
+        "idle": ["assets/pet/lpc/layers/bottom_teal_idle.png"]
+      },
+      "bottom_shorts": {
+        "walk": ["assets/pet/lpc/layers/bottom_teal_walk.png"],
+        "idle": ["assets/pet/lpc/layers/bottom_teal_idle.png"]
+      },
+      "bottom_pants": {
+        "walk": ["assets/pet/lpc/layers/bottom_teal_walk.png"],
+        "idle": ["assets/pet/lpc/layers/bottom_teal_idle.png"]
+      },
+      "bottom_overall": {
+        "walk": ["assets/pet/lpc/layers/bottom_teal_walk.png"],
+        "idle": ["assets/pet/lpc/layers/bottom_teal_idle.png"]
+      }
+    },
+    "shoes": {
+      "shoes_basic": {
+        "walk": ["assets/pet/lpc/layers/shoes_brown_walk.png"],
+        "idle": ["assets/pet/lpc/layers/shoes_brown_idle.png"]
+      },
+      "shoes_sneaker": {
+        "walk": ["assets/pet/lpc/layers/shoes_brown_walk.png"],
+        "idle": ["assets/pet/lpc/layers/shoes_brown_idle.png"]
+      },
+      "shoes_boot": {
+        "walk": ["assets/pet/lpc/layers/shoes_brown_walk.png"],
+        "idle": ["assets/pet/lpc/layers/shoes_brown_idle.png"]
+      },
+      "shoes_sandal": {
+        "walk": ["assets/pet/lpc/layers/shoes_brown_walk.png"],
+        "idle": ["assets/pet/lpc/layers/shoes_brown_idle.png"]
+      },
+      "shoes_slipper": {
+        "walk": ["assets/pet/lpc/layers/shoes_brown_walk.png"],
+        "idle": ["assets/pet/lpc/layers/shoes_brown_idle.png"]
+      },
+      "shoes_heel": {
+        "walk": ["assets/pet/lpc/layers/shoes_brown_walk.png"],
+        "idle": ["assets/pet/lpc/layers/shoes_brown_idle.png"]
+      }
+    }
+  },
+  "admin": {
+    "localGeneratorPath": "C:\\Users\\ZhuanZ1\\Downloads\\Universal-LPC-Spritesheet-Character-Generator-master",
+    "localDevCommand": "npm install && npm run dev",
+    "exportLayersScript": "scripts/pet/export_lpc_layers.ps1"
+  }
+}

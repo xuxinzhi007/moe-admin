@@ -1,0 +1,124 @@
+/* login shell · Sprint E from legacy（hero 细节见 soft-particles.css） */
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: var(--bg);
+}
+
+.login-layout {
+  display: flex;
+  width: 100%;
+  max-width: 920px;
+  min-height: 480px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  background: var(--panel);
+}
+
+.login-aside {
+  flex: 1;
+  padding: 48px 40px;
+  background: linear-gradient(135deg, #7f7fd5 0%, #86a8e7 50%, #91eae4 100%);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.login-aside h2 {
+  margin: 0 0 8px;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.login-aside > p {
+  margin: 0 0 24px;
+  opacity: 0.92;
+  font-size: 14px;
+}
+
+.login-aside-list {
+  margin: 0;
+  padding-left: 18px;
+  font-size: 13px;
+  line-height: 1.9;
+  opacity: 0.95;
+}
+
+.login-card {
+  width: 380px;
+  flex-shrink: 0;
+  padding: 40px 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.login-brand h1 {
+  margin: 0 0 6px;
+  font-size: 22px;
+  color: var(--text);
+  font-weight: 600;
+}
+
+.login-brand p {
+  margin: 0 0 12px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.login-hint {
+  font-size: 12px;
+  line-height: 1.5;
+  margin: 0 0 16px;
+  padding: 8px 10px;
+  background: var(--panel2);
+  border-radius: 6px;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.login-form label {
+  display: block;
+  margin-bottom: 14px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.login-form label span {
+  display: block;
+  margin-bottom: 6px;
+}
+
+.login-form input,
+.login-form select {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  font-size: 14px;
+  background: var(--panel2);
+  color: inherit;
+}
+
+.login-error {
+  color: var(--danger);
+  font-size: 13px;
+  margin-bottom: 12px;
+}
+
+.btn-block {
+  width: 100%;
+}
+
+.login-foot {
+  margin-top: 16px;
+  font-size: 12px;
+  line-height: 1.5;
+}

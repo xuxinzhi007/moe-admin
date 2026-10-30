@@ -1,0 +1,395 @@
+.brain-rpg-hero {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.brain-rpg-hero-card {
+  padding: 14px 16px;
+  border-radius: 10px;
+  background: var(--panel-bg, #fff);
+  border: 1px solid var(--border-subtle, #e8e8ef);
+}
+
+.brain-rpg-side-panel .brain-rpg-hero-card {
+  min-height: 116px;
+}
+
+.brain-rpg-hero-card strong {
+  display: block;
+  font-size: 1.35rem;
+  line-height: 1.2;
+}
+
+.brain-rpg-xp-bar {
+  margin-top: 8px;
+  height: 6px;
+  border-radius: 999px;
+  background: #ececf3;
+  overflow: hidden;
+}
+
+.brain-rpg-xp-bar span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #7c5cff, #4f8cff);
+}
+
+.brain-rpg-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.brain-rpg-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+@media (max-width: 960px) {
+  .brain-rpg-purpose { align-items: flex-start; flex-direction: column; }
+  .brain-rpg-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.brain-rpg-skill-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border-subtle, #eee);
+}
+
+.brain-rpg-skill-row:last-child {
+  border-bottom: none;
+}
+
+.brain-rpg-skill-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.brain-rpg-skill-meta strong {
+  font-size: 0.92rem;
+}
+
+.brain-rpg-skill-meta span {
+  font-size: 0.78rem;
+  color: var(--text-muted, #666);
+}
+
+.brain-rpg-fragment-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.86rem;
+}
+
+.brain-rpg-fragment-table th,
+.brain-rpg-fragment-table td {
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--border-subtle, #eee);
+  text-align: left;
+  vertical-align: top;
+}
+
+.brain-rpg-dream-item {
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border-subtle, #eee);
+}
+
+.brain-rpg-dream-item:last-child {
+  border-bottom: none;
+}
+
+.brain-rpg-dream-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 4px;
+  font-size: 0.78rem;
+  color: var(--text-muted, #666);
+}
+
+.brain-rpg-empty {
+  padding: 24px 12px;
+  text-align: center;
+  color: var(--text-muted, #666);
+}
+
+.brain-rpg-game-shell {
+  display: grid;
+  grid-template-columns: minmax(280px, 1.2fr) minmax(260px, 1fr);
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.brain-rpg-scene-col {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.brain-rpg-zone-hint {
+  margin: 0;
+  font-size: 0.8rem;
+  line-height: 1.45;
+  padding: 0 4px;
+}
+
+@media (max-width: 960px) {
+  .brain-rpg-game-shell {
+    grid-template-columns: 1fr;
+  }
+}
+
+.brain-rpg-scene {
+  position: relative;
+  min-height: 260px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border-subtle, #dfe3f0);
+  background: linear-gradient(180deg, #dff3ff 0%, #eef8e8 45%, #d8efc8 100%);
+}
+
+.brain-rpg-zone {
+  position: absolute;
+  z-index: 1;
+  border: 1px dashed rgba(90, 110, 140, 0.35);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.12);
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+
+.brain-rpg-zone:hover {
+  background: rgba(255, 255, 255, 0.28);
+  border-color: rgba(90, 110, 180, 0.55);
+}
+
+.brain-rpg-zone--active {
+  border-style: solid;
+  border-color: rgba(124, 92, 255, 0.55);
+  box-shadow: inset 0 0 0 1px rgba(124, 92, 255, 0.2);
+}
+
+.brain-rpg-zone--selected {
+  background: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 0 0 2px rgba(124, 92, 255, 0.35);
+}
+
+.brain-rpg-zone-label {
+  position: absolute;
+  top: 4px;
+  left: 6px;
+  font-size: 0.68rem;
+  color: rgba(40, 50, 80, 0.75);
+  pointer-events: none;
+}
+
+.brain-rpg-scene-zone {
+  font-size: 0.72rem;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.brain-rpg-scene-bg {
+  position: absolute;
+  inset: 0;
+  opacity: 0.35;
+  background-image:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.35) 1px, transparent 1px),
+    linear-gradient(rgba(255, 255, 255, 0.35) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.brain-rpg-scene-hud {
+  position: absolute;
+  top: 10px;
+  left: 12px;
+  right: 12px;
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  z-index: 2;
+}
+
+.brain-rpg-scene-name {
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.brain-rpg-scene-activity {
+  font-size: 0.78rem;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.75);
+}
+
+.brain-rpg-scene-activity--posting {
+  background: #ffe8c8;
+}
+
+.brain-rpg-scene-activity--exploring {
+  background: #dff5e8;
+}
+
+.brain-rpg-scene-activity--dreaming,
+.brain-rpg-scene-activity--tidying,
+.brain-rpg-scene-activity--compressing {
+  background: #e8ddff;
+}
+
+.brain-rpg-avatar-wrap {
+  position: absolute;
+  transform: translateX(-50%);
+  z-index: 3;
+  transition: left 0.12s linear, bottom 0.12s linear;
+}
+
+.brain-rpg-avatar-wrap--walk .brain-rpg-avatar {
+  animation: brain-rpg-bob 0.45s ease-in-out infinite;
+}
+
+.brain-rpg-bubble {
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 160px;
+  max-width: 260px;
+  padding: 10px 12px 8px;
+  border-radius: 12px;
+  background: #fff;
+  border: 1px solid #d8deef;
+  box-shadow: 0 8px 20px rgba(40, 50, 90, 0.12);
+  font-size: 0.82rem;
+  line-height: 1.45;
+  text-align: center;
+}
+
+.brain-rpg-bubble-text {
+  display: block;
+}
+
+.brain-rpg-thought-badge {
+  display: inline-block;
+  margin-top: 6px;
+  padding: 1px 7px;
+  border-radius: 999px;
+  font-size: 0.68rem;
+  letter-spacing: 0.02em;
+}
+
+.brain-rpg-thought-badge--rule {
+  background: #eef1f8;
+  color: #5a6478;
+}
+
+.brain-rpg-thought-badge--model {
+  background: #ebe4ff;
+  color: #5b45b8;
+}
+
+.brain-rpg-bubble--model {
+  border-color: #c9b8ff;
+  box-shadow: 0 8px 22px rgba(90, 70, 180, 0.14);
+}
+
+.brain-rpg-bubble::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -8px;
+  transform: translateX(-50%);
+  border: 8px solid transparent;
+  border-top-color: #fff;
+}
+
+.brain-rpg-bubble--busy {
+  background: #fff8e8;
+  border-color: #f0d9a8;
+}
+
+.brain-rpg-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  background: linear-gradient(180deg, #7c5cff, #5b7cff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  box-shadow: 0 10px 24px rgba(70, 80, 180, 0.25);
+}
+
+.brain-rpg-avatar--left {
+  transform: scaleX(-1);
+}
+
+.brain-rpg-avatar-face {
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.brain-rpg-avatar-shadow {
+  display: block;
+  width: 42px;
+  height: 8px;
+  margin: 6px auto 0;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.15);
+}
+
+@keyframes brain-rpg-bob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+.brain-rpg-side-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.brain-rpg-schedule-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.brain-rpg-schedule-row input[type='text'] {
+  flex: 1;
+  min-width: 140px;
+}
+.brain-rpg-purpose {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+  padding: 14px 16px;
+  border: 1px solid color-mix(in srgb, #7c5cff 18%, var(--border-subtle, #e8e8ef));
+  border-radius: 14px;
+  background: linear-gradient(100deg, rgba(124, 92, 255, .07), rgba(255, 255, 255, .65));
+}
+
+.brain-rpg-purpose > div { display: grid; gap: 4px; }
+.brain-rpg-purpose-kicker { color: #6954d6; font-size: 11px; font-weight: 800; letter-spacing: .08em; }
+.brain-rpg-purpose strong { font-size: 15px; }
+.brain-rpg-purpose p { margin: 0; color: var(--text-muted, #666); font-size: 12px; line-height: 1.5; }

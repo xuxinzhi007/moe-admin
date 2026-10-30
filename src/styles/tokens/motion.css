@@ -1,0 +1,36 @@
+/**
+ * Moe Admin V3 — motion tokens.
+ * SSOT: moe-admin/DESIGN.md §7
+ */
+:root {
+  --duration-fast: 150ms;
+  --duration-page: 300ms;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --stagger-metric: 50ms;
+}
+
+@keyframes admin-page-enter {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.admin-page-enter {
+  animation: admin-page-enter var(--duration-page) var(--ease-out) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration-fast: 0ms;
+    --duration-page: 0ms;
+  }
+
+  .admin-page-enter {
+    animation: none;
+  }
+}

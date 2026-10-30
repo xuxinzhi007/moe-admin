@@ -1,0 +1,311 @@
+.bot-flow-canvas-wrap {
+  margin-top: 12px;
+}
+
+.bot-flow-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 12px;
+  padding: 0 4px;
+}
+
+.bot-flow-tool-palette {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  flex: 1;
+  min-width: 200px;
+}
+
+.bot-flow-rf {
+  height: 480px;
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid var(--hairline, rgba(127, 127, 213, 0.2));
+  background: linear-gradient(145deg, rgba(127, 127, 213, 0.06), rgba(134, 168, 231, 0.1)),
+    var(--canvas, #f5f7fa);
+}
+
+.bot-flow-handle {
+  width: 10px;
+  height: 10px;
+  background: #7f7fd5;
+  border: 2px solid #fff;
+  z-index: 2;
+}
+
+.bot-flow-handle--core {
+  background: #91eae4;
+}
+
+.bot-flow-handle--tool {
+  background: #86a8e7;
+}
+
+.react-flow__edge.selected .react-flow__edge-path {
+  stroke: rgba(255, 107, 107, 0.95) !important;
+  stroke-width: 3px !important;
+}
+
+.react-flow__edge:hover .react-flow__edge-path {
+  stroke-width: 3px;
+  cursor: pointer;
+}
+
+.bot-flow-tool-btn {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1px;
+  line-height: 1.2;
+  max-width: 120px;
+  padding-top: 12px;
+  padding-bottom: 6px;
+}
+
+.bot-flow-tool-btn--on-canvas {
+  border: 1px solid rgba(127, 127, 213, 0.35);
+  background: rgba(127, 127, 213, 0.08);
+  cursor: default;
+  opacity: 0.92;
+}
+
+.bot-flow-tool-btn--on-canvas.bot-flow-tool-btn--linked {
+  border-color: rgba(145, 234, 228, 0.75);
+  background: rgba(145, 234, 228, 0.12);
+}
+
+.bot-flow-tool-btn-badge {
+  position: absolute;
+  top: 4px;
+  right: 6px;
+  font-size: 9px;
+  line-height: 1;
+  padding: 2px 5px;
+  border-radius: 6px;
+  background: rgba(127, 127, 213, 0.15);
+  color: #5c5c8a;
+  font-weight: 600;
+}
+
+.bot-flow-tool-btn--linked .bot-flow-tool-btn-badge {
+  background: rgba(52, 195, 143, 0.2);
+  color: #1f7a5c;
+}
+
+.bot-flow-tool-btn:disabled {
+  pointer-events: none;
+}
+
+.bot-flow-tool-btn-zh {
+  font-size: 12px;
+}
+
+.bot-flow-node-head--core {
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.bot-flow-node--tool {
+  border-left: 3px solid #91eae4;
+  min-width: 148px;
+}
+
+.bot-flow-node--tool.bot-flow-node--ok {
+  border-left-color: rgba(52, 195, 143, 0.9);
+}
+
+.bot-flow-node--tool.bot-flow-node--fail {
+  border-left-color: rgba(255, 107, 107, 0.9);
+}
+
+/* React Flow 节点：勿用 position:absolute（会与 RF 定位冲突导致看不见） */
+.react-flow__node .bot-flow-node {
+  position: relative;
+  min-width: 140px;
+  pointer-events: auto;
+}
+
+.react-flow__node .bot-flow-node--core {
+  min-width: 200px;
+  min-height: 100px;
+  box-shadow: 0 12px 32px rgba(127, 127, 213, 0.28);
+}
+
+.react-flow__node .bot-flow-node--disabled {
+  opacity: 0.55;
+}
+
+.bot-flow-feedback {
+  margin: 0 0 10px;
+  font-size: 13px;
+}
+
+.bot-flow-canvas {
+  position: relative;
+  min-height: 380px;
+  border-radius: 20px;
+  background: linear-gradient(145deg, rgba(127, 127, 213, 0.08), rgba(134, 168, 231, 0.12)),
+    var(--canvas, #f5f7fa);
+  border: 1px solid var(--hairline, rgba(127, 127, 213, 0.2));
+  box-shadow: 0 12px 32px rgba(127, 127, 213, 0.12);
+  overflow: hidden;
+}
+
+.bot-flow-edges {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.bot-flow-edge {
+  stroke: rgba(127, 127, 213, 0.35);
+  stroke-width: 2;
+  stroke-dasharray: 6 4;
+}
+
+.bot-flow-edge--active {
+  stroke: rgba(52, 195, 143, 0.85);
+  stroke-dasharray: none;
+  animation: bot-flow-pulse-line 1.2s ease-in-out infinite;
+}
+
+.bot-flow-edge--fail {
+  stroke: rgba(255, 107, 107, 0.9);
+  stroke-dasharray: none;
+}
+
+.react-flow__node .bot-flow-node {
+  padding: 10px 12px;
+  border-radius: 16px;
+  background: #fff;
+  border: 1px solid rgba(127, 127, 213, 0.2);
+  box-shadow: 0 8px 20px rgba(127, 127, 213, 0.1);
+  cursor: grab;
+  user-select: none;
+}
+
+.react-flow__node.selected .bot-flow-node {
+  border-color: rgba(127, 127, 213, 0.55);
+  box-shadow: 0 10px 24px rgba(127, 127, 213, 0.2);
+}
+
+.bot-flow-node--core {
+  border-radius: 999px;
+  min-height: 88px;
+  background: linear-gradient(135deg, #7f7fd5, #86a8e7);
+  color: #fff;
+  border: none;
+  text-align: center;
+  padding: 16px 20px;
+  width: 168px;
+}
+
+.bot-flow-node--core .muted,
+.bot-flow-node--core .bot-flow-node-sub {
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.bot-flow-node--core strong {
+  display: block;
+  font-size: 15px;
+}
+
+.bot-flow-core-ports-hint {
+  display: block;
+  font-size: 10px;
+  margin-top: 6px;
+  opacity: 0.85;
+}
+
+.bot-flow-node-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  margin-bottom: 4px;
+}
+
+.bot-flow-node-head strong {
+  font-size: 13px;
+}
+
+.bot-flow-node-sub {
+  font-size: 11px;
+  line-height: 1.3;
+  display: block;
+}
+
+.bot-flow-node--standby {
+  opacity: 0.72;
+}
+
+.bot-flow-mode--idle .bot-flow-node--core {
+  animation: bot-flow-idle-breathe 2.8s ease-in-out infinite;
+}
+
+.bot-flow-node--running {
+  border-color: rgba(255, 182, 72, 0.7);
+  animation: bot-flow-node-glow 1s ease-in-out infinite;
+}
+
+.bot-flow-node--ok {
+  border-color: rgba(52, 195, 143, 0.55);
+}
+
+.bot-flow-node--fail {
+  border-color: rgba(255, 107, 107, 0.65);
+}
+
+.bot-flow-hint {
+  margin: 10px 4px 0;
+  font-size: 12px;
+}
+
+@keyframes bot-flow-idle-breathe {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 10px 28px rgba(127, 127, 213, 0.25);
+  }
+  50% {
+    transform: scale(1.03);
+    box-shadow: 0 14px 36px rgba(127, 127, 213, 0.35);
+  }
+}
+
+@keyframes bot-flow-node-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 182, 72, 0.35);
+  }
+  50% {
+    box-shadow: 0 0 0 6px rgba(255, 182, 72, 0.12);
+  }
+}
+
+@keyframes bot-flow-pulse-line {
+  0%,
+  100% {
+    opacity: 0.65;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bot-flow-mode--idle .bot-flow-node--core,
+  .bot-flow-node--running,
+  .bot-flow-edge--active {
+    animation: none;
+  }
+}

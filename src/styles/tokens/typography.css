@@ -1,0 +1,19 @@
+/**
+ * Moe Admin V3 — typography tokens.
+ * SSOT: moe-admin/DESIGN.md §3
+ */
+:root {
+  --font-ui: 'Inter', 'PingFang SC', 'Helvetica Neue', system-ui, sans-serif;
+  --font-mono: ui-monospace, 'JetBrains Mono', Menlo, Consolas, monospace;
+
+  --text-page: 22px;
+  --text-section: 16px;
+  --text-body: 14px;
+  --text-caption: 12px;
+  --text-micro: 11px;
+  --text-mono: 13px;
+
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+}

@@ -1,0 +1,240 @@
+/* data galaxy map · Sprint E from legacy */
+/* —— 数据星系地图 —— */
+.data-map-root {
+  position: relative;
+  padding: 22px 24px 26px;
+  border-radius: 16px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.data-map-orbit-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.data-map-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.45;
+}
+
+.data-map-orb-a {
+  width: 280px;
+  height: 280px;
+  top: -80px;
+  right: -60px;
+  background: rgba(127, 127, 213, 0.35);
+}
+
+.data-map-orb-b {
+  width: 220px;
+  height: 220px;
+  bottom: -40px;
+  left: -40px;
+  background: rgba(145, 234, 228, 0.35);
+}
+
+.data-map-grid-lines {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(127, 127, 213, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(127, 127, 213, 0.06) 1px, transparent 1px);
+  background-size: 32px 32px;
+  mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+}
+
+.data-map-head {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.data-map-head h3 {
+  margin: 0 0 4px;
+  font-size: 1.15rem;
+}
+
+.data-map-bento {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 14px;
+  margin-bottom: 22px;
+}
+
+.data-map-tile {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.82);
+  cursor: pointer;
+  text-align: left;
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+  animation: data-map-fade-in 0.45s ease backwards;
+  animation-delay: var(--tile-delay, 0ms);
+}
+
+@keyframes data-map-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.data-map-tile:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px hsla(var(--tile-hue, 220), 60%, 50%, 0.15);
+  border-color: hsla(var(--tile-hue, 220), 55%, 58%, 0.45);
+}
+
+.data-map-tile.is-active {
+  border-color: hsl(var(--tile-hue, 220), 55%, 58%);
+  box-shadow: 0 0 0 2px hsla(var(--tile-hue, 220), 55%, 58%, 0.25);
+  background: linear-gradient(145deg, hsla(var(--tile-hue, 220), 70%, 96%, 0.9), #fff);
+}
+
+.data-map-tile-glow {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: hsla(var(--tile-hue, 220), 70%, 60%, 0.2);
+  filter: blur(20px);
+}
+
+.data-map-tile-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.data-map-tile-icon {
+  font-size: 26px;
+  line-height: 1;
+}
+
+.data-map-tile-name {
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.data-map-tile-stats {
+  font-size: 11px;
+  color: var(--muted);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  align-items: center;
+}
+
+.data-map-dot {
+  opacity: 0.5;
+}
+
+.data-map-tile-bar {
+  height: 4px;
+  border-radius: 999px;
+  background: var(--panel2);
+  overflow: hidden;
+}
+
+.data-map-tile-bar span {
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, hsl(var(--tile-hue, 220), 65%, 55%), hsl(var(--tile-hue, 220), 75%, 68%));
+  transition: width 0.5s ease;
+}
+
+.data-map-ring {
+  width: 52px;
+  height: 52px;
+  flex-shrink: 0;
+}
+
+.data-map-ring-track {
+  fill: none;
+  stroke: var(--panel2);
+  stroke-width: 5;
+}
+
+.data-map-ring-fill {
+  fill: none;
+  stroke-width: 5;
+  stroke-linecap: round;
+}
+
+.data-map-ring-text {
+  fill: var(--text);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.data-map-table-wrap {
+  position: relative;
+  padding: 16px;
+  border-radius: 12px;
+  background: var(--panel2);
+  border: 1px solid var(--border);
+}
+
+.data-map-table-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.data-map-table-head h4 {
+  margin: 0;
+  font-size: 13px;
+}
+
+.data-map-table-scroll {
+  max-height: 320px;
+  overflow: auto;
+}
+
+.data-map-table-sub {
+  font-size: 11px;
+  margin-top: 2px;
+}
+
+.data-map-table-more {
+  margin: 10px 0 0;
+  font-size: 12px;
+  text-align: center;
+}
+@media (max-width: 900px) {
+  .data-map-bento {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .data-map-bento {
+    grid-template-columns: 1fr;
+  }
+}
+

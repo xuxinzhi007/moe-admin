@@ -1,0 +1,2828 @@
+{
+  "schemaVersion": 1,
+  "domain": "admin",
+  "generatedAt": "2026-09-08T11:22:52.546Z",
+  "nodes": [
+    {
+      "weight": 4,
+      "id": "root:admin",
+      "kind": "root",
+      "label": "moe-admin",
+      "summary": "workspace → nav → route → page",
+      "ref_id": "moe-admin/src/App.tsx"
+    },
+    {
+      "weight": 3,
+      "id": "ws:biz",
+      "kind": "workspace",
+      "label": "biz",
+      "summary": "WorkspaceId",
+      "ref_id": "moe-admin/src/config/workspaceNav.ts"
+    },
+    {
+      "weight": 3,
+      "id": "ws:ai",
+      "kind": "workspace",
+      "label": "ai",
+      "summary": "WorkspaceId",
+      "ref_id": "moe-admin/src/config/workspaceNav.ts"
+    },
+    {
+      "weight": 3,
+      "id": "ws:infra",
+      "kind": "workspace",
+      "label": "infra",
+      "summary": "WorkspaceId",
+      "ref_id": "moe-admin/src/config/workspaceNav.ts"
+    },
+    {
+      "weight": 2,
+      "id": "nav:/biz",
+      "kind": "nav_item",
+      "label": "工作台",
+      "summary": "运营工作台",
+      "ref_id": "/biz",
+      "meta": {
+        "to": "/biz"
+      }
+    },
+    {
+      "weight": 2,
+      "id": "navgroup:biz-users",
+      "kind": "nav_group",
+      "label": "App 用户",
+      "summary": "biz-users",
+      "ref_id": "moe-admin/src/config/workspaceNav.ts"
+    },
+    {
+      "weight": 2,
+      "id": "nav:/biz/users",
+      "kind": "nav_item",
+      "label": "用户列表",
+      "summary": "用户与账号管理",
+      "ref_id": "/biz/users",
+      "meta": {
+        "to": "/biz/users"
+      }
+    },
+    {
+      "weight": 2,
+      "id": "nav:/biz/vip/plans",
+      "kind": "nav_item",
+      "label": "用户列表",
+      "summary": "用户与账号管理",
+      "ref_id": "/biz/vip/plans",
+      "meta": {
+        "to": "/biz/vip/plans"
+      }
+    },
+    {
+      "weight": 2,
+      "id": "nav:/biz/wallet/orders",
+      "kind": "nav_item",
+      "label": "用户列表",
+      "summary": "用户与账号管理",
+      "ref_id": "/biz/wallet/orders",
+      "meta": {
+        "to": "/biz/wallet/orders"
+      }
+    },
+    {
+      "weight": 2,
+      "id": "nav:/biz/growth",
+      "kind": "nav_item",
+      "label": "用户列表",
+      "summary": "用户与账号管理",
+      "ref_id": "/biz/growth",
+      "meta": {
+        "to": "/biz/growth"
+      }
+    },
+    {
+      "weight": 2,
+      "id": "nav:/biz/social",
+      "kind": "nav_item",
+      "label": "会员与套餐",
+      "summary": "VIP 套餐管理",
+      "ref_id": "/biz/social",
+      "meta": {
+        "to": "/biz/social"
+      }
+    },
+    {
+      "weight": 2,
+      "id": "navgroup:biz-pet-content",
+      "kind": "nav_group",
+      "label": "养成内容",
+      "summary": "biz-pet-content",
+      "ref_id": "moe-admin/src/config/workspaceNav.ts"
+    },
+    {
+      "weight": 2,
+      "id": "nav:/biz/pet/content",
+      "kind": "nav_item",
+      "label": "内容总览",
+      "summary": "角色 / 家具 / 装饰官方包",
+      "ref_id": "/biz/pet/content",
+      "meta": {
+        "to": "/biz/pet/content"
+      }
+    },
+    {
+      "weight": 2,
+      "id": "nav:/biz/pet/avatar",
+      "kind": "nav_item",
+      "label": "序列帧工作台",
+      "summary": "AI 序列帧整理 · 网格 Sheet 导出",
+      "ref_id": "/biz/pet/avatar",
+      "meta": {
+        "to": "/biz/pet/avatar"
+      }
+    },
+    {
+      "weight": 2,
+      "id": "nav:/biz/pet/furniture",
+      "kind": "nav_item",
+      "label": "家具",
+      "summary": "单品 PNG · 场景元数据",
+      "ref_id": "/biz/pet/furniture",
+      "meta": {
+        "to": "/biz/pet/furniture"
+      }
+    },
+    {
+      "weight": 2,
+      "id": "nav:/biz/pet/decor",
+      "kind": "nav_item",
+      "label": "装饰",
+      "summary": "墙贴 / 挂饰（规划）",
+      "ref_id": "/biz/pet/decor",
+      "meta": {
+        "to": "/biz/pet/decor"
+      }
+    },
+    {
+      "weight": 2,
+      "id": "navgroup:biz-content",
+      "kind": "nav_group",
+      "label": "内容运营",
+      "summary": "biz-content",
+      "ref_id": "moe-admin/src/config/workspaceNav.ts"
+    },
+    {
+      "weight": 2,
+      "id": "nav:/biz/content/posts",
+      "kind": "nav_item",
+      "label": "动态审核",
+      "summary": "动态内容审核",
+      "ref_id": "/biz/content/posts",
+      "meta": {
+        "to": "/biz/content/posts"
+      }
+    },
+    {
+      "weight": 2,
+      "id": "nav:/biz/content/comments",
+      "kind": "nav_item",
+      "label": "动态审核",
+      "summary": "动态内容审核",
+      "ref_id": "/biz/content/comments",
+      "meta": {
+        "to": "/biz/content/comments"
+      }
+    },
+    {
+      "weight": 2,
+      "id": "nav:/biz/content/community",
+      "kind": "nav_item",
+      "label": "动态审核",
+      "summary": "动态内容审核",
+      "ref_id": "/biz/content/community",
+      "meta": {
+        "to": "/biz/content/community"
+      }
+    },
+    {
+      "weight": 2,
+      "id": "nav:/biz/content/reports",
+      "kind": "nav_item",
+      "label": "动态审核",
+      "summary": "动态内容审核",
+      "ref_id": "/biz/content/reports",
+      "meta": {
+        "to": "/biz/content/reports"
+      }
+    },
+    {
+      "weight": 2,
+      "id": "nav:/biz/announcements",
+      "kind": "nav_item",
+      "label": "评论管理",
+      "summary": "评论内容审核",
+      "ref_id": "/biz/announcements",
+      "meta": {
+        "to": "/biz/announcements"
+      }
+    },
+    {
+      "weight": 2,
+      "id": "nav:/biz/update",
+      "kind": "nav_item",
+      "label": "兴趣社区",
+      "summary": "社区与圈子管理",
+      "ref_id": "/biz/update",
+      "meta": {
+        "to": "/biz/update"
+      }
+    },
+    {
+      "weight": 2,
+      "id": "nav:/biz/notify",
+      "kind": "nav_item",
+      "label": "举报处理",
+      "summary": "举报工单处理",
+      "ref_id": "/biz/notify",
+      "meta": {
+        "to": "/biz/notify"
+      }
+    },
+    {
+      "weight": 2,
+      "id": "navgroup:biz-commerce",
+      "kind": "nav_group",
+      "label": "商业与数据",
+      "summary": "biz-commerce",
+      "ref_id": "moe-admin/src/config/workspaceNav.ts"
+    },
+    {
+      "weight": 2,
+      "id": "nav:/biz/gifts/catalog",
+      "kind": "nav_item",
+      "label": "礼物与扭蛋",
+      "summary": "礼物与扭蛋管理",
+      "ref_id": "/biz/gifts/catalog",
+      "meta": {
+        "to": "/biz/gifts/catalog"
+      }
+    },
+    {
+      "weight": 2,
+      "id": "nav:/biz/tags",
+      "kind": "nav_item",
+      "label": "礼物与扭蛋",
+      "summary": "礼物与扭蛋管理",
+      "ref_id": "/biz/tags",
+      "meta": {
+        "to": "/biz/tags"
+      }
+    },
+    {
+      "weight": 2,
+      "id": "nav:/biz/analytics",
+      "kind": "nav_item",
+      "label": "礼物与扭蛋",
+      "summary": "礼物与扭蛋管理",
+      "ref_id": "/biz/analytics",
+      "meta": {
+        "to": "/biz/analytics"
+      }
+    },
+    {
+      "weight": 2,
+      "id": "nav:/biz/media-gallery",
+      "kind": "nav_item",
+      "label": "礼物与扭蛋",
+      "summary": "礼物与扭蛋管理",
+      "ref_id": "/biz/media-gallery",
+      "meta": {
+        "to": "/biz/media-gallery"
+      }
+    },
+    {
+      "weight": 2,
+      "id": "nav:/ai/moe-brain",
+      "kind": "nav_item",
+      "label": "AI 大脑",
+      "summary": "脑图与推理监控",
+      "ref_id": "/ai/moe-brain",
+      "meta": {
+        "to": "/ai/moe-brain"
+      }
+    },
+    {
+      "weight": 2,
+      "id": "navgroup:ai-bots",
+      "kind": "nav_group",
+      "label": "角色与 Bot",
+      "summary": "ai-bots",
+      "ref_id": "moe-admin/src/config/workspaceNav.ts"
+    },
+    {
+      "weight": 2,
+      "id": "nav:/ai/agents",
+      "kind": "nav_item",
+      "label": "AI 角色酒馆",
+      "summary": "AI 角色管理",
+      "ref_id": "/ai/agents",
+      "meta": {
+        "to": "/ai/agents"
+      }
+    },
+    {
+      "weight": 2,
+      "id": "nav:/ai/moe-bots",
+      "kind": "nav_item",
+      "label": "AI 角色酒馆",
+      "summary": "AI 角色管理",
+      "ref_id": "/ai/moe-bots",
+      "meta": {
+        "to": "/ai/moe-bots"
+      }
+    },
+    {
+      "weight": 2,
+      "id": "nav:/ai/moe-flow",
+      "kind": "nav_item",
+      "label": "AI 角色酒馆",
+      "summary": "AI 角色管理",
+      "ref_id": "/ai/moe-flow",
+      "meta": {
+        "to": "/ai/moe-flow"
+      }
+    },
+    {
+      "weight": 2,
+      "id": "nav:/ai/moe-tools",
+      "kind": "nav_item",
+      "label": "AI 角色酒馆",
+      "summary": "AI 角色管理",
+      "ref_id": "/ai/moe-tools",
+      "meta": {
+        "to": "/ai/moe-tools"
+      }
+    },
+    {
+      "weight": 2,
+      "id": "nav:/ai/chat-logs",
+      "kind": "nav_item",
+      "label": "社区 AI Bot",
+      "summary": "Bot 配置",
+      "ref_id": "/ai/chat-logs",
+      "meta": {
+        "to": "/ai/chat-logs"
+      }
+    },
+    {
+      "weight": 2,
+      "id": "nav:/infra/deploy",
+      "kind": "nav_item",
+      "label": "运维总览",
+      "summary": "部署总览",
+      "ref_id": "/infra/deploy",
+      "meta": {
+        "to": "/infra/deploy"
+      }
+    },
+    {
+      "weight": 2,
+      "id": "navgroup:infra-platform",
+      "kind": "nav_group",
+      "label": "平台治理",
+      "summary": "infra-platform",
+      "ref_id": "moe-admin/src/config/workspaceNav.ts"
+    },
+    {
+      "weight": 2,
+      "id": "nav:/infra/platform",
+      "kind": "nav_item",
+      "label": "平台治理",
+      "summary": "平台配置与数据地图",
+      "ref_id": "/infra/platform",
+      "meta": {
+        "to": "/infra/platform"
+      }
+    },
+    {
+      "weight": 2,
+      "id": "nav:/infra/admins",
+      "kind": "nav_item",
+      "label": "平台治理",
+      "summary": "平台配置与数据地图",
+      "ref_id": "/infra/admins",
+      "meta": {
+        "to": "/infra/admins"
+      }
+    },
+    {
+      "weight": 2,
+      "id": "nav:/infra/audit",
+      "kind": "nav_item",
+      "label": "平台治理",
+      "summary": "平台配置与数据地图",
+      "ref_id": "/infra/audit",
+      "meta": {
+        "to": "/infra/audit"
+      }
+    },
+    {
+      "weight": 2,
+      "id": "navgroup:infra-release",
+      "kind": "nav_group",
+      "label": "构建与发布",
+      "summary": "infra-release",
+      "ref_id": "moe-admin/src/config/workspaceNav.ts"
+    },
+    {
+      "weight": 2,
+      "id": "nav:/infra/docker",
+      "kind": "nav_item",
+      "label": "云 Docker",
+      "summary": "VPS Docker / compose",
+      "ref_id": "/infra/docker",
+      "meta": {
+        "to": "/infra/docker"
+      }
+    },
+    {
+      "weight": 2,
+      "id": "nav:/infra/build",
+      "kind": "nav_item",
+      "label": "云 Docker",
+      "summary": "VPS Docker / compose",
+      "ref_id": "/infra/build",
+      "meta": {
+        "to": "/infra/build"
+      }
+    },
+    {
+      "weight": 2,
+      "id": "nav:/infra/release",
+      "kind": "nav_item",
+      "label": "构建流水线",
+      "summary": "本机交叉编译后端",
+      "ref_id": "/infra/release",
+      "meta": {
+        "to": "/infra/release"
+      }
+    },
+    {
+      "weight": 2,
+      "id": "nav:/infra/jobs",
+      "kind": "nav_item",
+      "label": "GitHub APK 构建",
+      "summary": "触发 flutter-release（不写 app_releases）",
+      "ref_id": "/infra/jobs",
+      "meta": {
+        "to": "/infra/jobs"
+      }
+    },
+    {
+      "weight": 2,
+      "id": "navgroup:infra-dev",
+      "kind": "nav_group",
+      "label": "开发工具",
+      "summary": "infra-dev",
+      "ref_id": "moe-admin/src/config/workspaceNav.ts"
+    },
+    {
+      "weight": 2,
+      "id": "nav:/infra/dev/codegraph",
+      "kind": "nav_item",
+      "label": "CodeGraph",
+      "summary": "跨栈依赖导航图谱（自动生成）",
+      "ref_id": "/infra/dev/codegraph",
+      "meta": {
+        "to": "/infra/dev/codegraph"
+      }
+    },
+    {
+      "weight": 2,
+      "id": "nav:/infra/platform?tab=data",
+      "kind": "nav_item",
+      "label": "/infra/platform?tab=data",
+      "summary": "/infra/platform?tab=data",
+      "ref_id": "/infra/platform?tab=data",
+      "meta": {
+        "to": "/infra/platform?tab=data"
+      }
+    },
+    {
+      "weight": 2,
+      "id": "nav:/infra/platform?tab=config",
+      "kind": "nav_item",
+      "label": "/infra/platform?tab=config",
+      "summary": "/infra/platform?tab=config",
+      "ref_id": "/infra/platform?tab=config",
+      "meta": {
+        "to": "/infra/platform?tab=config"
+      }
+    },
+    {
+      "weight": 1,
+      "id": "route:/login",
+      "kind": "route",
+      "label": "/login",
+      "summary": "LoginPage",
+      "ref_id": "moe-admin/src/App.tsx",
+      "meta": {
+        "page": "LoginPage"
+      }
+    },
+    {
+      "weight": 2,
+      "id": "page:LoginPage",
+      "kind": "page",
+      "label": "LoginPage",
+      "summary": "moe-admin/src/pages/LoginPage.tsx",
+      "ref_id": "moe-admin/src/pages/LoginPage.tsx"
+    },
+    {
+      "weight": 1,
+      "id": "route:/biz",
+      "kind": "route",
+      "label": "/biz",
+      "summary": "DashboardPage",
+      "ref_id": "moe-admin/src/App.tsx",
+      "meta": {
+        "page": "DashboardPage"
+      }
+    },
+    {
+      "weight": 2,
+      "id": "page:DashboardPage",
+      "kind": "page",
+      "label": "DashboardPage",
+      "summary": "moe-admin/src/pages/DashboardPage.tsx",
+      "ref_id": "moe-admin/src/pages/DashboardPage.tsx"
+    },
+    {
+      "weight": 1,
+      "id": "route:/biz/users",
+      "kind": "route",
+      "label": "/biz/users",
+      "summary": "UsersPage",
+      "ref_id": "moe-admin/src/App.tsx",
+      "meta": {
+        "page": "UsersPage"
+      }
+    },
+    {
+      "weight": 2,
+      "id": "page:UsersPage",
+      "kind": "page",
+      "label": "UsersPage",
+      "summary": "moe-admin/src/pages/UsersPage.tsx",
+      "ref_id": "moe-admin/src/pages/UsersPage.tsx"
+    },
+    {
+      "weight": 1,
+      "id": "route:/biz/vip/plans",
+      "kind": "route",
+      "label": "/biz/vip/plans",
+      "summary": "VipPlansPage",
+      "ref_id": "moe-admin/src/App.tsx",
+      "meta": {
+        "page": "VipPlansPage"
+      }
+    },
+    {
+      "weight": 2,
+      "id": "page:VipPlansPage",
+      "kind": "page",
+      "label": "VipPlansPage",
+      "summary": "moe-admin/src/pages/VipPlansPage.tsx",
+      "ref_id": "moe-admin/src/pages/VipPlansPage.tsx"
+    },
+    {
+      "weight": 1,
+      "id": "route:/biz/wallet/orders",
+      "kind": "route",
+      "label": "/biz/wallet/orders",
+      "summary": "WalletOrdersPage",
+      "ref_id": "moe-admin/src/App.tsx",
+      "meta": {
+        "page": "WalletOrdersPage"
+      }
+    },
+    {
+      "weight": 2,
+      "id": "page:WalletOrdersPage",
+      "kind": "page",
+      "label": "WalletOrdersPage",
+      "summary": "moe-admin/src/pages/WalletOrdersPage.tsx",
+      "ref_id": "moe-admin/src/pages/WalletOrdersPage.tsx"
+    },
+    {
+      "weight": 1,
+      "id": "route:/biz/gifts/catalog",
+      "kind": "route",
+      "label": "/biz/gifts/catalog",
+      "summary": "GiftsPage",
+      "ref_id": "moe-admin/src/App.tsx",
+      "meta": {
+        "page": "GiftsPage"
+      }
+    },
+    {
+      "weight": 2,
+      "id": "page:GiftsPage",
+      "kind": "page",
+      "label": "GiftsPage",
+      "summary": "moe-admin/src/pages/GiftsPage.tsx",
+      "ref_id": "moe-admin/src/pages/GiftsPage.tsx"
+    },
+    {
+      "weight": 1,
+      "id": "route:/biz/content/posts",
+      "kind": "route",
+      "label": "/biz/content/posts",
+      "summary": "PostsPage",
+      "ref_id": "moe-admin/src/App.tsx",
+      "meta": {
+        "page": "PostsPage"
+      }
+    },
+    {
+      "weight": 2,
+      "id": "page:PostsPage",
+      "kind": "page",
+      "label": "PostsPage",
+      "summary": "moe-admin/src/pages/PostsPage.tsx",
+      "ref_id": "moe-admin/src/pages/PostsPage.tsx"
+    },
+    {
+      "weight": 1,
+      "id": "route:/biz/content/comments",
+      "kind": "route",
+      "label": "/biz/content/comments",
+      "summary": "CommentsPage",
+      "ref_id": "moe-admin/src/App.tsx",
+      "meta": {
+        "page": "CommentsPage"
+      }
+    },
+    {
+      "weight": 2,
+      "id": "page:CommentsPage",
+      "kind": "page",
+      "label": "CommentsPage",
+      "summary": "moe-admin/src/pages/CommentsPage.tsx",
+      "ref_id": "moe-admin/src/pages/CommentsPage.tsx"
+    },
+    {
+      "weight": 1,
+      "id": "route:/biz/content/community",
+      "kind": "route",
+      "label": "/biz/content/community",
+      "summary": "CommunityGroupsPage",
+      "ref_id": "moe-admin/src/App.tsx",
+      "meta": {
+        "page": "CommunityGroupsPage"
+      }
+    },
+    {
+      "weight": 2,
+      "id": "page:CommunityGroupsPage",
+      "kind": "page",
+      "label": "CommunityGroupsPage",
+      "summary": "moe-admin/src/pages/CommunityGroupsPage.tsx",
+      "ref_id": "moe-admin/src/pages/CommunityGroupsPage.tsx"
+    },
+    {
+      "weight": 1,
+      "id": "route:/biz/content/reports",
+      "kind": "route",
+      "label": "/biz/content/reports",
+      "summary": "ReportsPage",
+      "ref_id": "moe-admin/src/App.tsx",
+      "meta": {
+        "page": "ReportsPage"
+      }
+    },
+    {
+      "weight": 2,
+      "id": "page:ReportsPage",
+      "kind": "page",
+      "label": "ReportsPage",
+      "summary": "moe-admin/src/pages/ReportsPage.tsx",
+      "ref_id": "moe-admin/src/pages/ReportsPage.tsx"
+    },
+    {
+      "weight": 1,
+      "id": "route:/biz/growth",
+      "kind": "route",
+      "label": "/biz/growth",
+      "summary": "GrowthPage",
+      "ref_id": "moe-admin/src/App.tsx",
+      "meta": {
+        "page": "GrowthPage"
+      }
+    },
+    {
+      "weight": 2,
+      "id": "page:GrowthPage",
+      "kind": "page",
+      "label": "GrowthPage",
+      "summary": "moe-admin/src/pages/GrowthPage.tsx",
+      "ref_id": "moe-admin/src/pages/GrowthPage.tsx"
+    },
+    {
+      "weight": 1,
+      "id": "route:/biz/pet/content",
+      "kind": "route",
+      "label": "/biz/pet/content",
+      "summary": "PetContentHubPage",
+      "ref_id": "moe-admin/src/App.tsx",
+      "meta": {
+        "page": "PetContentHubPage"
+      }
+    },
+    {
+      "weight": 2,
+      "id": "page:PetContentHubPage",
+      "kind": "page",
+      "label": "PetContentHubPage",
+      "summary": "moe-admin/src/pages/PetContentHubPage.tsx",
+      "ref_id": "moe-admin/src/pages/PetContentHubPage.tsx"
+    },
+    {
+      "weight": 1,
+      "id": "route:/biz/pet/avatar",
+      "kind": "route",
+      "label": "/biz/pet/avatar",
+      "summary": "SpriteStudioPage",
+      "ref_id": "moe-admin/src/App.tsx",
+      "meta": {
+        "page": "SpriteStudioPage"
+      }
+    },
+    {
+      "weight": 2,
+      "id": "page:SpriteStudioPage",
+      "kind": "page",
+      "label": "SpriteStudioPage",
+      "summary": "moe-admin/src/pages/SpriteStudioPage.tsx",
+      "ref_id": "moe-admin/src/pages/SpriteStudioPage.tsx"
+    },
+    {
+      "weight": 1,
+      "id": "route:/biz/pet/sprites",
+      "kind": "route",
+      "label": "/biz/pet/sprites",
+      "summary": "Navigate",
+      "ref_id": "moe-admin/src/App.tsx",
+      "meta": {
+        "page": "Navigate"
+      }
+    },
+    {
+      "weight": 1,
+      "id": "route:/biz/pet/furniture",
+      "kind": "route",
+      "label": "/biz/pet/furniture",
+      "summary": "PetFurnitureEditorPage",
+      "ref_id": "moe-admin/src/App.tsx",
+      "meta": {
+        "page": "PetFurnitureEditorPage"
+      }
+    },
+    {
+      "weight": 2,
+      "id": "page:PetFurnitureEditorPage",
+      "kind": "page",
+      "label": "PetFurnitureEditorPage",
+      "summary": "moe-admin/src/pages/PetFurnitureEditorPage.tsx",
+      "ref_id": "moe-admin/src/pages/PetFurnitureEditorPage.tsx"
+    },
+    {
+      "weight": 1,
+      "id": "route:/biz/pet/decor",
+      "kind": "route",
+      "label": "/biz/pet/decor",
+      "summary": "PetDecorEditorPage",
+      "ref_id": "moe-admin/src/App.tsx",
+      "meta": {
+        "page": "PetDecorEditorPage"
+      }
+    },
+    {
+      "weight": 2,
+      "id": "page:PetDecorEditorPage",
+      "kind": "page",
+      "label": "PetDecorEditorPage",
+      "summary": "moe-admin/src/pages/PetContentHubPage.tsx",
+      "ref_id": "moe-admin/src/pages/PetContentHubPage.tsx"
+    },
+    {
+      "weight": 1,
+      "id": "route:/biz/pet/lpc",
+      "kind": "route",
+      "label": "/biz/pet/lpc",
+      "summary": "Navigate",
+      "ref_id": "moe-admin/src/App.tsx",
+      "meta": {
+        "page": "Navigate"
+      }
+    },
+    {
+      "weight": 1,
+      "id": "route:/biz/announcements",
+      "kind": "route",
+      "label": "/biz/announcements",
+      "summary": "AnnouncementsPage",
+      "ref_id": "moe-admin/src/App.tsx",
+      "meta": {
+        "page": "AnnouncementsPage"
+      }
+    },
+    {
+      "weight": 2,
+      "id": "page:AnnouncementsPage",
+      "kind": "page",
+      "label": "AnnouncementsPage",
+      "summary": "moe-admin/src/pages/AnnouncementsPage.tsx",
+      "ref_id": "moe-admin/src/pages/AnnouncementsPage.tsx"
+    },
+    {
+      "weight": 1,
+      "id": "route:/biz/update",
+      "kind": "route",
+      "label": "/biz/update",
+      "summary": "AppReleasePage",
+      "ref_id": "moe-admin/src/App.tsx",
+      "meta": {
+        "page": "AppReleasePage"
+      }
+    },
+    {
+      "weight": 2,
+      "id": "page:AppReleasePage",
+      "kind": "page",
+      "label": "AppReleasePage",
+      "summary": "moe-admin/src/pages/AppReleasePage.tsx",
+      "ref_id": "moe-admin/src/pages/AppReleasePage.tsx"
+    },
+    {
+      "weight": 1,
+      "id": "route:/biz/notify",
+      "kind": "route",
+      "label": "/biz/notify",
+      "summary": "NotifyPage",
+      "ref_id": "moe-admin/src/App.tsx",
+      "meta": {
+        "page": "NotifyPage"
+      }
+    },
+    {
+      "weight": 2,
+      "id": "page:NotifyPage",
+      "kind": "page",
+      "label": "NotifyPage",
+      "summary": "moe-admin/src/pages/NotifyPage.tsx",
+      "ref_id": "moe-admin/src/pages/NotifyPage.tsx"
+    },
+    {
+      "weight": 1,
+      "id": "route:/biz/analytics",
+      "kind": "route",
+      "label": "/biz/analytics",
+      "summary": "AnalyticsPage",
+      "ref_id": "moe-admin/src/App.tsx",
+      "meta": {
+        "page": "AnalyticsPage"
+      }
+    },
+    {
+      "weight": 2,
+      "id": "page:AnalyticsPage",
+      "kind": "page",
+      "label": "AnalyticsPage",
+      "summary": "moe-admin/src/pages/AnalyticsPage.tsx",
+      "ref_id": "moe-admin/src/pages/AnalyticsPage.tsx"
+    },
+    {
+      "weight": 1,
+      "id": "route:/biz/tags",
+      "kind": "route",
+      "label": "/biz/tags",
+      "summary": "TagsCenterPage",
+      "ref_id": "moe-admin/src/App.tsx",
+      "meta": {
+        "page": "TagsCenterPage"
+      }
+    },
+    {
+      "weight": 2,
+      "id": "page:TagsCenterPage",
+      "kind": "page",
+      "label": "TagsCenterPage",
+      "summary": "moe-admin/src/pages/TagsCenterPage.tsx",
+      "ref_id": "moe-admin/src/pages/TagsCenterPage.tsx"
+    },
+    {
+      "weight": 1,
+      "id": "route:/biz/social",
+      "kind": "route",
+      "label": "/biz/social",
+      "summary": "SocialPage",
+      "ref_id": "moe-admin/src/App.tsx",
+      "meta": {
+        "page": "SocialPage"
+      }
+    },
+    {
+      "weight": 2,
+      "id": "page:SocialPage",
+      "kind": "page",
+      "label": "SocialPage",
+      "summary": "moe-admin/src/pages/SocialPage.tsx",
+      "ref_id": "moe-admin/src/pages/SocialPage.tsx"
+    },
+    {
+      "weight": 1,
+      "id": "route:/biz/media-gallery",
+      "kind": "route",
+      "label": "/biz/media-gallery",
+      "summary": "MediaGalleryPage",
+      "ref_id": "moe-admin/src/App.tsx",
+      "meta": {
+        "page": "MediaGalleryPage"
+      }
+    },
+    {
+      "weight": 2,
+      "id": "page:MediaGalleryPage",
+      "kind": "page",
+      "label": "MediaGalleryPage",
+      "summary": "moe-admin/src/pages/MediaGalleryPage.tsx",
+      "ref_id": "moe-admin/src/pages/MediaGalleryPage.tsx"
+    },
+    {
+      "weight": 1,
+      "id": "route:/ai/agents",
+      "kind": "route",
+      "label": "/ai/agents",
+      "summary": "AiAgentsPage",
+      "ref_id": "moe-admin/src/App.tsx",
+      "meta": {
+        "page": "AiAgentsPage"
+      }
+    },
+    {
+      "weight": 2,
+      "id": "page:AiAgentsPage",
+      "kind": "page",
+      "label": "AiAgentsPage",
+      "summary": "moe-admin/src/pages/AiAgentsPage.tsx",
+      "ref_id": "moe-admin/src/pages/AiAgentsPage.tsx"
+    },
+    {
+      "weight": 1,
+      "id": "route:/ai/moe-bots",
+      "kind": "route",
+      "label": "/ai/moe-bots",
+      "summary": "MoeBotsPage",
+      "ref_id": "moe-admin/src/App.tsx",
+      "meta": {
+        "page": "MoeBotsPage"
+      }
+    },
+    {
+      "weight": 2,
+      "id": "page:MoeBotsPage",
+      "kind": "page",
+      "label": "MoeBotsPage",
+      "summary": "moe-admin/src/pages/MoeBotsPage.tsx",
+      "ref_id": "moe-admin/src/pages/MoeBotsPage.tsx"
+    },
+    {
+      "weight": 1,
+      "id": "route:/ai/moe-bots/:agentKey/brain",
+      "kind": "route",
+      "label": "/ai/moe-bots/:agentKey/brain",
+      "summary": "MoeBrainPage",
+      "ref_id": "moe-admin/src/App.tsx",
+      "meta": {
+        "page": "MoeBrainPage"
+      }
+    },
+    {
+      "weight": 2,
+      "id": "page:MoeBrainPage",
+      "kind": "page",
+      "label": "MoeBrainPage",
+      "summary": "moe-admin/src/pages/MoeBrainPage.tsx",
+      "ref_id": "moe-admin/src/pages/MoeBrainPage.tsx"
+    },
+    {
+      "weight": 1,
+      "id": "route:/ai/moe-brain",
+      "kind": "route",
+      "label": "/ai/moe-brain",
+      "summary": "MoeBrainPage",
+      "ref_id": "moe-admin/src/App.tsx",
+      "meta": {
+        "page": "MoeBrainPage"
+      }
+    },
+    {
+      "weight": 1,
+      "id": "route:/ai/moe-flow",
+      "kind": "route",
+      "label": "/ai/moe-flow",
+      "summary": "MoeBotFlowPage",
+      "ref_id": "moe-admin/src/App.tsx",
+      "meta": {
+        "page": "MoeBotFlowPage"
+      }
+    },
+    {
+      "weight": 2,
+      "id": "page:MoeBotFlowPage",
+      "kind": "page",
+      "label": "MoeBotFlowPage",
+      "summary": "moe-admin/src/pages/MoeBotFlowPage.tsx",
+      "ref_id": "moe-admin/src/pages/MoeBotFlowPage.tsx"
+    },
+    {
+      "weight": 1,
+      "id": "route:/ai/moe-tools",
+      "kind": "route",
+      "label": "/ai/moe-tools",
+      "summary": "MoeToolsPage",
+      "ref_id": "moe-admin/src/App.tsx",
+      "meta": {
+        "page": "MoeToolsPage"
+      }
+    },
+    {
+      "weight": 2,
+      "id": "page:MoeToolsPage",
+      "kind": "page",
+      "label": "MoeToolsPage",
+      "summary": "moe-admin/src/pages/MoeToolsPage.tsx",
+      "ref_id": "moe-admin/src/pages/MoeToolsPage.tsx"
+    },
+    {
+      "weight": 1,
+      "id": "route:/ai/chat-logs",
+      "kind": "route",
+      "label": "/ai/chat-logs",
+      "summary": "AiChatLogsPage",
+      "ref_id": "moe-admin/src/App.tsx",
+      "meta": {
+        "page": "AiChatLogsPage"
+      }
+    },
+    {
+      "weight": 2,
+      "id": "page:AiChatLogsPage",
+      "kind": "page",
+      "label": "AiChatLogsPage",
+      "summary": "moe-admin/src/pages/AiChatLogsPage.tsx",
+      "ref_id": "moe-admin/src/pages/AiChatLogsPage.tsx"
+    },
+    {
+      "weight": 1,
+      "id": "route:/infra/platform",
+      "kind": "route",
+      "label": "/infra/platform",
+      "summary": "PlatformPage",
+      "ref_id": "moe-admin/src/App.tsx",
+      "meta": {
+        "page": "PlatformPage"
+      }
+    },
+    {
+      "weight": 2,
+      "id": "page:PlatformPage",
+      "kind": "page",
+      "label": "PlatformPage",
+      "summary": "moe-admin/src/pages/PlatformPage.tsx",
+      "ref_id": "moe-admin/src/pages/PlatformPage.tsx"
+    },
+    {
+      "weight": 1,
+      "id": "route:/infra/admins",
+      "kind": "route",
+      "label": "/infra/admins",
+      "summary": "AdminAccountsPage",
+      "ref_id": "moe-admin/src/App.tsx",
+      "meta": {
+        "page": "AdminAccountsPage"
+      }
+    },
+    {
+      "weight": 2,
+      "id": "page:AdminAccountsPage",
+      "kind": "page",
+      "label": "AdminAccountsPage",
+      "summary": "moe-admin/src/pages/AdminAccountsPage.tsx",
+      "ref_id": "moe-admin/src/pages/AdminAccountsPage.tsx"
+    },
+    {
+      "weight": 1,
+      "id": "route:/infra/audit",
+      "kind": "route",
+      "label": "/infra/audit",
+      "summary": "AuditLogsPage",
+      "ref_id": "moe-admin/src/App.tsx",
+      "meta": {
+        "page": "AuditLogsPage"
+      }
+    },
+    {
+      "weight": 2,
+      "id": "page:AuditLogsPage",
+      "kind": "page",
+      "label": "AuditLogsPage",
+      "summary": "moe-admin/src/pages/AuditLogsPage.tsx",
+      "ref_id": "moe-admin/src/pages/AuditLogsPage.tsx"
+    },
+    {
+      "weight": 1,
+      "id": "route:/infra/deploy",
+      "kind": "route",
+      "label": "/infra/deploy",
+      "summary": "OverviewPage",
+      "ref_id": "moe-admin/src/App.tsx",
+      "meta": {
+        "page": "OverviewPage"
+      }
+    },
+    {
+      "weight": 2,
+      "id": "page:OverviewPage",
+      "kind": "page",
+      "label": "OverviewPage",
+      "summary": "moe-admin/src/pages/OverviewPage.tsx",
+      "ref_id": "moe-admin/src/pages/OverviewPage.tsx"
+    },
+    {
+      "weight": 1,
+      "id": "route:/infra/docker",
+      "kind": "route",
+      "label": "/infra/docker",
+      "summary": "DockerPage",
+      "ref_id": "moe-admin/src/App.tsx",
+      "meta": {
+        "page": "DockerPage"
+      }
+    },
+    {
+      "weight": 2,
+      "id": "page:DockerPage",
+      "kind": "page",
+      "label": "DockerPage",
+      "summary": "moe-admin/src/pages/DockerPage.tsx",
+      "ref_id": "moe-admin/src/pages/DockerPage.tsx"
+    },
+    {
+      "weight": 1,
+      "id": "route:/infra/build",
+      "kind": "route",
+      "label": "/infra/build",
+      "summary": "BuildPage",
+      "ref_id": "moe-admin/src/App.tsx",
+      "meta": {
+        "page": "BuildPage"
+      }
+    },
+    {
+      "weight": 2,
+      "id": "page:BuildPage",
+      "kind": "page",
+      "label": "BuildPage",
+      "summary": "moe-admin/src/pages/BuildPage.tsx",
+      "ref_id": "moe-admin/src/pages/BuildPage.tsx"
+    },
+    {
+      "weight": 1,
+      "id": "route:/infra/release",
+      "kind": "route",
+      "label": "/infra/release",
+      "summary": "ReleasePage",
+      "ref_id": "moe-admin/src/App.tsx",
+      "meta": {
+        "page": "ReleasePage"
+      }
+    },
+    {
+      "weight": 2,
+      "id": "page:ReleasePage",
+      "kind": "page",
+      "label": "ReleasePage",
+      "summary": "moe-admin/src/pages/ReleasePage.tsx",
+      "ref_id": "moe-admin/src/pages/ReleasePage.tsx"
+    },
+    {
+      "weight": 1,
+      "id": "route:/infra/jobs",
+      "kind": "route",
+      "label": "/infra/jobs",
+      "summary": "JobsPage",
+      "ref_id": "moe-admin/src/App.tsx",
+      "meta": {
+        "page": "JobsPage"
+      }
+    },
+    {
+      "weight": 2,
+      "id": "page:JobsPage",
+      "kind": "page",
+      "label": "JobsPage",
+      "summary": "moe-admin/src/pages/JobsPage.tsx",
+      "ref_id": "moe-admin/src/pages/JobsPage.tsx"
+    },
+    {
+      "weight": 1,
+      "id": "route:/infra/dev/codegraph",
+      "kind": "route",
+      "label": "/infra/dev/codegraph",
+      "summary": "CodeGraphPage",
+      "ref_id": "moe-admin/src/App.tsx",
+      "meta": {
+        "page": "CodeGraphPage"
+      }
+    },
+    {
+      "weight": 2,
+      "id": "page:CodeGraphPage",
+      "kind": "page",
+      "label": "CodeGraphPage",
+      "summary": "moe-admin/src/pages/CodeGraphPage.tsx",
+      "ref_id": "moe-admin/src/pages/CodeGraphPage.tsx"
+    },
+    {
+      "weight": 1,
+      "id": "route:/infra/data",
+      "kind": "route",
+      "label": "/infra/data",
+      "summary": "PlatformTabRedirect",
+      "ref_id": "moe-admin/src/App.tsx",
+      "meta": {
+        "page": "PlatformTabRedirect"
+      }
+    },
+    {
+      "weight": 2,
+      "id": "page:PlatformTabRedirect",
+      "kind": "page",
+      "label": "PlatformTabRedirect",
+      "summary": "moe-admin/src/pages/PlatformTabRedirect.tsx",
+      "ref_id": "moe-admin/src/pages/PlatformTabRedirect.tsx"
+    },
+    {
+      "weight": 1,
+      "id": "route:/infra/app-config",
+      "kind": "route",
+      "label": "/infra/app-config",
+      "summary": "PlatformTabRedirect",
+      "ref_id": "moe-admin/src/App.tsx",
+      "meta": {
+        "page": "PlatformTabRedirect"
+      }
+    },
+    {
+      "weight": 1,
+      "id": "route:/app/moe-bots/:agentKey/brain",
+      "kind": "route",
+      "label": "/app/moe-bots/:agentKey/brain",
+      "summary": "LegacyMoeBotBrainRedirect",
+      "ref_id": "moe-admin/src/App.tsx",
+      "meta": {
+        "page": "LegacyMoeBotBrainRedirect"
+      }
+    },
+    {
+      "weight": 2,
+      "id": "page:LegacyMoeBotBrainRedirect",
+      "kind": "page",
+      "label": "LegacyMoeBotBrainRedirect",
+      "summary": "moe-admin/src/pages/LegacyMoeBotBrainRedirect.tsx",
+      "ref_id": "moe-admin/src/pages/LegacyMoeBotBrainRedirect.tsx"
+    },
+    {
+      "weight": 1,
+      "id": "route:/users/:userId",
+      "kind": "route",
+      "label": "/users/:userId",
+      "summary": "LegacyUserDetailRedirect",
+      "ref_id": "moe-admin/src/App.tsx",
+      "meta": {
+        "page": "LegacyUserDetailRedirect"
+      }
+    },
+    {
+      "weight": 2,
+      "id": "page:LegacyUserDetailRedirect",
+      "kind": "page",
+      "label": "LegacyUserDetailRedirect",
+      "summary": "moe-admin/src/pages/LegacyUserDetailRedirect.tsx",
+      "ref_id": "moe-admin/src/pages/LegacyUserDetailRedirect.tsx"
+    },
+    {
+      "weight": 1,
+      "id": "feature:codegraph",
+      "kind": "feature",
+      "label": "codegraph",
+      "summary": "moe-admin/src/features/codegraph",
+      "ref_id": "moe-admin/src/features/codegraph"
+    },
+    {
+      "weight": 1,
+      "id": "feature:moe-avatar",
+      "kind": "feature",
+      "label": "moe-avatar",
+      "summary": "moe-admin/src/features/moe-avatar",
+      "ref_id": "moe-admin/src/features/moe-avatar"
+    },
+    {
+      "weight": 1,
+      "id": "feature:moe-content",
+      "kind": "feature",
+      "label": "moe-content",
+      "summary": "moe-admin/src/features/moe-content",
+      "ref_id": "moe-admin/src/features/moe-content"
+    },
+    {
+      "weight": 1,
+      "id": "feature:sprite-studio",
+      "kind": "feature",
+      "label": "sprite-studio",
+      "summary": "moe-admin/src/features/sprite-studio",
+      "ref_id": "moe-admin/src/features/sprite-studio"
+    }
+  ],
+  "edges": [
+    {
+      "id": "e:root:admin|contains|ws:biz",
+      "source": "root:admin",
+      "target": "ws:biz",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:root:admin|contains|ws:ai",
+      "source": "root:admin",
+      "target": "ws:ai",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:root:admin|contains|ws:infra",
+      "source": "root:admin",
+      "target": "ws:infra",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:ws:biz|nav_to|nav:/biz",
+      "source": "ws:biz",
+      "target": "nav:/biz",
+      "relation": "nav_to",
+      "weight": 1
+    },
+    {
+      "id": "e:ws:biz|contains|navgroup:biz-users",
+      "source": "ws:biz",
+      "target": "navgroup:biz-users",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:navgroup:biz-users|nav_to|nav:/biz/users",
+      "source": "navgroup:biz-users",
+      "target": "nav:/biz/users",
+      "relation": "nav_to",
+      "weight": 1
+    },
+    {
+      "id": "e:navgroup:biz-users|nav_to|nav:/biz/vip/plans",
+      "source": "navgroup:biz-users",
+      "target": "nav:/biz/vip/plans",
+      "relation": "nav_to",
+      "weight": 1
+    },
+    {
+      "id": "e:navgroup:biz-users|nav_to|nav:/biz/wallet/orders",
+      "source": "navgroup:biz-users",
+      "target": "nav:/biz/wallet/orders",
+      "relation": "nav_to",
+      "weight": 1
+    },
+    {
+      "id": "e:navgroup:biz-users|nav_to|nav:/biz/growth",
+      "source": "navgroup:biz-users",
+      "target": "nav:/biz/growth",
+      "relation": "nav_to",
+      "weight": 1
+    },
+    {
+      "id": "e:navgroup:biz-users|nav_to|nav:/biz/social",
+      "source": "navgroup:biz-users",
+      "target": "nav:/biz/social",
+      "relation": "nav_to",
+      "weight": 1
+    },
+    {
+      "id": "e:ws:biz|contains|navgroup:biz-pet-content",
+      "source": "ws:biz",
+      "target": "navgroup:biz-pet-content",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:navgroup:biz-pet-content|nav_to|nav:/biz/pet/content",
+      "source": "navgroup:biz-pet-content",
+      "target": "nav:/biz/pet/content",
+      "relation": "nav_to",
+      "weight": 1
+    },
+    {
+      "id": "e:navgroup:biz-pet-content|nav_to|nav:/biz/pet/avatar",
+      "source": "navgroup:biz-pet-content",
+      "target": "nav:/biz/pet/avatar",
+      "relation": "nav_to",
+      "weight": 1
+    },
+    {
+      "id": "e:navgroup:biz-pet-content|nav_to|nav:/biz/pet/furniture",
+      "source": "navgroup:biz-pet-content",
+      "target": "nav:/biz/pet/furniture",
+      "relation": "nav_to",
+      "weight": 1
+    },
+    {
+      "id": "e:navgroup:biz-pet-content|nav_to|nav:/biz/pet/decor",
+      "source": "navgroup:biz-pet-content",
+      "target": "nav:/biz/pet/decor",
+      "relation": "nav_to",
+      "weight": 1
+    },
+    {
+      "id": "e:ws:biz|contains|navgroup:biz-content",
+      "source": "ws:biz",
+      "target": "navgroup:biz-content",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:navgroup:biz-content|nav_to|nav:/biz/content/posts",
+      "source": "navgroup:biz-content",
+      "target": "nav:/biz/content/posts",
+      "relation": "nav_to",
+      "weight": 1
+    },
+    {
+      "id": "e:navgroup:biz-content|nav_to|nav:/biz/content/comments",
+      "source": "navgroup:biz-content",
+      "target": "nav:/biz/content/comments",
+      "relation": "nav_to",
+      "weight": 1
+    },
+    {
+      "id": "e:navgroup:biz-content|nav_to|nav:/biz/content/community",
+      "source": "navgroup:biz-content",
+      "target": "nav:/biz/content/community",
+      "relation": "nav_to",
+      "weight": 1
+    },
+    {
+      "id": "e:navgroup:biz-content|nav_to|nav:/biz/content/reports",
+      "source": "navgroup:biz-content",
+      "target": "nav:/biz/content/reports",
+      "relation": "nav_to",
+      "weight": 1
+    },
+    {
+      "id": "e:navgroup:biz-content|nav_to|nav:/biz/announcements",
+      "source": "navgroup:biz-content",
+      "target": "nav:/biz/announcements",
+      "relation": "nav_to",
+      "weight": 1
+    },
+    {
+      "id": "e:navgroup:biz-content|nav_to|nav:/biz/update",
+      "source": "navgroup:biz-content",
+      "target": "nav:/biz/update",
+      "relation": "nav_to",
+      "weight": 1
+    },
+    {
+      "id": "e:navgroup:biz-content|nav_to|nav:/biz/notify",
+      "source": "navgroup:biz-content",
+      "target": "nav:/biz/notify",
+      "relation": "nav_to",
+      "weight": 1
+    },
+    {
+      "id": "e:ws:biz|contains|navgroup:biz-commerce",
+      "source": "ws:biz",
+      "target": "navgroup:biz-commerce",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:navgroup:biz-commerce|nav_to|nav:/biz/gifts/catalog",
+      "source": "navgroup:biz-commerce",
+      "target": "nav:/biz/gifts/catalog",
+      "relation": "nav_to",
+      "weight": 1
+    },
+    {
+      "id": "e:navgroup:biz-commerce|nav_to|nav:/biz/tags",
+      "source": "navgroup:biz-commerce",
+      "target": "nav:/biz/tags",
+      "relation": "nav_to",
+      "weight": 1
+    },
+    {
+      "id": "e:navgroup:biz-commerce|nav_to|nav:/biz/analytics",
+      "source": "navgroup:biz-commerce",
+      "target": "nav:/biz/analytics",
+      "relation": "nav_to",
+      "weight": 1
+    },
+    {
+      "id": "e:navgroup:biz-commerce|nav_to|nav:/biz/media-gallery",
+      "source": "navgroup:biz-commerce",
+      "target": "nav:/biz/media-gallery",
+      "relation": "nav_to",
+      "weight": 1
+    },
+    {
+      "id": "e:ws:ai|nav_to|nav:/ai/moe-brain",
+      "source": "ws:ai",
+      "target": "nav:/ai/moe-brain",
+      "relation": "nav_to",
+      "weight": 1
+    },
+    {
+      "id": "e:ws:ai|contains|navgroup:ai-bots",
+      "source": "ws:ai",
+      "target": "navgroup:ai-bots",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:navgroup:ai-bots|nav_to|nav:/ai/agents",
+      "source": "navgroup:ai-bots",
+      "target": "nav:/ai/agents",
+      "relation": "nav_to",
+      "weight": 1
+    },
+    {
+      "id": "e:navgroup:ai-bots|nav_to|nav:/ai/moe-bots",
+      "source": "navgroup:ai-bots",
+      "target": "nav:/ai/moe-bots",
+      "relation": "nav_to",
+      "weight": 1
+    },
+    {
+      "id": "e:navgroup:ai-bots|nav_to|nav:/ai/moe-flow",
+      "source": "navgroup:ai-bots",
+      "target": "nav:/ai/moe-flow",
+      "relation": "nav_to",
+      "weight": 1
+    },
+    {
+      "id": "e:navgroup:ai-bots|nav_to|nav:/ai/moe-tools",
+      "source": "navgroup:ai-bots",
+      "target": "nav:/ai/moe-tools",
+      "relation": "nav_to",
+      "weight": 1
+    },
+    {
+      "id": "e:navgroup:ai-bots|nav_to|nav:/ai/chat-logs",
+      "source": "navgroup:ai-bots",
+      "target": "nav:/ai/chat-logs",
+      "relation": "nav_to",
+      "weight": 1
+    },
+    {
+      "id": "e:ws:infra|nav_to|nav:/infra/deploy",
+      "source": "ws:infra",
+      "target": "nav:/infra/deploy",
+      "relation": "nav_to",
+      "weight": 1
+    },
+    {
+      "id": "e:ws:infra|contains|navgroup:infra-platform",
+      "source": "ws:infra",
+      "target": "navgroup:infra-platform",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:navgroup:infra-platform|nav_to|nav:/infra/platform",
+      "source": "navgroup:infra-platform",
+      "target": "nav:/infra/platform",
+      "relation": "nav_to",
+      "weight": 1
+    },
+    {
+      "id": "e:navgroup:infra-platform|nav_to|nav:/infra/admins",
+      "source": "navgroup:infra-platform",
+      "target": "nav:/infra/admins",
+      "relation": "nav_to",
+      "weight": 1
+    },
+    {
+      "id": "e:navgroup:infra-platform|nav_to|nav:/infra/audit",
+      "source": "navgroup:infra-platform",
+      "target": "nav:/infra/audit",
+      "relation": "nav_to",
+      "weight": 1
+    },
+    {
+      "id": "e:ws:infra|contains|navgroup:infra-release",
+      "source": "ws:infra",
+      "target": "navgroup:infra-release",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:navgroup:infra-release|nav_to|nav:/infra/docker",
+      "source": "navgroup:infra-release",
+      "target": "nav:/infra/docker",
+      "relation": "nav_to",
+      "weight": 1
+    },
+    {
+      "id": "e:navgroup:infra-release|nav_to|nav:/infra/build",
+      "source": "navgroup:infra-release",
+      "target": "nav:/infra/build",
+      "relation": "nav_to",
+      "weight": 1
+    },
+    {
+      "id": "e:navgroup:infra-release|nav_to|nav:/infra/release",
+      "source": "navgroup:infra-release",
+      "target": "nav:/infra/release",
+      "relation": "nav_to",
+      "weight": 1
+    },
+    {
+      "id": "e:navgroup:infra-release|nav_to|nav:/infra/jobs",
+      "source": "navgroup:infra-release",
+      "target": "nav:/infra/jobs",
+      "relation": "nav_to",
+      "weight": 1
+    },
+    {
+      "id": "e:ws:infra|contains|navgroup:infra-dev",
+      "source": "ws:infra",
+      "target": "navgroup:infra-dev",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:navgroup:infra-dev|nav_to|nav:/infra/dev/codegraph",
+      "source": "navgroup:infra-dev",
+      "target": "nav:/infra/dev/codegraph",
+      "relation": "nav_to",
+      "weight": 1
+    },
+    {
+      "id": "e:ws:infra|nav_to|nav:/biz/users",
+      "source": "ws:infra",
+      "target": "nav:/biz/users",
+      "relation": "nav_to",
+      "weight": 1
+    },
+    {
+      "id": "e:ws:infra|nav_to|nav:/biz/vip/plans",
+      "source": "ws:infra",
+      "target": "nav:/biz/vip/plans",
+      "relation": "nav_to",
+      "weight": 1
+    },
+    {
+      "id": "e:ws:infra|nav_to|nav:/biz/wallet/orders",
+      "source": "ws:infra",
+      "target": "nav:/biz/wallet/orders",
+      "relation": "nav_to",
+      "weight": 1
+    },
+    {
+      "id": "e:ws:infra|nav_to|nav:/biz/gifts/catalog",
+      "source": "ws:infra",
+      "target": "nav:/biz/gifts/catalog",
+      "relation": "nav_to",
+      "weight": 1
+    },
+    {
+      "id": "e:ws:infra|nav_to|nav:/biz/content/posts",
+      "source": "ws:infra",
+      "target": "nav:/biz/content/posts",
+      "relation": "nav_to",
+      "weight": 1
+    },
+    {
+      "id": "e:ws:infra|nav_to|nav:/biz/content/comments",
+      "source": "ws:infra",
+      "target": "nav:/biz/content/comments",
+      "relation": "nav_to",
+      "weight": 1
+    },
+    {
+      "id": "e:ws:infra|nav_to|nav:/biz/content/community",
+      "source": "ws:infra",
+      "target": "nav:/biz/content/community",
+      "relation": "nav_to",
+      "weight": 1
+    },
+    {
+      "id": "e:ws:infra|nav_to|nav:/biz/content/reports",
+      "source": "ws:infra",
+      "target": "nav:/biz/content/reports",
+      "relation": "nav_to",
+      "weight": 1
+    },
+    {
+      "id": "e:ws:infra|nav_to|nav:/biz/growth",
+      "source": "ws:infra",
+      "target": "nav:/biz/growth",
+      "relation": "nav_to",
+      "weight": 1
+    },
+    {
+      "id": "e:ws:infra|nav_to|nav:/biz/pet/avatar",
+      "source": "ws:infra",
+      "target": "nav:/biz/pet/avatar",
+      "relation": "nav_to",
+      "weight": 1
+    },
+    {
+      "id": "e:ws:infra|nav_to|nav:/biz/announcements",
+      "source": "ws:infra",
+      "target": "nav:/biz/announcements",
+      "relation": "nav_to",
+      "weight": 1
+    },
+    {
+      "id": "e:ws:infra|nav_to|nav:/biz/update",
+      "source": "ws:infra",
+      "target": "nav:/biz/update",
+      "relation": "nav_to",
+      "weight": 1
+    },
+    {
+      "id": "e:ws:infra|nav_to|nav:/biz/notify",
+      "source": "ws:infra",
+      "target": "nav:/biz/notify",
+      "relation": "nav_to",
+      "weight": 1
+    },
+    {
+      "id": "e:ws:infra|nav_to|nav:/biz/analytics",
+      "source": "ws:infra",
+      "target": "nav:/biz/analytics",
+      "relation": "nav_to",
+      "weight": 1
+    },
+    {
+      "id": "e:ws:infra|nav_to|nav:/biz/tags",
+      "source": "ws:infra",
+      "target": "nav:/biz/tags",
+      "relation": "nav_to",
+      "weight": 1
+    },
+    {
+      "id": "e:ws:infra|nav_to|nav:/biz/social",
+      "source": "ws:infra",
+      "target": "nav:/biz/social",
+      "relation": "nav_to",
+      "weight": 1
+    },
+    {
+      "id": "e:ws:infra|nav_to|nav:/biz/media-gallery",
+      "source": "ws:infra",
+      "target": "nav:/biz/media-gallery",
+      "relation": "nav_to",
+      "weight": 1
+    },
+    {
+      "id": "e:ws:infra|nav_to|nav:/ai/agents",
+      "source": "ws:infra",
+      "target": "nav:/ai/agents",
+      "relation": "nav_to",
+      "weight": 1
+    },
+    {
+      "id": "e:ws:infra|nav_to|nav:/ai/moe-bots",
+      "source": "ws:infra",
+      "target": "nav:/ai/moe-bots",
+      "relation": "nav_to",
+      "weight": 1
+    },
+    {
+      "id": "e:ws:infra|nav_to|nav:/ai/moe-brain",
+      "source": "ws:infra",
+      "target": "nav:/ai/moe-brain",
+      "relation": "nav_to",
+      "weight": 1
+    },
+    {
+      "id": "e:ws:infra|nav_to|nav:/ai/moe-flow",
+      "source": "ws:infra",
+      "target": "nav:/ai/moe-flow",
+      "relation": "nav_to",
+      "weight": 1
+    },
+    {
+      "id": "e:ws:infra|nav_to|nav:/ai/moe-tools",
+      "source": "ws:infra",
+      "target": "nav:/ai/moe-tools",
+      "relation": "nav_to",
+      "weight": 1
+    },
+    {
+      "id": "e:ws:infra|nav_to|nav:/ai/chat-logs",
+      "source": "ws:infra",
+      "target": "nav:/ai/chat-logs",
+      "relation": "nav_to",
+      "weight": 1
+    },
+    {
+      "id": "e:ws:infra|nav_to|nav:/infra/platform",
+      "source": "ws:infra",
+      "target": "nav:/infra/platform",
+      "relation": "nav_to",
+      "weight": 1
+    },
+    {
+      "id": "e:ws:infra|nav_to|nav:/infra/platform?tab=data",
+      "source": "ws:infra",
+      "target": "nav:/infra/platform?tab=data",
+      "relation": "nav_to",
+      "weight": 1
+    },
+    {
+      "id": "e:ws:infra|nav_to|nav:/infra/platform?tab=config",
+      "source": "ws:infra",
+      "target": "nav:/infra/platform?tab=config",
+      "relation": "nav_to",
+      "weight": 1
+    },
+    {
+      "id": "e:ws:infra|nav_to|nav:/infra/admins",
+      "source": "ws:infra",
+      "target": "nav:/infra/admins",
+      "relation": "nav_to",
+      "weight": 1
+    },
+    {
+      "id": "e:ws:infra|nav_to|nav:/infra/audit",
+      "source": "ws:infra",
+      "target": "nav:/infra/audit",
+      "relation": "nav_to",
+      "weight": 1
+    },
+    {
+      "id": "e:ws:infra|nav_to|nav:/infra/docker",
+      "source": "ws:infra",
+      "target": "nav:/infra/docker",
+      "relation": "nav_to",
+      "weight": 1
+    },
+    {
+      "id": "e:ws:infra|nav_to|nav:/infra/build",
+      "source": "ws:infra",
+      "target": "nav:/infra/build",
+      "relation": "nav_to",
+      "weight": 1
+    },
+    {
+      "id": "e:ws:infra|nav_to|nav:/infra/release",
+      "source": "ws:infra",
+      "target": "nav:/infra/release",
+      "relation": "nav_to",
+      "weight": 1
+    },
+    {
+      "id": "e:ws:infra|nav_to|nav:/infra/jobs",
+      "source": "ws:infra",
+      "target": "nav:/infra/jobs",
+      "relation": "nav_to",
+      "weight": 1
+    },
+    {
+      "id": "e:root:admin|registers|route:/login",
+      "source": "root:admin",
+      "target": "route:/login",
+      "relation": "registers",
+      "weight": 1
+    },
+    {
+      "id": "e:route:/login|implements|page:LoginPage",
+      "source": "route:/login",
+      "target": "page:LoginPage",
+      "relation": "implements",
+      "weight": 1
+    },
+    {
+      "id": "e:root:admin|registers|route:/biz",
+      "source": "root:admin",
+      "target": "route:/biz",
+      "relation": "registers",
+      "weight": 1
+    },
+    {
+      "id": "e:route:/biz|implements|page:DashboardPage",
+      "source": "route:/biz",
+      "target": "page:DashboardPage",
+      "relation": "implements",
+      "weight": 1
+    },
+    {
+      "id": "e:nav:/biz|opens|route:/biz",
+      "source": "nav:/biz",
+      "target": "route:/biz",
+      "relation": "opens",
+      "weight": 1
+    },
+    {
+      "id": "e:root:admin|registers|route:/biz/users",
+      "source": "root:admin",
+      "target": "route:/biz/users",
+      "relation": "registers",
+      "weight": 1
+    },
+    {
+      "id": "e:route:/biz/users|implements|page:UsersPage",
+      "source": "route:/biz/users",
+      "target": "page:UsersPage",
+      "relation": "implements",
+      "weight": 1
+    },
+    {
+      "id": "e:nav:/biz/users|opens|route:/biz/users",
+      "source": "nav:/biz/users",
+      "target": "route:/biz/users",
+      "relation": "opens",
+      "weight": 1
+    },
+    {
+      "id": "e:root:admin|registers|route:/biz/vip/plans",
+      "source": "root:admin",
+      "target": "route:/biz/vip/plans",
+      "relation": "registers",
+      "weight": 1
+    },
+    {
+      "id": "e:route:/biz/vip/plans|implements|page:VipPlansPage",
+      "source": "route:/biz/vip/plans",
+      "target": "page:VipPlansPage",
+      "relation": "implements",
+      "weight": 1
+    },
+    {
+      "id": "e:nav:/biz/vip/plans|opens|route:/biz/vip/plans",
+      "source": "nav:/biz/vip/plans",
+      "target": "route:/biz/vip/plans",
+      "relation": "opens",
+      "weight": 1
+    },
+    {
+      "id": "e:root:admin|registers|route:/biz/wallet/orders",
+      "source": "root:admin",
+      "target": "route:/biz/wallet/orders",
+      "relation": "registers",
+      "weight": 1
+    },
+    {
+      "id": "e:route:/biz/wallet/orders|implements|page:WalletOrdersPage",
+      "source": "route:/biz/wallet/orders",
+      "target": "page:WalletOrdersPage",
+      "relation": "implements",
+      "weight": 1
+    },
+    {
+      "id": "e:nav:/biz/wallet/orders|opens|route:/biz/wallet/orders",
+      "source": "nav:/biz/wallet/orders",
+      "target": "route:/biz/wallet/orders",
+      "relation": "opens",
+      "weight": 1
+    },
+    {
+      "id": "e:root:admin|registers|route:/biz/gifts/catalog",
+      "source": "root:admin",
+      "target": "route:/biz/gifts/catalog",
+      "relation": "registers",
+      "weight": 1
+    },
+    {
+      "id": "e:route:/biz/gifts/catalog|implements|page:GiftsPage",
+      "source": "route:/biz/gifts/catalog",
+      "target": "page:GiftsPage",
+      "relation": "implements",
+      "weight": 1
+    },
+    {
+      "id": "e:nav:/biz/gifts/catalog|opens|route:/biz/gifts/catalog",
+      "source": "nav:/biz/gifts/catalog",
+      "target": "route:/biz/gifts/catalog",
+      "relation": "opens",
+      "weight": 1
+    },
+    {
+      "id": "e:root:admin|registers|route:/biz/content/posts",
+      "source": "root:admin",
+      "target": "route:/biz/content/posts",
+      "relation": "registers",
+      "weight": 1
+    },
+    {
+      "id": "e:route:/biz/content/posts|implements|page:PostsPage",
+      "source": "route:/biz/content/posts",
+      "target": "page:PostsPage",
+      "relation": "implements",
+      "weight": 1
+    },
+    {
+      "id": "e:nav:/biz/content/posts|opens|route:/biz/content/posts",
+      "source": "nav:/biz/content/posts",
+      "target": "route:/biz/content/posts",
+      "relation": "opens",
+      "weight": 1
+    },
+    {
+      "id": "e:root:admin|registers|route:/biz/content/comments",
+      "source": "root:admin",
+      "target": "route:/biz/content/comments",
+      "relation": "registers",
+      "weight": 1
+    },
+    {
+      "id": "e:route:/biz/content/comments|implements|page:CommentsPage",
+      "source": "route:/biz/content/comments",
+      "target": "page:CommentsPage",
+      "relation": "implements",
+      "weight": 1
+    },
+    {
+      "id": "e:nav:/biz/content/comments|opens|route:/biz/content/comments",
+      "source": "nav:/biz/content/comments",
+      "target": "route:/biz/content/comments",
+      "relation": "opens",
+      "weight": 1
+    },
+    {
+      "id": "e:root:admin|registers|route:/biz/content/community",
+      "source": "root:admin",
+      "target": "route:/biz/content/community",
+      "relation": "registers",
+      "weight": 1
+    },
+    {
+      "id": "e:route:/biz/content/community|implements|page:CommunityGroupsPage",
+      "source": "route:/biz/content/community",
+      "target": "page:CommunityGroupsPage",
+      "relation": "implements",
+      "weight": 1
+    },
+    {
+      "id": "e:nav:/biz/content/community|opens|route:/biz/content/community",
+      "source": "nav:/biz/content/community",
+      "target": "route:/biz/content/community",
+      "relation": "opens",
+      "weight": 1
+    },
+    {
+      "id": "e:root:admin|registers|route:/biz/content/reports",
+      "source": "root:admin",
+      "target": "route:/biz/content/reports",
+      "relation": "registers",
+      "weight": 1
+    },
+    {
+      "id": "e:route:/biz/content/reports|implements|page:ReportsPage",
+      "source": "route:/biz/content/reports",
+      "target": "page:ReportsPage",
+      "relation": "implements",
+      "weight": 1
+    },
+    {
+      "id": "e:nav:/biz/content/reports|opens|route:/biz/content/reports",
+      "source": "nav:/biz/content/reports",
+      "target": "route:/biz/content/reports",
+      "relation": "opens",
+      "weight": 1
+    },
+    {
+      "id": "e:root:admin|registers|route:/biz/growth",
+      "source": "root:admin",
+      "target": "route:/biz/growth",
+      "relation": "registers",
+      "weight": 1
+    },
+    {
+      "id": "e:route:/biz/growth|implements|page:GrowthPage",
+      "source": "route:/biz/growth",
+      "target": "page:GrowthPage",
+      "relation": "implements",
+      "weight": 1
+    },
+    {
+      "id": "e:nav:/biz/growth|opens|route:/biz/growth",
+      "source": "nav:/biz/growth",
+      "target": "route:/biz/growth",
+      "relation": "opens",
+      "weight": 1
+    },
+    {
+      "id": "e:root:admin|registers|route:/biz/pet/content",
+      "source": "root:admin",
+      "target": "route:/biz/pet/content",
+      "relation": "registers",
+      "weight": 1
+    },
+    {
+      "id": "e:route:/biz/pet/content|implements|page:PetContentHubPage",
+      "source": "route:/biz/pet/content",
+      "target": "page:PetContentHubPage",
+      "relation": "implements",
+      "weight": 1
+    },
+    {
+      "id": "e:nav:/biz/pet/content|opens|route:/biz/pet/content",
+      "source": "nav:/biz/pet/content",
+      "target": "route:/biz/pet/content",
+      "relation": "opens",
+      "weight": 1
+    },
+    {
+      "id": "e:root:admin|registers|route:/biz/pet/avatar",
+      "source": "root:admin",
+      "target": "route:/biz/pet/avatar",
+      "relation": "registers",
+      "weight": 1
+    },
+    {
+      "id": "e:route:/biz/pet/avatar|implements|page:SpriteStudioPage",
+      "source": "route:/biz/pet/avatar",
+      "target": "page:SpriteStudioPage",
+      "relation": "implements",
+      "weight": 1
+    },
+    {
+      "id": "e:nav:/biz/pet/avatar|opens|route:/biz/pet/avatar",
+      "source": "nav:/biz/pet/avatar",
+      "target": "route:/biz/pet/avatar",
+      "relation": "opens",
+      "weight": 1
+    },
+    {
+      "id": "e:root:admin|registers|route:/biz/pet/sprites",
+      "source": "root:admin",
+      "target": "route:/biz/pet/sprites",
+      "relation": "registers",
+      "weight": 1
+    },
+    {
+      "id": "e:root:admin|registers|route:/biz/pet/furniture",
+      "source": "root:admin",
+      "target": "route:/biz/pet/furniture",
+      "relation": "registers",
+      "weight": 1
+    },
+    {
+      "id": "e:route:/biz/pet/furniture|implements|page:PetFurnitureEditorPage",
+      "source": "route:/biz/pet/furniture",
+      "target": "page:PetFurnitureEditorPage",
+      "relation": "implements",
+      "weight": 1
+    },
+    {
+      "id": "e:nav:/biz/pet/furniture|opens|route:/biz/pet/furniture",
+      "source": "nav:/biz/pet/furniture",
+      "target": "route:/biz/pet/furniture",
+      "relation": "opens",
+      "weight": 1
+    },
+    {
+      "id": "e:root:admin|registers|route:/biz/pet/decor",
+      "source": "root:admin",
+      "target": "route:/biz/pet/decor",
+      "relation": "registers",
+      "weight": 1
+    },
+    {
+      "id": "e:route:/biz/pet/decor|implements|page:PetDecorEditorPage",
+      "source": "route:/biz/pet/decor",
+      "target": "page:PetDecorEditorPage",
+      "relation": "implements",
+      "weight": 1
+    },
+    {
+      "id": "e:nav:/biz/pet/decor|opens|route:/biz/pet/decor",
+      "source": "nav:/biz/pet/decor",
+      "target": "route:/biz/pet/decor",
+      "relation": "opens",
+      "weight": 1
+    },
+    {
+      "id": "e:root:admin|registers|route:/biz/pet/lpc",
+      "source": "root:admin",
+      "target": "route:/biz/pet/lpc",
+      "relation": "registers",
+      "weight": 1
+    },
+    {
+      "id": "e:root:admin|registers|route:/biz/announcements",
+      "source": "root:admin",
+      "target": "route:/biz/announcements",
+      "relation": "registers",
+      "weight": 1
+    },
+    {
+      "id": "e:route:/biz/announcements|implements|page:AnnouncementsPage",
+      "source": "route:/biz/announcements",
+      "target": "page:AnnouncementsPage",
+      "relation": "implements",
+      "weight": 1
+    },
+    {
+      "id": "e:nav:/biz/announcements|opens|route:/biz/announcements",
+      "source": "nav:/biz/announcements",
+      "target": "route:/biz/announcements",
+      "relation": "opens",
+      "weight": 1
+    },
+    {
+      "id": "e:root:admin|registers|route:/biz/update",
+      "source": "root:admin",
+      "target": "route:/biz/update",
+      "relation": "registers",
+      "weight": 1
+    },
+    {
+      "id": "e:route:/biz/update|implements|page:AppReleasePage",
+      "source": "route:/biz/update",
+      "target": "page:AppReleasePage",
+      "relation": "implements",
+      "weight": 1
+    },
+    {
+      "id": "e:nav:/biz/update|opens|route:/biz/update",
+      "source": "nav:/biz/update",
+      "target": "route:/biz/update",
+      "relation": "opens",
+      "weight": 1
+    },
+    {
+      "id": "e:root:admin|registers|route:/biz/notify",
+      "source": "root:admin",
+      "target": "route:/biz/notify",
+      "relation": "registers",
+      "weight": 1
+    },
+    {
+      "id": "e:route:/biz/notify|implements|page:NotifyPage",
+      "source": "route:/biz/notify",
+      "target": "page:NotifyPage",
+      "relation": "implements",
+      "weight": 1
+    },
+    {
+      "id": "e:nav:/biz/notify|opens|route:/biz/notify",
+      "source": "nav:/biz/notify",
+      "target": "route:/biz/notify",
+      "relation": "opens",
+      "weight": 1
+    },
+    {
+      "id": "e:root:admin|registers|route:/biz/analytics",
+      "source": "root:admin",
+      "target": "route:/biz/analytics",
+      "relation": "registers",
+      "weight": 1
+    },
+    {
+      "id": "e:route:/biz/analytics|implements|page:AnalyticsPage",
+      "source": "route:/biz/analytics",
+      "target": "page:AnalyticsPage",
+      "relation": "implements",
+      "weight": 1
+    },
+    {
+      "id": "e:nav:/biz/analytics|opens|route:/biz/analytics",
+      "source": "nav:/biz/analytics",
+      "target": "route:/biz/analytics",
+      "relation": "opens",
+      "weight": 1
+    },
+    {
+      "id": "e:root:admin|registers|route:/biz/tags",
+      "source": "root:admin",
+      "target": "route:/biz/tags",
+      "relation": "registers",
+      "weight": 1
+    },
+    {
+      "id": "e:route:/biz/tags|implements|page:TagsCenterPage",
+      "source": "route:/biz/tags",
+      "target": "page:TagsCenterPage",
+      "relation": "implements",
+      "weight": 1
+    },
+    {
+      "id": "e:nav:/biz/tags|opens|route:/biz/tags",
+      "source": "nav:/biz/tags",
+      "target": "route:/biz/tags",
+      "relation": "opens",
+      "weight": 1
+    },
+    {
+      "id": "e:root:admin|registers|route:/biz/social",
+      "source": "root:admin",
+      "target": "route:/biz/social",
+      "relation": "registers",
+      "weight": 1
+    },
+    {
+      "id": "e:route:/biz/social|implements|page:SocialPage",
+      "source": "route:/biz/social",
+      "target": "page:SocialPage",
+      "relation": "implements",
+      "weight": 1
+    },
+    {
+      "id": "e:nav:/biz/social|opens|route:/biz/social",
+      "source": "nav:/biz/social",
+      "target": "route:/biz/social",
+      "relation": "opens",
+      "weight": 1
+    },
+    {
+      "id": "e:root:admin|registers|route:/biz/media-gallery",
+      "source": "root:admin",
+      "target": "route:/biz/media-gallery",
+      "relation": "registers",
+      "weight": 1
+    },
+    {
+      "id": "e:route:/biz/media-gallery|implements|page:MediaGalleryPage",
+      "source": "route:/biz/media-gallery",
+      "target": "page:MediaGalleryPage",
+      "relation": "implements",
+      "weight": 1
+    },
+    {
+      "id": "e:nav:/biz/media-gallery|opens|route:/biz/media-gallery",
+      "source": "nav:/biz/media-gallery",
+      "target": "route:/biz/media-gallery",
+      "relation": "opens",
+      "weight": 1
+    },
+    {
+      "id": "e:root:admin|registers|route:/ai/agents",
+      "source": "root:admin",
+      "target": "route:/ai/agents",
+      "relation": "registers",
+      "weight": 1
+    },
+    {
+      "id": "e:route:/ai/agents|implements|page:AiAgentsPage",
+      "source": "route:/ai/agents",
+      "target": "page:AiAgentsPage",
+      "relation": "implements",
+      "weight": 1
+    },
+    {
+      "id": "e:nav:/ai/agents|opens|route:/ai/agents",
+      "source": "nav:/ai/agents",
+      "target": "route:/ai/agents",
+      "relation": "opens",
+      "weight": 1
+    },
+    {
+      "id": "e:root:admin|registers|route:/ai/moe-bots",
+      "source": "root:admin",
+      "target": "route:/ai/moe-bots",
+      "relation": "registers",
+      "weight": 1
+    },
+    {
+      "id": "e:route:/ai/moe-bots|implements|page:MoeBotsPage",
+      "source": "route:/ai/moe-bots",
+      "target": "page:MoeBotsPage",
+      "relation": "implements",
+      "weight": 1
+    },
+    {
+      "id": "e:nav:/ai/moe-bots|opens|route:/ai/moe-bots",
+      "source": "nav:/ai/moe-bots",
+      "target": "route:/ai/moe-bots",
+      "relation": "opens",
+      "weight": 1
+    },
+    {
+      "id": "e:root:admin|registers|route:/ai/moe-bots/:agentKey/brain",
+      "source": "root:admin",
+      "target": "route:/ai/moe-bots/:agentKey/brain",
+      "relation": "registers",
+      "weight": 1
+    },
+    {
+      "id": "e:route:/ai/moe-bots/:agentKey/brain|implements|page:MoeBrainPage",
+      "source": "route:/ai/moe-bots/:agentKey/brain",
+      "target": "page:MoeBrainPage",
+      "relation": "implements",
+      "weight": 1
+    },
+    {
+      "id": "e:root:admin|registers|route:/ai/moe-brain",
+      "source": "root:admin",
+      "target": "route:/ai/moe-brain",
+      "relation": "registers",
+      "weight": 1
+    },
+    {
+      "id": "e:route:/ai/moe-brain|implements|page:MoeBrainPage",
+      "source": "route:/ai/moe-brain",
+      "target": "page:MoeBrainPage",
+      "relation": "implements",
+      "weight": 1
+    },
+    {
+      "id": "e:nav:/ai/moe-brain|opens|route:/ai/moe-brain",
+      "source": "nav:/ai/moe-brain",
+      "target": "route:/ai/moe-brain",
+      "relation": "opens",
+      "weight": 1
+    },
+    {
+      "id": "e:root:admin|registers|route:/ai/moe-flow",
+      "source": "root:admin",
+      "target": "route:/ai/moe-flow",
+      "relation": "registers",
+      "weight": 1
+    },
+    {
+      "id": "e:route:/ai/moe-flow|implements|page:MoeBotFlowPage",
+      "source": "route:/ai/moe-flow",
+      "target": "page:MoeBotFlowPage",
+      "relation": "implements",
+      "weight": 1
+    },
+    {
+      "id": "e:nav:/ai/moe-flow|opens|route:/ai/moe-flow",
+      "source": "nav:/ai/moe-flow",
+      "target": "route:/ai/moe-flow",
+      "relation": "opens",
+      "weight": 1
+    },
+    {
+      "id": "e:root:admin|registers|route:/ai/moe-tools",
+      "source": "root:admin",
+      "target": "route:/ai/moe-tools",
+      "relation": "registers",
+      "weight": 1
+    },
+    {
+      "id": "e:route:/ai/moe-tools|implements|page:MoeToolsPage",
+      "source": "route:/ai/moe-tools",
+      "target": "page:MoeToolsPage",
+      "relation": "implements",
+      "weight": 1
+    },
+    {
+      "id": "e:nav:/ai/moe-tools|opens|route:/ai/moe-tools",
+      "source": "nav:/ai/moe-tools",
+      "target": "route:/ai/moe-tools",
+      "relation": "opens",
+      "weight": 1
+    },
+    {
+      "id": "e:root:admin|registers|route:/ai/chat-logs",
+      "source": "root:admin",
+      "target": "route:/ai/chat-logs",
+      "relation": "registers",
+      "weight": 1
+    },
+    {
+      "id": "e:route:/ai/chat-logs|implements|page:AiChatLogsPage",
+      "source": "route:/ai/chat-logs",
+      "target": "page:AiChatLogsPage",
+      "relation": "implements",
+      "weight": 1
+    },
+    {
+      "id": "e:nav:/ai/chat-logs|opens|route:/ai/chat-logs",
+      "source": "nav:/ai/chat-logs",
+      "target": "route:/ai/chat-logs",
+      "relation": "opens",
+      "weight": 1
+    },
+    {
+      "id": "e:root:admin|registers|route:/infra/platform",
+      "source": "root:admin",
+      "target": "route:/infra/platform",
+      "relation": "registers",
+      "weight": 1
+    },
+    {
+      "id": "e:route:/infra/platform|implements|page:PlatformPage",
+      "source": "route:/infra/platform",
+      "target": "page:PlatformPage",
+      "relation": "implements",
+      "weight": 1
+    },
+    {
+      "id": "e:nav:/infra/platform|opens|route:/infra/platform",
+      "source": "nav:/infra/platform",
+      "target": "route:/infra/platform",
+      "relation": "opens",
+      "weight": 1
+    },
+    {
+      "id": "e:root:admin|registers|route:/infra/admins",
+      "source": "root:admin",
+      "target": "route:/infra/admins",
+      "relation": "registers",
+      "weight": 1
+    },
+    {
+      "id": "e:route:/infra/admins|implements|page:AdminAccountsPage",
+      "source": "route:/infra/admins",
+      "target": "page:AdminAccountsPage",
+      "relation": "implements",
+      "weight": 1
+    },
+    {
+      "id": "e:nav:/infra/admins|opens|route:/infra/admins",
+      "source": "nav:/infra/admins",
+      "target": "route:/infra/admins",
+      "relation": "opens",
+      "weight": 1
+    },
+    {
+      "id": "e:root:admin|registers|route:/infra/audit",
+      "source": "root:admin",
+      "target": "route:/infra/audit",
+      "relation": "registers",
+      "weight": 1
+    },
+    {
+      "id": "e:route:/infra/audit|implements|page:AuditLogsPage",
+      "source": "route:/infra/audit",
+      "target": "page:AuditLogsPage",
+      "relation": "implements",
+      "weight": 1
+    },
+    {
+      "id": "e:nav:/infra/audit|opens|route:/infra/audit",
+      "source": "nav:/infra/audit",
+      "target": "route:/infra/audit",
+      "relation": "opens",
+      "weight": 1
+    },
+    {
+      "id": "e:root:admin|registers|route:/infra/deploy",
+      "source": "root:admin",
+      "target": "route:/infra/deploy",
+      "relation": "registers",
+      "weight": 1
+    },
+    {
+      "id": "e:route:/infra/deploy|implements|page:OverviewPage",
+      "source": "route:/infra/deploy",
+      "target": "page:OverviewPage",
+      "relation": "implements",
+      "weight": 1
+    },
+    {
+      "id": "e:nav:/infra/deploy|opens|route:/infra/deploy",
+      "source": "nav:/infra/deploy",
+      "target": "route:/infra/deploy",
+      "relation": "opens",
+      "weight": 1
+    },
+    {
+      "id": "e:root:admin|registers|route:/infra/docker",
+      "source": "root:admin",
+      "target": "route:/infra/docker",
+      "relation": "registers",
+      "weight": 1
+    },
+    {
+      "id": "e:route:/infra/docker|implements|page:DockerPage",
+      "source": "route:/infra/docker",
+      "target": "page:DockerPage",
+      "relation": "implements",
+      "weight": 1
+    },
+    {
+      "id": "e:nav:/infra/docker|opens|route:/infra/docker",
+      "source": "nav:/infra/docker",
+      "target": "route:/infra/docker",
+      "relation": "opens",
+      "weight": 1
+    },
+    {
+      "id": "e:root:admin|registers|route:/infra/build",
+      "source": "root:admin",
+      "target": "route:/infra/build",
+      "relation": "registers",
+      "weight": 1
+    },
+    {
+      "id": "e:route:/infra/build|implements|page:BuildPage",
+      "source": "route:/infra/build",
+      "target": "page:BuildPage",
+      "relation": "implements",
+      "weight": 1
+    },
+    {
+      "id": "e:nav:/infra/build|opens|route:/infra/build",
+      "source": "nav:/infra/build",
+      "target": "route:/infra/build",
+      "relation": "opens",
+      "weight": 1
+    },
+    {
+      "id": "e:root:admin|registers|route:/infra/release",
+      "source": "root:admin",
+      "target": "route:/infra/release",
+      "relation": "registers",
+      "weight": 1
+    },
+    {
+      "id": "e:route:/infra/release|implements|page:ReleasePage",
+      "source": "route:/infra/release",
+      "target": "page:ReleasePage",
+      "relation": "implements",
+      "weight": 1
+    },
+    {
+      "id": "e:nav:/infra/release|opens|route:/infra/release",
+      "source": "nav:/infra/release",
+      "target": "route:/infra/release",
+      "relation": "opens",
+      "weight": 1
+    },
+    {
+      "id": "e:root:admin|registers|route:/infra/jobs",
+      "source": "root:admin",
+      "target": "route:/infra/jobs",
+      "relation": "registers",
+      "weight": 1
+    },
+    {
+      "id": "e:route:/infra/jobs|implements|page:JobsPage",
+      "source": "route:/infra/jobs",
+      "target": "page:JobsPage",
+      "relation": "implements",
+      "weight": 1
+    },
+    {
+      "id": "e:nav:/infra/jobs|opens|route:/infra/jobs",
+      "source": "nav:/infra/jobs",
+      "target": "route:/infra/jobs",
+      "relation": "opens",
+      "weight": 1
+    },
+    {
+      "id": "e:root:admin|registers|route:/infra/dev/codegraph",
+      "source": "root:admin",
+      "target": "route:/infra/dev/codegraph",
+      "relation": "registers",
+      "weight": 1
+    },
+    {
+      "id": "e:route:/infra/dev/codegraph|implements|page:CodeGraphPage",
+      "source": "route:/infra/dev/codegraph",
+      "target": "page:CodeGraphPage",
+      "relation": "implements",
+      "weight": 1
+    },
+    {
+      "id": "e:nav:/infra/dev/codegraph|opens|route:/infra/dev/codegraph",
+      "source": "nav:/infra/dev/codegraph",
+      "target": "route:/infra/dev/codegraph",
+      "relation": "opens",
+      "weight": 1
+    },
+    {
+      "id": "e:root:admin|registers|route:/infra/data",
+      "source": "root:admin",
+      "target": "route:/infra/data",
+      "relation": "registers",
+      "weight": 1
+    },
+    {
+      "id": "e:route:/infra/data|implements|page:PlatformTabRedirect",
+      "source": "route:/infra/data",
+      "target": "page:PlatformTabRedirect",
+      "relation": "implements",
+      "weight": 1
+    },
+    {
+      "id": "e:root:admin|registers|route:/infra/app-config",
+      "source": "root:admin",
+      "target": "route:/infra/app-config",
+      "relation": "registers",
+      "weight": 1
+    },
+    {
+      "id": "e:route:/infra/app-config|implements|page:PlatformTabRedirect",
+      "source": "route:/infra/app-config",
+      "target": "page:PlatformTabRedirect",
+      "relation": "implements",
+      "weight": 1
+    },
+    {
+      "id": "e:root:admin|registers|route:/app/moe-bots/:agentKey/brain",
+      "source": "root:admin",
+      "target": "route:/app/moe-bots/:agentKey/brain",
+      "relation": "registers",
+      "weight": 1
+    },
+    {
+      "id": "e:route:/app/moe-bots/:agentKey/brain|implements|page:LegacyMoeBotBrainRedirect",
+      "source": "route:/app/moe-bots/:agentKey/brain",
+      "target": "page:LegacyMoeBotBrainRedirect",
+      "relation": "implements",
+      "weight": 1
+    },
+    {
+      "id": "e:root:admin|registers|route:/users/:userId",
+      "source": "root:admin",
+      "target": "route:/users/:userId",
+      "relation": "registers",
+      "weight": 1
+    },
+    {
+      "id": "e:route:/users/:userId|implements|page:LegacyUserDetailRedirect",
+      "source": "route:/users/:userId",
+      "target": "page:LegacyUserDetailRedirect",
+      "relation": "implements",
+      "weight": 1
+    },
+    {
+      "id": "e:root:admin|contains|feature:codegraph",
+      "source": "root:admin",
+      "target": "feature:codegraph",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:root:admin|contains|feature:moe-avatar",
+      "source": "root:admin",
+      "target": "feature:moe-avatar",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:page:PetContentHubPage|uses_feature|feature:moe-avatar",
+      "source": "page:PetContentHubPage",
+      "target": "feature:moe-avatar",
+      "relation": "uses_feature",
+      "weight": 1
+    },
+    {
+      "id": "e:page:PetFurnitureEditorPage|uses_feature|feature:moe-avatar",
+      "source": "page:PetFurnitureEditorPage",
+      "target": "feature:moe-avatar",
+      "relation": "uses_feature",
+      "weight": 1
+    },
+    {
+      "id": "e:root:admin|contains|feature:moe-content",
+      "source": "root:admin",
+      "target": "feature:moe-content",
+      "relation": "contains",
+      "weight": 1
+    },
+    {
+      "id": "e:page:PetContentHubPage|uses_feature|feature:moe-content",
+      "source": "page:PetContentHubPage",
+      "target": "feature:moe-content",
+      "relation": "uses_feature",
+      "weight": 1
+    },
+    {
+      "id": "e:page:PetFurnitureEditorPage|uses_feature|feature:moe-content",
+      "source": "page:PetFurnitureEditorPage",
+      "target": "feature:moe-content",
+      "relation": "uses_feature",
+      "weight": 1
+    },
+    {
+      "id": "e:root:admin|contains|feature:sprite-studio",
+      "source": "root:admin",
+      "target": "feature:sprite-studio",
+      "relation": "contains",
+      "weight": 1
+    }
+  ],
+  "stats": {
+    "nodeCount": 138,
+    "edgeCount": 209,
+    "navItems": 71,
+    "routes": 44
+  }
+}

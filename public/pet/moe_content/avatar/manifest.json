@@ -1,0 +1,79 @@
+{
+  "specVersion": "1",
+  "packId": "moe-official-prototype-v1",
+  "displayName": "Moe 官方 · 原型（64 格过渡）",
+  "cellSize": 64,
+  "style": "soft_chibi",
+  "directionRows": ["up", "left", "down", "right"],
+  "animations": {
+    "walk": { "cols": 9, "rows": 4 },
+    "idle": { "cols": 2, "rows": 4 }
+  },
+  "animationPolicy": {
+    "source": "moe_official",
+    "description": "walk/idle 由官方 sheet 定义；新增 run/emote/sit 等仅在 manifest.animations 注册后 App 才播放"
+  },
+  "composeOrder": ["body", "bottom", "top", "shoes", "head", "face", "hat", "hair"],
+  "base": {
+    "body": {
+      "walk": "layers/base/body_walk.png",
+      "idle": "layers/base/body_idle.png"
+    },
+    "head": {
+      "walk": "layers/base/head_walk.png",
+      "idle": "layers/base/head_idle.png"
+    },
+    "face": {
+      "walk": "layers/base/face_walk.png",
+      "idle": "layers/base/face_idle.png"
+    },
+    "hair": {
+      "walk": "layers/base/hair_walk.png",
+      "idle": "layers/base/hair_idle.png"
+    }
+  },
+  "slots": {
+    "hat": {},
+    "top": {
+      "top_basic": {
+        "walk": "layers/slots/top_basic_walk.png",
+        "idle": "layers/slots/top_basic_idle.png",
+        "label": "基础上衣"
+      },
+      "top_hoodie": {
+        "walk": "layers/slots/top_hoodie_walk.png",
+        "idle": "layers/slots/top_hoodie_idle.png",
+        "label": "连帽衫"
+      },
+      "top_tee": {
+        "walk": "layers/slots/top_tee_walk.png",
+        "idle": "layers/slots/top_tee_idle.png",
+        "label": "T恤"
+      }
+    },
+    "bottom": {
+      "bottom_basic": {
+        "walk": "layers/slots/bottom_basic_walk.png",
+        "idle": "layers/slots/bottom_basic_idle.png",
+        "label": "基础下装"
+      },
+      "bottom_jeans": {
+        "walk": "layers/slots/bottom_jeans_walk.png",
+        "idle": "layers/slots/bottom_jeans_idle.png",
+        "label": "牛仔裤"
+      }
+    },
+    "shoes": {
+      "shoes_basic": {
+        "walk": "layers/slots/shoes_basic_walk.png",
+        "idle": "layers/slots/shoes_basic_idle.png",
+        "label": "基础鞋"
+      },
+      "shoes_sneaker": {
+        "walk": "layers/slots/shoes_sneaker_walk.png",
+        "idle": "layers/slots/shoes_sneaker_idle.png",
+        "label": "运动鞋"
+      }
+    }
+  }
+}
