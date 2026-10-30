@@ -1,14 +1,16 @@
-/* drawers + form-field · extracted from legacy · Sprint D */
+/* drawers + form-field · V3 Soft Violet Console (Unified Centered Dialog & Sections) */
 .drawer-backdrop {
   position: fixed;
   inset: 0;
   width: 100vw;
   height: 100dvh;
-  background: rgba(0, 0, 0, 0.4);
-  z-index: 100;
+  background: rgba(15, 18, 31, 0.48);
+  backdrop-filter: blur(3px);
+  z-index: 1000;
   display: flex;
-  justify-content: flex-end;
-  align-items: stretch;
+  justify-content: center;
+  align-items: center;
+  padding: 24px 16px;
 }
 
 .drawer-backdrop-hint {
@@ -27,37 +29,38 @@
   display: none;
 }
 
+/* 全站统一为居中工作台模态窗，避开右侧边缘裁剪与浏览器悬浮插件遮挡 */
 .drawer {
   position: relative;
   z-index: 1;
-  width: min(400px, 92vw);
-  height: 100dvh;
-  background: var(--panel);
-  border-left: 1px solid var(--border);
-  box-shadow: -8px 0 24px rgba(0, 0, 0, 0.08);
+  width: min(560px, 94vw);
+  height: auto;
+  max-height: min(88dvh, 840px);
+  background: var(--surface);
+  border: 1px solid var(--hairline);
+  border-radius: 16px;
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.22);
   display: flex;
   flex-direction: column;
   flex-shrink: 0;
-  max-height: 100dvh;
   overflow: hidden;
 }
 
 .drawer--wide {
-  width: min(960px, 92vw);
-}
-
-.drawer--wide .drawer-body {
-  padding: 24px 32px;
-}
-
-.drawer--wide .drawer-body > .form-field,
-.drawer--wide .drawer-body > label {
-  max-width: 760px;
+  width: min(760px, 94vw);
+  max-height: min(88dvh, 860px);
 }
 
 @media (max-width: 700px) {
-  .drawer--wide { width: 100vw; }
-  .drawer--wide .drawer-body { padding: 18px; }
+  .drawer,
+  .drawer--wide {
+    width: 100vw;
+    max-height: 100dvh;
+    border-radius: 0;
+  }
+  .drawer-backdrop {
+    padding: 0;
+  }
 }
 
 .topbar .btn.is-active {
@@ -70,20 +73,23 @@
   justify-content: space-between;
   align-items: flex-start;
   gap: 12px;
-  padding: 16px 18px;
-  border-bottom: 1px solid var(--border);
+  padding: 18px 24px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--hairline);
   flex-shrink: 0;
 }
 
 .drawer-head h3 {
   margin: 0;
-  font-size: 16px;
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--ink);
 }
 
 .drawer-subtitle {
   margin: 4px 0 0;
   font-size: 12px;
-  color: var(--muted);
+  color: var(--ink-muted);
 }
 
 .drawer-close {
@@ -93,40 +99,80 @@
 }
 
 .drawer-body {
-  padding: 16px 18px;
-  overflow: auto;
+  padding: 20px 24px 24px;
+  overflow-y: auto;
+  overflow-x: hidden;
   flex: 1;
   min-height: 0;
-  padding-bottom: 28px;
+  background: var(--surface);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* 当弹窗内部使用分组卡片时，分组采用柔和浅底，内部控件采用纯白底 */
+.drawer-section {
+  background: var(--surface-soft);
+  border: 1px solid var(--hairline);
+  border-radius: 12px;
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.drawer-section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--hairline);
+}
+
+.drawer-section-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.drawer-section-desc {
+  font-size: 11px;
+  color: var(--ink-muted);
 }
 
 .drawer-foot {
   display: flex;
-  gap: 8px;
+  gap: 10px;
   justify-content: flex-end;
-  padding: 12px 18px 16px;
-  border-top: 1px solid var(--border);
+  padding: 14px 24px;
+  background: var(--surface);
+  border-top: 1px solid var(--hairline);
   flex-shrink: 0;
 }
 
 .drawer-error {
-  margin: 0 0 12px;
-  padding: 8px 10px;
-  border-radius: 8px;
+  margin: 0;
+  padding: 10px 12px;
+  border-radius: 10px;
   font-size: 13px;
   color: var(--danger);
-  background: rgba(245, 108, 108, 0.08);
-  border: 1px solid rgba(245, 108, 108, 0.25);
+  background: rgba(255, 107, 107, 0.08);
+  border: 1px solid rgba(255, 107, 107, 0.25);
 }
 
 .form-field {
-  margin-bottom: 14px;
+  margin-bottom: 0;
+  min-width: 0;
 }
 
 .form-field-label {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   font-size: 12px;
-  color: var(--muted);
+  font-weight: 600;
+  color: var(--ink);
   margin-bottom: 6px;
 }
 
@@ -138,49 +184,116 @@
 .form-field-hint {
   display: block;
   font-size: 11px;
-  color: var(--muted);
-  margin-top: 4px;
-  line-height: 1.4;
+  color: var(--ink-muted);
+  margin-top: 5px;
+  line-height: 1.45;
 }
 
-.form-field input,
+.form-field input:not([type='checkbox']):not([type='radio']):not([type='range']):not([type='color']),
 .form-field select,
 .form-field textarea,
-.drawer-body input,
+.drawer-body input:not([type='checkbox']):not([type='radio']):not([type='range']):not([type='color']),
 .drawer-body select,
 .drawer-body textarea {
   width: 100%;
-  padding: 8px 10px;
-  border-radius: 8px;
-  border: 1px solid var(--border);
-  background: var(--panel2);
-  color: var(--text);
+  padding: 9px 12px;
+  border-radius: 9px;
+  border: 1px solid var(--hairline);
+  background: var(--surface-soft);
+  color: var(--ink);
   font-size: 13px;
-  font-family: inherit;
+  font-family: var(--font-ui);
+  transition: border-color 0.16s ease, background-color 0.16s ease, box-shadow 0.16s ease;
+}
+
+.drawer-section input:not([type='checkbox']):not([type='radio']):not([type='range']):not([type='color']),
+.drawer-section select,
+.drawer-section textarea {
+  background: var(--surface);
+}
+
+.form-field input:not([type='checkbox']):not([type='radio']):not([type='range']):not([type='color']):hover,
+.form-field select:hover,
+.form-field textarea:hover,
+.drawer-body input:not([type='checkbox']):not([type='radio']):not([type='range']):not([type='color']):hover,
+.drawer-body select:hover,
+.drawer-body textarea:hover {
+  border-color: rgba(107, 95, 193, 0.5);
+  background: var(--surface);
 }
 
 .form-field textarea,
 .drawer-body textarea {
-  min-height: 72px;
+  min-height: 84px;
   resize: vertical;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
-.form-field input:focus,
+.form-field input:not([type='checkbox']):not([type='radio']):not([type='range']):not([type='color']):focus,
 .form-field select:focus,
 .form-field textarea:focus,
-.drawer-body input:focus,
+.drawer-body input:not([type='checkbox']):not([type='radio']):not([type='range']):not([type='color']):focus,
 .drawer-body select:focus,
 .drawer-body textarea:focus {
   outline: none;
-  border-color: var(--accent);
-  box-shadow: 0 0 0 2px rgba(127, 127, 213, 0.2);
+  background: var(--surface);
+  border-color: var(--brand-violet);
+  box-shadow: 0 0 0 3px rgba(107, 95, 193, 0.14);
 }
 
-.form-grid-2 {
+.form-grid-2,
+.drawer-grid-2 {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 12px;
+}
+
+.drawer-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+@media (max-width: 600px) {
+  .form-grid-2,
+  .drawer-grid-2,
+  .drawer-grid-3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.drawer-pill-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.drawer-pill {
+  max-width: 240px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--hairline);
+  background: var(--surface);
+  color: var(--ink-muted);
+  font-size: 11px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.drawer-pill:hover {
+  border-color: var(--brand-violet);
+  color: var(--brand-violet);
+}
+
+.drawer-pill.is-active {
+  background: rgba(107, 95, 193, 0.12);
+  border-color: var(--brand-violet);
+  color: var(--brand-violet);
+  font-weight: 600;
 }
 
 .emoji-icon-row {
@@ -235,9 +348,13 @@
   background: rgba(127, 127, 213, 0.12);
 }
 
-.drawer-body label {
-  display: block;
-  font-size: 12px;
-  color: var(--muted);
-  margin-bottom: 6px;
+.drawer-body label.checkbox-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink);
+  margin: 0;
+  cursor: pointer;
 }

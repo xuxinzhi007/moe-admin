@@ -79,6 +79,7 @@ export function MoeBotsPage() {
   const [formError, setFormError] = useState('')
   const [saving, setSaving] = useState(false)
   const [runningKey, setRunningKey] = useState('')
+  const [models, setModels] = useState<string[]>([])
 
   const load = useCallback(async () => {
     setLoading(true)
@@ -99,8 +100,24 @@ export function MoeBotsPage() {
   }, [client])
 
   useEffect(() => {
-    void load()
+    const timer = window.setTimeout(() => {
+      void load()
+    }, 0)
+    return () => window.clearTimeout(timer)
   }, [load])
+
+  useEffect(() => {
+    void client
+      .getMoeInferenceStatus()
+      .then((res) => {
+        if (res.success && res.data?.models) {
+          setModels(res.data.models)
+        }
+      })
+      .catch(() => {
+        // ignore inference status failure
+      })
+  }, [client])
 
   function openEdit(row: MoeRuntimeRow) {
     const scheduleMode = row.post_schedule_mode || 'manual'
@@ -285,10 +302,10 @@ export function MoeBotsPage() {
         render: (row) => (
           <div className="btn-row">
             <Link
-              className="btn btn-ghost btn-sm"
+              className="btn btn-primary btn-sm"
               to={`/ai/moe-bots/${encodeURIComponent(row.agent_key)}/brain`}
             >
-              AI 大脑
+              大脑与编排
             </Link>
             <button type="button" className="btn btn-ghost btn-sm" onClick={() => openEdit(row)}>
               编辑
@@ -305,7 +322,14 @@ export function MoeBotsPage() {
         ),
       },
     ],
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [runningKey],
+  )
+
+  const enabledCount = useMemo(() => items.filter((r) => r.enabled).length, [items])
+  const todayPostTotal = useMemo(
+    () => items.reduce((sum, r) => sum + (r.posts_today || 0), 0),
+    [items],
   )
 
   return (
@@ -313,6 +337,12 @@ export function MoeBotsPage() {
       <ListPageLayout
         title="社区 AI Bot"
         description="配置发帖 Bot：正文由服务端 llm_inference 配置的 Ollama 或 OpenAI 兼容模型生成，支持定时 cron 与智能发送。调度器默认每 60 秒扫描。"
+        metrics={[
+          { label: '注册 Bot 总数', value: loading ? '…' : items.length },
+          { label: '启用中 Bot', value: enabledCount },
+          { label: '今日累计发帖', value: todayPostTotal },
+          { label: '在线可用模型', value: models.length },
+        ]}
         headActions={
           <button type="button" className="btn btn-primary" onClick={openCreate}>
             新建 Bot
@@ -348,50 +378,94 @@ export function MoeBotsPage() {
         onClose={() => setDrawerOpen(false)}
         onSave={() => void save()}
       >
-        <FormField label="agent_key">
-          <input
-            value={form.agent_key}
-            onChange={(e) => setForm({ ...form, agent_key: e.target.value })}
-            placeholder="moe_guide"
-          />
-        </FormField>
-        <FormField label="显示名称">
-          <input value={form.display_name} onChange={(e) => setForm({ ...form, display_name: e.target.value })} />
-        </FormField>
-        <FormField label="bot_user_id（App 用户 ID）">
-          <input
-            value={form.bot_user_id}
-            onChange={(e) => setForm({ ...form, bot_user_id: e.target.value })}
-            placeholder="例如 2"
-          />
-        </FormField>
-        <FormField label="发帖调度">
-          <select
-            value={form.post_schedule_mode}
-            onChange={(e) => {
-              const mode = e.target.value
-              setForm({
-                ...form,
-                post_schedule_mode: mode,
-                schedule_cron:
-                  mode === 'smart'
-                    ? ''
-                    : form.schedule_cron || '0 */6 * * *',
-              })
-            }}
-          >
-            <option value="manual">手动（仅 run-once / 后台试跑）</option>
-            <option value="cron">定时（cron 表达式）</option>
-            <option value="smart">智能（LLM 判断是否发帖 + AI 生成正文）</option>
-          </select>
-        </FormField>
-        {form.post_schedule_mode === 'cron' || form.post_schedule_mode === 'smart' ? (
-          <>
+        <section className="drawer-section">
+          <div className="drawer-section-head">
+            <div>
+              <div className="drawer-section-title">1. 基础身份与状态</div>
+              <div className="drawer-section-desc">绑定社区发帖的 App 账号与唯一运行时标识</div>
+            </div>
+            <label className="checkbox-row">
+              <input
+                type="checkbox"
+                checked={form.enabled}
+                onChange={(e) => setForm({ ...form, enabled: e.target.checked })}
+              />
+              <span>启用 Bot</span>
+            </label>
+          </div>
+          <div className="drawer-grid-3">
+            <FormField label="agent_key">
+              <input
+                value={form.agent_key}
+                onChange={(e) => setForm({ ...form, agent_key: e.target.value })}
+                placeholder="moe_guide"
+              />
+            </FormField>
+            <FormField label="显示名称">
+              <input
+                value={form.display_name}
+                onChange={(e) => setForm({ ...form, display_name: e.target.value })}
+                placeholder="例如 Moe 向导"
+              />
+            </FormField>
+            <FormField label="App 用户 ID">
+              <input
+                value={form.bot_user_id}
+                onChange={(e) => setForm({ ...form, bot_user_id: e.target.value })}
+                placeholder="例如 2"
+              />
+            </FormField>
+          </div>
+        </section>
+
+        <section className="drawer-section">
+          <div className="drawer-section-head">
+            <div>
+              <div className="drawer-section-title">2. 发帖调度与配额</div>
+              <div className="drawer-section-desc">设置自动发帖节奏与每日上限（调度器每 60s 扫描）</div>
+            </div>
+          </div>
+          <div className="drawer-grid-2">
+            <FormField label="发帖调度模式">
+              <select
+                value={form.post_schedule_mode}
+                onChange={(e) => {
+                  const mode = e.target.value
+                  setForm({
+                    ...form,
+                    post_schedule_mode: mode,
+                    schedule_cron:
+                      mode === 'smart'
+                        ? ''
+                        : form.schedule_cron || '0 */6 * * *',
+                  })
+                }}
+              >
+                <option value="manual">手动（仅后台试跑）</option>
+                <option value="cron">定时（Cron 表达式）</option>
+                <option value="smart">智能（LLM 评估 + 生成）</option>
+              </select>
+            </FormField>
+            <FormField label="每日发帖配额（0 为不限）">
+              <input
+                type="number"
+                min={0}
+                value={form.post_quota_daily}
+                onChange={(e) =>
+                  setForm({
+                    ...form,
+                    post_quota_daily: Number(e.target.value) || 0,
+                  })
+                }
+              />
+            </FormField>
+          </div>
+          {form.post_schedule_mode === 'cron' || form.post_schedule_mode === 'smart' ? (
             <FormField
               label={
                 form.post_schedule_mode === 'smart'
-                  ? '可选评估 cron（留空则按智能重试周期运行）'
-                  : 'cron 表达式（分 时 日 月 周）'
+                  ? '可选评估 Cron（留空则按智能重试周期运行）'
+                  : 'Cron 表达式（分 时 日 月 周）'
               }
             >
               <input
@@ -399,70 +473,89 @@ export function MoeBotsPage() {
                 onChange={(e) => setForm({ ...form, schedule_cron: e.target.value })}
                 placeholder="0 */6 * * *"
               />
-            </FormField>
-            <FormField label="快捷预设">
-              <div className="btn-row" style={{ flexWrap: 'wrap' }}>
+              <div className="drawer-pill-row">
                 {CRON_PRESETS.map((p) => (
                   <button
                     key={p.value}
                     type="button"
-                    className="btn btn-ghost btn-sm"
+                    className={`drawer-pill${form.schedule_cron.trim() === p.value ? ' is-active' : ''}`}
                     onClick={() => setForm({ ...form, schedule_cron: p.value })}
                   >
-                    {p.label}
+                    {p.label}（{p.value}）
                   </button>
                 ))}
               </div>
             </FormField>
-          </>
-        ) : null}
-        <FormField label="模型 ID（展示用；发帖实际优先使用服务端 moe.bot_post_model）">
-          <input
-            value={form.model_name}
-            onChange={(e) => setForm({ ...form, model_name: e.target.value })}
-            placeholder="例如 qwen2.5:3b-instruct；需与推理端模型名一致"
-          />
-        </FormField>
-        <FormField label="每日发帖配额（0 表示不限）">
-          <input
-            type="number"
-            min={0}
-            value={form.post_quota_daily}
-            onChange={(e) =>
-              setForm({
-                ...form,
-                post_quota_daily: Number(e.target.value) || 0,
-              })
-            }
-          />
-        </FormField>
-        <FormField label="人设 / 系统提示（性格与擅长领域，不是发帖正文）">
-          <textarea
-            rows={3}
-            value={form.system_prompt}
-            onChange={(e) => setForm({ ...form, system_prompt: e.target.value })}
-            placeholder="例如：Moe 向导，爱手绘和 ACG，说话直爽、爱吐槽，偶尔晒练习进度"
-          />
-        </FormField>
-        <FormField label="发帖硬性规则（每行一条，存数据库，每次生成必遵守）">
-          <textarea
-            rows={6}
-            value={form.post_rules}
-            onChange={(e) => setForm({ ...form, post_rules: e.target.value })}
-            placeholder={DEFAULT_POST_RULES}
-          />
-          <p className="muted" style={{ fontSize: 12, marginTop: 6 }}>
-            留空则使用服务端内置默认规则。以 # 开头的行视为注释。
-          </p>
-        </FormField>
-        <label className="checkbox-row">
-          <input
-            type="checkbox"
-            checked={form.enabled}
-            onChange={(e) => setForm({ ...form, enabled: e.target.checked })}
-          />
-          启用 Bot
-        </label>
+          ) : null}
+        </section>
+
+        <section className="drawer-section">
+          <div className="drawer-section-head">
+            <div>
+              <div className="drawer-section-title">3. 推理模型与文风设定</div>
+              <div className="drawer-section-desc">指定生成模型、Bot 人设与每次发帖必须遵守的硬性规则</div>
+            </div>
+            <button
+              type="button"
+              className="btn btn-ghost btn-sm"
+              onClick={() => setForm({ ...form, post_rules: DEFAULT_POST_RULES })}
+            >
+              恢复默认规则
+            </button>
+          </div>
+
+          <FormField label="模型 ID（点击下方在线模型快速选择，或留空跟随默认）">
+            <input
+              list="moe-bot-model-datalist"
+              value={form.model_name}
+              onChange={(e) => setForm({ ...form, model_name: e.target.value })}
+              placeholder="例如 qwen2.5:7b；需与推理端模型名一致"
+            />
+            {models.length > 0 ? (
+              <>
+                <datalist id="moe-bot-model-datalist">
+                  {models.map((m) => (
+                    <option key={m} value={m} />
+                  ))}
+                </datalist>
+                <div className="drawer-pill-row">
+                  {models.map((m) => (
+                    <button
+                      key={m}
+                      type="button"
+                      title={m}
+                      className={`drawer-pill${form.model_name.trim() === m ? ' is-active' : ''}`}
+                      onClick={() => setForm({ ...form, model_name: m })}
+                    >
+                      {m}
+                    </button>
+                  ))}
+                </div>
+              </>
+            ) : null}
+          </FormField>
+
+          <FormField label="人设 / 系统提示（性格与擅长领域，不是发帖正文）">
+            <textarea
+              rows={5}
+              value={form.system_prompt}
+              onChange={(e) => setForm({ ...form, system_prompt: e.target.value })}
+              placeholder="例如：Moe 向导，爱手绘和 ACG，说话直爽、爱吐槽，偶尔晒练习进度"
+            />
+          </FormField>
+
+          <FormField
+            label="发帖硬性规则（每行一条，存数据库，每次生成必遵守）"
+            hint="留空则使用服务端内置默认规则；以 # 开头的行视为注释。"
+          >
+            <textarea
+              rows={6}
+              value={form.post_rules}
+              onChange={(e) => setForm({ ...form, post_rules: e.target.value })}
+              placeholder={DEFAULT_POST_RULES}
+            />
+          </FormField>
+        </section>
       </AdminFormDrawer>
     </>
   )

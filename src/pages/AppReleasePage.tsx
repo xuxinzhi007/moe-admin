@@ -230,23 +230,25 @@ export function AppReleasePage() {
         onSave={() => void save()}
         saveLabel="保存并生效"
       >
-        <FormField label="版本名 versionName（展示用）">
-          <input
-            value={form.version_name}
-            onChange={(e) => setForm((f) => ({ ...f, version_name: e.target.value }))}
-            placeholder="1.2.3"
-            spellCheck={false}
-          />
-        </FormField>
-        <FormField label="versionCode（覆盖安装依据，必填正整数）">
-          <input
-            value={form.version_code}
-            onChange={(e) => setForm((f) => ({ ...f, version_code: e.target.value }))}
-            placeholder="例如 pubspec 1.2.3+42 则填 42"
-            inputMode="numeric"
-            spellCheck={false}
-          />
-        </FormField>
+        <div className="form-grid-2">
+          <FormField label="版本名 versionName（展示用）">
+            <input
+              value={form.version_name}
+              onChange={(e) => setForm((f) => ({ ...f, version_name: e.target.value }))}
+              placeholder="1.2.3"
+              spellCheck={false}
+            />
+          </FormField>
+          <FormField label="versionCode（必填正整数）">
+            <input
+              value={form.version_code}
+              onChange={(e) => setForm((f) => ({ ...f, version_code: e.target.value }))}
+              placeholder="例如 pubspec 1.2.3+42 则填 42"
+              inputMode="numeric"
+              spellCheck={false}
+            />
+          </FormField>
+        </div>
         <FormField label="APK 下载 URL">
           <input
             value={form.apk_url}
@@ -259,30 +261,28 @@ export function AppReleasePage() {
           <textarea
             value={form.changelog}
             onChange={(e) => setForm((f) => ({ ...f, changelog: e.target.value }))}
-            rows={5}
+            rows={4}
             placeholder="本次更新内容…"
           />
         </FormField>
-        <FormField label="选项">
-          <div className="checkbox-stack">
-            <label className="checkbox-row">
-              <input
-                type="checkbox"
-                checked={form.enabled}
-                onChange={(e) => setForm((f) => ({ ...f, enabled: e.target.checked }))}
-              />
-              <span>启用（关闭后客户端视为无更新）</span>
-            </label>
-            <label className="checkbox-row">
-              <input
-                type="checkbox"
-                checked={form.force_update}
-                onChange={(e) => setForm((f) => ({ ...f, force_update: e.target.checked }))}
-              />
-              <span>强制更新（用户必须更新才能继续使用主功能）</span>
-            </label>
-          </div>
-        </FormField>
+        <div className="form-grid-2">
+          <label className="ai-switch-row">
+            <span>启用版本更新</span>
+            <input
+              type="checkbox"
+              checked={form.enabled}
+              onChange={(e) => setForm((f) => ({ ...f, enabled: e.target.checked }))}
+            />
+          </label>
+          <label className="ai-switch-row">
+            <span>强制更新（阻断旧版）</span>
+            <input
+              type="checkbox"
+              checked={form.force_update}
+              onChange={(e) => setForm((f) => ({ ...f, force_update: e.target.checked }))}
+            />
+          </label>
+        </div>
       </AdminFormDrawer>
     </>
   )

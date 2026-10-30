@@ -5,6 +5,7 @@ import { AdminTag } from '../components/AdminTag'
 import { BrainPipelinePanel } from '../components/BrainPipelinePanel'
 import { BrainKnowledgeGraph } from '../components/BrainKnowledgeGraph'
 import { BrainRpgPanel } from '../components/BrainRpgPanel'
+import { PageTabs, type PageTabItem } from '../components/PageTabs'
 import { MonitorPageLayout } from '../ui'
 import { InferenceStatusBar } from '../components/InferenceStatusBar'
 import { MemoryInfluencePanel } from '../components/MemoryInfluencePanel'
@@ -17,6 +18,7 @@ import { waitMoeBrainPipelineWs } from '../lib/moePipelineWs'
 import { normalizeBrainData, type BrainData } from '../lib/brainData'
 import { normalizeBrainGraphData, type BrainGraphData, type BrainGraphNode } from '../lib/brainGraphData'
 import { asArray } from '../lib/apiRecord'
+import { MoeBotFlowPanel } from './MoeBotFlowPage'
 
 const DEFAULT_FORBIDDEN = `risk:诗意腔
 tone:官方
@@ -27,7 +29,14 @@ type:提问
 topic:日常
 topic:手绘`
 
-type BrainTab = 'workbench' | 'graph' | 'rpg'
+type BrainTab = 'workbench' | 'graph' | 'rpg' | 'flow'
+
+const BRAIN_TABS: PageTabItem<BrainTab>[] = [
+  { key: 'workbench', label: '策略与自传工作台', hint: '标签策略 · 自传列表 · 评分' },
+  { key: 'graph', label: '知识图谱', hint: '记忆关联网络' },
+  { key: 'rpg', label: '记忆 RPG', hint: '入梦 · 压缩 · 技能 · 碎片' },
+  { key: 'flow', label: '流程编排画布', hint: '工具节点 · 重试策略' },
+]
 
 export function MoeBrainPage() {
   const { agentKey: paramKey } = useParams<{ agentKey: string }>()
@@ -60,7 +69,12 @@ export function MoeBrainPage() {
   const [messageTone, setMessageTone] = useState<'ok' | 'warn' | 'err'>('ok')
   const [opsRefresh, setOpsRefresh] = useState(0)
   const [runningOnce, setRunningOnce] = useState(false)
-  const [pageTab, setPageTab] = useState<BrainTab>('workbench')
+  const tabFromUrl = searchParams.get('tab') as BrainTab | null
+  const [pageTab, setPageTab] = useState<BrainTab>(
+    tabFromUrl && ['workbench', 'graph', 'rpg', 'flow'].includes(tabFromUrl)
+      ? tabFromUrl
+      : 'workbench',
+  )
   const [graph, setGraph] = useState<BrainGraphData | null>(null)
   const [graphLoading, setGraphLoading] = useState(false)
   const [selectedGraphNode, setSelectedGraphNode] = useState<BrainGraphNode | null>(null)
@@ -132,19 +146,32 @@ export function MoeBrainPage() {
   }, [agentKey, client])
 
   useEffect(() => {
-    void loadAgents()
-  }, [loadAgents])
+    const timer = window.setTimeout(() => {
+      void loadAgents()
+      void loadBrain()
+    }, 0)
+    return () => window.clearTimeout(timer)
+  }, [loadAgents, loadBrain])
 
   useEffect(() => {
-    void loadBrain()
-  }, [loadBrain])
-
-  useEffect(() => {
-    if (pageTab === 'graph') void loadGraph()
+    if (pageTab !== 'graph') return
+    const timer = window.setTimeout(() => {
+      void loadGraph()
+    }, 0)
+    return () => window.clearTimeout(timer)
   }, [pageTab, loadGraph])
 
   function onSelectAgent(key: string) {
-    setSearchParams({ agent: key })
+    const next: Record<string, string> = { agent: key }
+    if (pageTab !== 'workbench') next.tab = pageTab
+    setSearchParams(next)
+  }
+
+  function switchBrainTab(nextTab: BrainTab) {
+    setPageTab(nextTab)
+    const next: Record<string, string> = { agent: agentKey }
+    if (nextTab !== 'workbench') next.tab = nextTab
+    setSearchParams(next)
   }
 
   async function savePolicy() {
@@ -332,8 +359,8 @@ export function MoeBrainPage() {
 
   return (
     <MonitorPageLayout
-      title="AI 大脑"
-      description="单 Bot 标签策略、生成结果与记忆整理 · 先选对象再编辑规则"
+      title="AI 大脑与流程编排"
+      description="单 Bot 标签策略、自传润色、知识图谱、记忆 RPG 与工具编排画布一站式工作台"
       headActions={
         <div className="btn-row page-head-toolbar">
           <Link className="btn btn-ghost btn-sm" to="/ai/moe-bots">
@@ -431,40 +458,19 @@ export function MoeBrainPage() {
 
       {brain && !loading ? (
         <>
-          <div className="brain-page-tabs" role="tablist" aria-label="大脑视图">
-            <button
-              type="button"
-              role="tab"
-              aria-selected={pageTab === 'workbench'}
-              className={`brain-page-tab ${pageTab === 'workbench' ? 'brain-page-tab--active' : ''}`}
-              onClick={() => setPageTab('workbench')}
-            >
-              工作台
-              <span className="brain-page-tab-hint">策略 · 自传列表 · 标签 · 评分</span>
-            </button>
-            <button
-              type="button"
-              role="tab"
-              aria-selected={pageTab === 'graph'}
-              className={`brain-page-tab ${pageTab === 'graph' ? 'brain-page-tab--active' : ''}`}
-              onClick={() => setPageTab('graph')}
-            >
-              知识图谱
-              <span className="brain-page-tab-hint">关联网络 · 可交互探索</span>
-            </button>
-            <button
-              type="button"
-              role="tab"
-              aria-selected={pageTab === 'rpg'}
-              className={`brain-page-tab ${pageTab === 'rpg' ? 'brain-page-tab--active' : ''}`}
-              onClick={() => setPageTab('rpg')}
-            >
-              记忆 RPG
-              <span className="brain-page-tab-hint">入梦 · 压缩 · 技能 · 碎片</span>
-            </button>
-          </div>
+          <PageTabs
+            tabs={BRAIN_TABS}
+            active={pageTab}
+            onChange={switchBrainTab}
+          />
 
-          {pageTab === 'rpg' ? (
+          {pageTab === 'flow' ? (
+            <MoeBotFlowPanel
+              agentKey={activeKey}
+              agentLabel={brain?.display_name || activeRuntime?.display_name || activeKey}
+              runningOnce={runningOnce}
+            />
+          ) : pageTab === 'rpg' ? (
             <BrainRpgPanel
               agentKey={activeKey}
               client={client}
@@ -484,7 +490,7 @@ export function MoeBrainPage() {
               onSelect={setSelectedGraphNode}
               onRefresh={() => void loadGraph()}
               onOpenWorkbench={() => {
-                setPageTab('workbench')
+                switchBrainTab('workbench')
                 setSelectedGraphNode(null)
               }}
             />

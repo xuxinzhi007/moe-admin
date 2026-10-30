@@ -1,4 +1,5 @@
 import { useMemo, useState } from 'react'
+import { createPortal } from 'react-dom'
 import { AdminFilterInput } from './AdminFilterInput'
 import { AdminFilterPills } from './AdminFilterPills'
 import { AdminTag } from './AdminTag'
@@ -286,100 +287,103 @@ export function MoeToolCallsPanel({
         </button>
       </div>
 
-      {detailRow ? (
-        <div className="drawer-backdrop" onClick={() => setDetailRow(null)}>
-          <aside
-            className="drawer moe-call-detail-drawer"
-            aria-label="调用详情"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <div className="drawer-head">
-              <div>
-                <h3>调用详情</h3>
-                <p className="drawer-subtitle">
-                  #{detailRow.id} · {detailRow.tool}
-                </p>
-              </div>
-              <button
-                type="button"
-                className="btn btn-ghost drawer-close"
-                onClick={() => setDetailRow(null)}
+      {detailRow && typeof document !== 'undefined'
+        ? createPortal(
+            <div className="drawer-backdrop" onClick={() => setDetailRow(null)}>
+              <aside
+                className="drawer drawer--wide moe-call-detail-drawer"
+                aria-label="调用详情"
+                onClick={(e) => e.stopPropagation()}
               >
-                ✕
-              </button>
-            </div>
-            <div className="drawer-body">
-              <dl className="moe-call-detail-grid">
-                <div>
-                  <dt>时间</dt>
-                  <dd>{formatDateTime(detailRow.created_at)}</dd>
-                </div>
-                <div>
-                  <dt>结果</dt>
-                  <dd>
-                    <AdminTag
-                      spec={
-                        detailRow.ok
-                          ? { label: '成功', tone: 'ok' }
-                          : { label: '失败', tone: 'fail' }
-                      }
-                    />
-                  </dd>
-                </div>
-                <div>
-                  <dt>耗时</dt>
-                  <dd>{detailRow.latency_ms} ms</dd>
-                </div>
-                <div>
-                  <dt>来源</dt>
-                  <dd>{sourceLabel(detailRow.source)}</dd>
-                </div>
-                <div>
-                  <dt>用户</dt>
-                  <dd>
-                    <IdCell id={detailRow.actor_user_id} />
-                  </dd>
-                </div>
-                <div>
-                  <dt>Agent</dt>
-                  <dd>{detailRow.agent_key || '—'}</dd>
-                </div>
-              </dl>
-              {detailRow.error_msg ? (
-                <div className="moe-call-error">
-                  <strong>错误信息</strong>
-                  <pre>{detailRow.error_msg}</pre>
-                </div>
-              ) : null}
-              <div className="moe-call-detail-json-wrap">
-                <div className="moe-call-detail-json-head">
-                  <strong>请求参数</strong>
+                <div className="drawer-head">
+                  <div>
+                    <h3>调用详情</h3>
+                    <p className="drawer-subtitle">
+                      #{detailRow.id} · {detailRow.tool}
+                    </p>
+                  </div>
                   <button
                     type="button"
-                    className="btn btn-ghost btn-sm"
-                    onClick={() =>
-                      void handleCopy(
-                        parseToolArguments(detailRow.tool, detailRow.arguments_preview).formattedJson,
-                        '参数',
-                      )
-                    }
+                    className="btn btn-ghost drawer-close"
+                    onClick={() => setDetailRow(null)}
                   >
-                    复制
+                    ✕
                   </button>
                 </div>
-                <pre className="moe-call-json">
-                  {parseToolArguments(detailRow.tool, detailRow.arguments_preview).formattedJson || '—'}
-                </pre>
-              </div>
-            </div>
-            <div className="drawer-foot">
-              <button type="button" className="btn btn-primary" onClick={() => setDetailRow(null)}>
-                关闭
-              </button>
-            </div>
-          </aside>
-        </div>
-      ) : null}
+                <div className="drawer-body">
+                  <dl className="moe-call-detail-grid">
+                    <div>
+                      <dt>时间</dt>
+                      <dd>{formatDateTime(detailRow.created_at)}</dd>
+                    </div>
+                    <div>
+                      <dt>结果</dt>
+                      <dd>
+                        <AdminTag
+                          spec={
+                            detailRow.ok
+                              ? { label: '成功', tone: 'ok' }
+                              : { label: '失败', tone: 'fail' }
+                          }
+                        />
+                      </dd>
+                    </div>
+                    <div>
+                      <dt>耗时</dt>
+                      <dd>{detailRow.latency_ms} ms</dd>
+                    </div>
+                    <div>
+                      <dt>来源</dt>
+                      <dd>{sourceLabel(detailRow.source)}</dd>
+                    </div>
+                    <div>
+                      <dt>用户</dt>
+                      <dd>
+                        <IdCell id={detailRow.actor_user_id} />
+                      </dd>
+                    </div>
+                    <div>
+                      <dt>Agent</dt>
+                      <dd>{detailRow.agent_key || '—'}</dd>
+                    </div>
+                  </dl>
+                  {detailRow.error_msg ? (
+                    <div className="moe-call-error">
+                      <strong>错误信息</strong>
+                      <pre>{detailRow.error_msg}</pre>
+                    </div>
+                  ) : null}
+                  <div className="moe-call-detail-json-wrap">
+                    <div className="moe-call-detail-json-head">
+                      <strong>请求参数</strong>
+                      <button
+                        type="button"
+                        className="btn btn-ghost btn-sm"
+                        onClick={() =>
+                          void handleCopy(
+                            parseToolArguments(detailRow.tool, detailRow.arguments_preview).formattedJson,
+                            '参数',
+                          )
+                        }
+                      >
+                        复制
+                      </button>
+                    </div>
+                    <pre className="moe-call-json">
+                      {parseToolArguments(detailRow.tool, detailRow.arguments_preview).formattedJson || '—'}
+                    </pre>
+                  </div>
+                </div>
+                <div className="drawer-foot">
+                  <button type="button" className="btn btn-primary" onClick={() => setDetailRow(null)}>
+                    关闭
+                  </button>
+                </div>
+              </aside>
+            </div>,
+            document.body,
+          )
+        : null}
     </section>
   )
 }

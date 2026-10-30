@@ -154,11 +154,18 @@ export function MoeToolsPage() {
   }, [client, callsPage, appliedCallFilters])
 
   useEffect(() => {
-    void loadCore()
+    const timer = window.setTimeout(() => {
+      void loadCore()
+    }, 0)
+    return () => window.clearTimeout(timer)
   }, [loadCore])
 
   useEffect(() => {
-    if (tab === 'calls') void loadCalls()
+    if (tab !== 'calls') return
+    const timer = window.setTimeout(() => {
+      void loadCalls()
+    }, 0)
+    return () => window.clearTimeout(timer)
   }, [tab, loadCalls])
 
   function applyCallFilters() {
@@ -175,13 +182,19 @@ export function MoeToolsPage() {
 
   return (
     <TabbedPageLayout
-      title="Moe 工具与 Bot"
-      description="Chat → tool_calls → Executor → 审计埋点 · 概览指标与工具目录、调用明细在同一页切换"
+      title="工具目录与调用审计"
+      description="Chat → tool_calls → Executor → 审计埋点 · 工具目录权限与调用明细同页切换"
       envNote={`当前数据环境：${apiTargetLabel} · 工具执行经 /api/moe/tools/execute 埋点`}
+      metrics={[
+        { label: '累计调用', value: stats?.total_calls ?? '—' },
+        { label: '调用成功率', value: successRate != null ? `${successRate}%` : '—' },
+        { label: '注册工具数', value: tools.length },
+        { label: '启用中 Bot', value: `${enabledBots} / ${runtimes.length}` },
+      ]}
       headActions={
         <div className="btn-row">
           <Link className="btn btn-ghost btn-sm" to="/ai/moe-bots">
-            社区 Bot
+            社区发帖 Bot
           </Link>
           <button type="button" className="btn btn-ghost" disabled={loading} onClick={() => void loadCore()}>
             刷新

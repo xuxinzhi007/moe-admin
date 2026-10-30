@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react'
+import { createPortal } from 'react-dom'
 import { useDrawerDismiss } from '../hooks/useDrawerDismiss'
 
 type AdminFormDrawerProps = {
@@ -30,8 +31,12 @@ export function AdminFormDrawer({
 
   if (!open) return null
 
-  return (
-    <div className="drawer-backdrop" role="presentation" onClick={onClose}>
+  const dialogNode = (
+    <div
+      className={`drawer-backdrop ${wide ? 'drawer-backdrop--modal' : ''}`}
+      role="presentation"
+      onClick={onClose}
+    >
       <p className="drawer-backdrop-hint">点击空白处或按 Esc 关闭</p>
       <aside
         className={`drawer ${wide ? 'drawer--wide' : ''}`}
@@ -69,4 +74,6 @@ export function AdminFormDrawer({
       </aside>
     </div>
   )
+
+  return typeof document !== 'undefined' ? createPortal(dialogNode, document.body) : dialogNode
 }

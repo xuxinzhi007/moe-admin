@@ -87,15 +87,21 @@ export function UsersPage() {
     try {
       const res = await client.getUserProfile(userId)
       if (res.success && res.data) {
+        const raw = res.data as Partial<typeof res.data> & Record<string, unknown>
         setProfile({
-          counts: res.data.counts as Record<string, number>,
-          level: res.data.level,
-          links: res.data.links || [],
-          behavior: res.data.behavior
+          counts: (raw.counts && typeof raw.counts === 'object' ? raw.counts : {}) as Record<
+            string,
+            number
+          >,
+          level: raw.level,
+          links: Array.isArray(raw.links) ? raw.links : [],
+          behavior: raw.behavior
             ? {
-                ...res.data.behavior,
-                tags: res.data.behavior.tags || [],
-                top_screens: res.data.behavior.top_screens || [],
+                ...raw.behavior,
+                tags: Array.isArray(raw.behavior.tags) ? raw.behavior.tags : [],
+                top_screens: Array.isArray(raw.behavior.top_screens)
+                  ? raw.behavior.top_screens
+                  : [],
               }
             : undefined,
         })
@@ -232,7 +238,8 @@ export function UsersPage() {
       <AdminFormDrawer
         open={selected !== null}
         title={selected ? `编辑用户 · ${selected.username}` : '编辑用户'}
-        subtitle={selected ? `ID ${selected.id}` : undefined}
+        subtitle={selected ? `UID ${selected.id} · 账号资料、关联资产与角色权限治理` : undefined}
+        wide
         error={formError}
         saving={saving}
         onClose={() => {
@@ -240,145 +247,177 @@ export function UsersPage() {
           setFormError('')
         }}
         onSave={() => void saveUser()}
+        saveLabel="保存用户设置"
       >
         {selected ? <UserProfileCard user={selected} /> : null}
-        {profileLoading ? (
-          <p className="muted" style={{ fontSize: 12 }}>
-            加载关联数据…
-          </p>
-        ) : profile ? (
-          <>
-            {profile.level ? (
-              <div className="admin-hint" style={{ marginBottom: 12 }}>
-                Lv.{profile.level.level} {profile.level.level_title || ''} · 经验{' '}
-                {profile.level.experience}/{profile.level.total_exp}
-              </div>
-            ) : null}
-            <div className="admin-metrics" style={{ marginBottom: 12 }}>
-              {[
-                ['动态', profile.counts.posts],
-                ['评论', profile.counts.comments],
-                ['粉丝', profile.counts.followers],
-                ['关注', profile.counts.following],
-                ['签到', profile.counts.check_ins],
-                ['成就', profile.counts.achievements_unlocked],
-                ['VIP 订单', profile.counts.vip_orders],
-                ['送礼', profile.counts.gift_sent],
-                ['收礼', profile.counts.gift_received],
-                ['AI 分身', profile.counts.ai_agents],
-              ].map(([label, value]) => (
-                <div className="metric" key={String(label)}>
-                  <div className="label">{label}</div>
-                  <div className="value">{value ?? 0}</div>
-                </div>
-              ))}
+
+        <section className="drawer-section">
+          <div className="drawer-section-head">
+            <div>
+              <div className="drawer-section-title">1. 账号资料与权限治理</div>
+              <div className="drawer-section-desc">修改头像路径、签名、后台角色与 VIP 权益状态</div>
             </div>
-            {profile.links.length > 0 ? (
-              <div className="inline-form" style={{ flexWrap: 'wrap', marginBottom: 12 }}>
-                {profile.links.map((link) => (
-                  <Link
-                    key={link.admin_route}
-                    to={resolveAdminPath(link.admin_route)}
-                    className="btn btn-ghost btn-sm"
-                  >
-                    {link.label}
-                  </Link>
+            {selected ? (
+              <TagRow>
+                <AdminTag spec={roleTag(role)} />
+                <AdminTag spec={vipTag(isVip)} />
+              </TagRow>
+            ) : null}
+          </div>
+
+          <div className="drawer-grid-2">
+            <FormField label="App 角色权限">
+              <select value={role} onChange={(e) => setRole(e.target.value)}>
+                <option value="user">user（普通用户）</option>
+                <option value="admin">admin（管理员）</option>
+                <option value="super_admin">super_admin（超级管理员）</option>
+              </select>
+            </FormField>
+
+            <FormField label="会员权益状态">
+              <label className="ai-switch-row" style={{ background: 'var(--surface)' }}>
+                <span>开通 VIP 会员标识</span>
+                <input
+                  type="checkbox"
+                  checked={isVip}
+                  onChange={(e) => setIsVip(e.target.checked)}
+                />
+              </label>
+            </FormField>
+          </div>
+
+          <FormField
+            label="头像 URL / 云图库路径"
+            hint="支持相对路径（/api/images/…）或外链；换域名后可在「应用配置」改 PublicBaseUrl。"
+          >
+            <input
+              value={avatar}
+              onChange={(e) => setAvatar(e.target.value)}
+              placeholder="/api/images/xxx 或完整 http(s) URL"
+              spellCheck={false}
+            />
+          </FormField>
+
+          <FormField label="个性签名">
+            <input
+              value={signature}
+              onChange={(e) => setSignature(e.target.value)}
+              placeholder="可选，展示在用户个人主页"
+            />
+          </FormField>
+        </section>
+
+        <section className="drawer-section">
+          <div className="drawer-section-head">
+            <div>
+              <div className="drawer-section-title">2. 社区资产与近 7 日行为画像</div>
+              <div className="drawer-section-desc">实时汇总该用户的发帖、互动、成长等级与高频访问页面</div>
+            </div>
+            {profile?.level ? (
+              <AdminTag
+                label={`Lv.${profile.level.level} ${profile.level.level_title || ''} (${profile.level.experience}/${profile.level.total_exp})`}
+                tone="purple"
+              />
+            ) : null}
+          </div>
+
+          {profileLoading ? (
+            <p className="muted" style={{ fontSize: 12, margin: 0 }}>
+              正在加载用户关联数据与行为画像…
+            </p>
+          ) : profile ? (
+            <>
+              <div className="admin-metrics" style={{ marginBottom: 4 }}>
+                {[
+                  ['动态', profile.counts?.posts],
+                  ['评论', profile.counts?.comments],
+                  ['粉丝', profile.counts?.followers],
+                  ['关注', profile.counts?.following],
+                  ['签到', profile.counts?.check_ins],
+                  ['成就', profile.counts?.achievements_unlocked],
+                  ['VIP 订单', profile.counts?.vip_orders],
+                  ['送礼', profile.counts?.gift_sent],
+                  ['收礼', profile.counts?.gift_received],
+                  ['AI 分身', profile.counts?.ai_agents],
+                ].map(([label, value]) => (
+                  <div className="metric" key={String(label)}>
+                    <div className="label">{label}</div>
+                    <div className="value">{value ?? 0}</div>
+                  </div>
                 ))}
               </div>
-            ) : null}
-            {profile.behavior ? (
-              <div className="panel" style={{ marginBottom: 12, padding: 12 }}>
-                <div style={{ fontWeight: 600, marginBottom: 8 }}>行为画像（近 7 日）</div>
-                {profile.behavior.tags && profile.behavior.tags.length > 0 ? (
-                  <div className="inline-form" style={{ flexWrap: 'wrap', marginBottom: 8 }}>
-                    {profile.behavior.tags.map((tag) => (
-                      <span key={tag} className="admin-tag admin-tag-mint">
-                        {tag}
-                      </span>
-                    ))}
+
+              {(profile.links?.length ?? 0) > 0 ? (
+                <div className="drawer-pill-row">
+                  {(profile.links ?? []).map((link) => (
+                    <Link
+                      key={link.admin_route}
+                      to={resolveAdminPath(link.admin_route)}
+                      className="btn btn-ghost btn-sm"
+                    >
+                      {link.label} →
+                    </Link>
+                  ))}
+                </div>
+              ) : null}
+
+              {profile.behavior ? (
+                <div style={{ marginTop: 4 }}>
+                  <div className="btn-row" style={{ justifyContent: 'space-between', marginBottom: 6 }}>
+                    <strong style={{ fontSize: 12 }}>行为画像（近 7 日）</strong>
+                    <span className="muted" style={{ fontSize: 12 }}>
+                      事件 {profile.behavior.total_events_7d ?? 0} 条
+                      {profile.behavior.last_active_at
+                        ? ` · 最近活跃 ${formatDateTime(profile.behavior.last_active_at)}`
+                        : ''}
+                    </span>
                   </div>
-                ) : (
-                  <p className="muted" style={{ fontSize: 12, marginBottom: 8 }}>
-                    暂无画像标签
-                  </p>
-                )}
-                <p className="muted" style={{ fontSize: 12, marginBottom: 8 }}>
-                  事件 {profile.behavior.total_events_7d ?? 0} 条
-                  {profile.behavior.last_active_at
-                    ? ` · 最近活跃 ${formatDateTime(profile.behavior.last_active_at)}`
-                    : ''}
-                </p>
-                {(profile.behavior.top_screens || []).length > 0 ? (
-                  <AdminTable
-                    compact
-                    columns={[
-                      {
-                        key: 'screen',
-                        header: '页面',
-                        render: (row) => row.label || row.screen,
-                      },
-                      {
-                        key: 'visits',
-                        header: '访问',
-                        render: (row) => row.visit_count,
-                      },
-                      {
-                        key: 'duration',
-                        header: '停留(ms)',
-                        render: (row) => row.total_duration_ms,
-                      },
-                    ]}
-                    rows={profile.behavior.top_screens!}
-                    rowKey={(row) => row.screen}
-                  />
-                ) : (
-                  <p className="muted" style={{ fontSize: 12 }}>
-                    暂无页面浏览数据
-                  </p>
-                )}
-              </div>
-            ) : null}
-          </>
-        ) : null}
-        <FormField label="头像 URL / 云图库路径">
-          <input
-            value={avatar}
-            onChange={(e) => setAvatar(e.target.value)}
-            placeholder="/api/images/xxx 或完整 http(s) URL"
-            spellCheck={false}
-          />
-          <p className="muted" style={{ fontSize: 11, marginTop: 4 }}>
-            支持相对路径（/api/images/…）或外链；换域名后可在「应用配置」改 PublicBaseUrl。
-          </p>
-        </FormField>
-        <FormField label="个性签名">
-          <input
-            value={signature}
-            onChange={(e) => setSignature(e.target.value)}
-            placeholder="可选"
-          />
-        </FormField>
-        <FormField label="App 角色">
-          <select value={role} onChange={(e) => setRole(e.target.value)}>
-            <option value="user">user</option>
-            <option value="admin">admin</option>
-            <option value="super_admin">super_admin</option>
-          </select>
-        </FormField>
-        <label className="checkbox-row form-field">
-          <input
-            type="checkbox"
-            checked={isVip}
-            onChange={(e) => setIsVip(e.target.checked)}
-          />
-          <span>VIP 用户</span>
-        </label>
-        {selected ? (
-          <TagRow>
-            <AdminTag spec={roleTag(role)} />
-            <AdminTag spec={vipTag(isVip)} />
-          </TagRow>
-        ) : null}
+                  {profile.behavior.tags && profile.behavior.tags.length > 0 ? (
+                    <div className="drawer-pill-row" style={{ marginBottom: 8 }}>
+                      {profile.behavior.tags.map((tag) => (
+                        <span key={tag} className="admin-tag admin-tag-mint">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  ) : null}
+                  {(profile.behavior.top_screens || []).length > 0 ? (
+                    <AdminTable
+                      compact
+                      columns={[
+                        {
+                          key: 'screen',
+                          header: '页面',
+                          render: (row) => row.label || row.screen,
+                        },
+                        {
+                          key: 'visits',
+                          header: '访问',
+                          render: (row) => row.visit_count,
+                        },
+                        {
+                          key: 'duration',
+                          header: '停留(ms)',
+                          render: (row) => row.total_duration_ms,
+                        },
+                      ]}
+                      rows={profile.behavior.top_screens!}
+                      rowKey={(row) => row.screen}
+                    />
+                  ) : (
+                    <p className="muted" style={{ fontSize: 12, margin: 0 }}>
+                      近 7 日暂无页面浏览埋点数据
+                    </p>
+                  )}
+                </div>
+              ) : null}
+            </>
+          ) : (
+            <p className="muted" style={{ fontSize: 12, margin: 0 }}>
+              暂无关联统计数据
+            </p>
+          )}
+        </section>
       </AdminFormDrawer>
     </>
   )

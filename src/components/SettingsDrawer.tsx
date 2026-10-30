@@ -1,7 +1,9 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
+import { AdminFormDrawer } from './AdminFormDrawer'
+import { AdminTag } from './AdminTag'
+import { FormField } from './FormField'
 import { useAdminAuth } from '../context/AdminAuthContext'
 import { useDeploy } from '../context/DeployContext'
-import { useDrawerDismiss } from '../hooks/useDrawerDismiss'
 import { isSuperAdmin } from '../lib/adminAccess'
 import { AGENT_URL, DEFAULT_DEPLOY_TOKEN } from '../lib/storage'
 
@@ -11,6 +13,11 @@ type Props = {
 }
 
 export function SettingsDrawer({ open, onClose }: Props) {
+  if (!open) return null
+  return <SettingsDrawerInner onClose={onClose} />
+}
+
+function SettingsDrawerInner({ onClose }: { onClose: () => void }) {
   const { user } = useAdminAuth()
   const {
     baseUrl,
@@ -23,160 +30,232 @@ export function SettingsDrawer({ open, onClose }: Props) {
     authOk,
     client,
   } = useDeploy()
+
   const [url, setUrl] = useState(baseUrl)
-  const [tok, setTok] = useState(token)
+  const [tok, setTok] = useState(token || DEFAULT_DEPLOY_TOKEN)
   const [target, setTarget] = useState(deployTarget)
-  const [authLog, setAuthLog] = useState('—')
+  const [showAdvanced, setShowAdvanced] = useState(false)
+  const [authLog, setAuthLog] = useState('点击「检测连接」或「测试云端 SSH」查看实时诊断输出。')
+  const [saving, setSaving] = useState(false)
+  const [probing, setProbing] = useState(false)
+
   const showDeploy = isSuperAdmin(user?.role)
-
-  useEffect(() => {
-    if (open) {
-      setUrl(baseUrl)
-      setTok(token || DEFAULT_DEPLOY_TOKEN)
-      setTarget(deployTarget)
-    }
-  }, [open, baseUrl, token, deployTarget])
-
-  useDrawerDismiss(open, onClose)
-
-  if (!open) return null
+  const isWrongVitePort = url.includes(':5173') || url.includes(':4173')
 
   async function handleSave() {
-    await saveConnection(url, tok.trim() || DEFAULT_DEPLOY_TOKEN, target)
-    onClose()
+    setSaving(true)
+    try {
+      await saveConnection(url.trim() || AGENT_URL, tok.trim() || DEFAULT_DEPLOY_TOKEN, target)
+      onClose()
+    } finally {
+      setSaving(false)
+    }
   }
 
   async function handleVerify() {
-    await saveConnection(url, tok.trim() || DEFAULT_DEPLOY_TOKEN, target)
-    const ok = await verifyToken()
-    setAuthLog(
-      ok
-        ? '运维网关鉴权通过'
-        : '鉴权失败：检查 Agent 是否启动，或高级里 Token 是否与 config.yaml 一致',
-    )
+    setProbing(true)
+    try {
+      await saveConnection(url.trim() || AGENT_URL, tok.trim() || DEFAULT_DEPLOY_TOKEN, target)
+      const ok = await verifyToken()
+      setAuthLog(
+        ok
+          ? '✓ 运维网关（Deploy Agent）连接与 Token 鉴权通过。'
+          : '✕ 鉴权失败：请确认本机 Deploy Agent (:19010) 已启动，且 Token 与 backend/deploy/config.yaml 一致。',
+      )
+    } finally {
+      setProbing(false)
+    }
+  }
+
+  async function handleProbeAgent() {
+    setProbing(true)
+    try {
+      await probeAgent()
+      setAuthLog('已刷新 Deploy Agent 在线状态。')
+    } finally {
+      setProbing(false)
+    }
   }
 
   async function handleSsh() {
+    setProbing(true)
+    setAuthLog('正在连接云端 VPS 测试 SSH 握手与认证…')
     try {
       const data = await client.sshCheck('cloud')
       const p = data.probe
-      setAuthLog((p?.message || '') + '\n' + (p?.output || ''))
+      setAuthLog([p?.message, p?.output].filter(Boolean).join('\n') || 'SSH 检测完成')
     } catch (e) {
       setAuthLog(e instanceof Error ? e.message : 'SSH 检查失败')
+    } finally {
+      setProbing(false)
     }
   }
 
   return (
-    <div
-      className="drawer-backdrop"
-      role="presentation"
-      onClick={onClose}
-      aria-hidden={false}
+    <AdminFormDrawer
+      open
+      title="连接与环境设置"
+      subtitle="配置本机 Deploy Agent 运维网关、默认部署目标与 SSH 连通性诊断"
+      saving={saving}
+      onClose={onClose}
+      onSave={() => void handleSave()}
+      saveLabel="保存设置"
     >
-      <p className="drawer-backdrop-hint">点击空白处或按 Esc 关闭</p>
-      <aside
-        className="drawer"
-        role="dialog"
-        aria-modal="true"
-        aria-label="连接设置"
-        onClick={(e) => e.stopPropagation()}
-      >
-        <div className="drawer-head">
-          <h3>连接设置</h3>
-          <button type="button" className="btn btn-ghost drawer-close" onClick={onClose}>
-            ✕
-          </button>
-        </div>
-        <div className="drawer-body">
-          {!showDeploy ? (
-            <>
-              <p className="settings-muted">
-                业务操作凭顶部账号登录即可。数据环境请用顶栏「本机 / 云端」切换。
-              </p>
-              <p className="settings-muted">
-                当前角色 <code>{user?.role || 'admin'}</code> 无运维发布权限；Deploy Agent / Token
-                仅 <code>super_admin</code> 可见。
-              </p>
-              <p className="settings-status">
-                登录用户：{user?.username || '—'} · 角色：{user?.role || '—'}
-              </p>
-            </>
-          ) : (
-            <>
-              <p className="settings-muted">
-                业务操作凭顶部账号登录即可。运维发布走本机 Deploy Agent（默认自动鉴权），一般无需再填
-                Token。
-              </p>
+      {!showDeploy ? (
+        <section className="drawer-section">
+          <div className="drawer-section-head">
+            <div>
+              <div className="drawer-section-title">当前账号会话</div>
+              <div className="drawer-section-desc">
+                业务操作凭顶部账号登录即可；数据环境请用顶栏「本机 API / 云端 API」切换
+              </div>
+            </div>
+            <AdminTag label={user?.role || 'admin'} tone="info" />
+          </div>
+          <p className="muted" style={{ fontSize: 13, margin: 0 }}>
+            登录管理员：<strong>{user?.username || '—'}</strong>。当前角色无运维发布权限，Deploy
+            Agent 与 SSH 诊断仅对 <code>super_admin</code> 开放。
+          </p>
+        </section>
+      ) : (
+        <>
+          <section className="drawer-section">
+            <div className="drawer-section-head">
+              <div>
+                <div className="drawer-section-title">1. 运维网关（Deploy Agent）</div>
+                <div className="drawer-section-desc">
+                  日常业务 API 直连 :8888；构建与远程发布走 Deploy Agent（:19010）
+                </div>
+              </div>
+              <button
+                type="button"
+                className="btn btn-ghost btn-sm"
+                onClick={() => setUrl(AGENT_URL)}
+              >
+                恢复默认地址
+              </button>
+            </div>
 
-              <label>Agent URL</label>
-              <input
-                value={url}
-                onChange={(e) => setUrl(e.target.value)}
-                placeholder={AGENT_URL}
-                spellCheck={false}
-              />
-              <p className="settings-muted">
-                填 Deploy Agent 地址（<code>{AGENT_URL}</code>），不要填 Vite 前端端口 :5173。
+            <div className="drawer-grid-2">
+              <FormField
+                label="Agent URL"
+                hint={
+                  isWrongVitePort
+                    ? '当前填的是前端端口 (:5173)，请点右上角「恢复默认地址」切回 :19010'
+                    : `默认地址：${AGENT_URL}`
+                }
+              >
+                <input
+                  value={url}
+                  onChange={(e) => setUrl(e.target.value)}
+                  placeholder={AGENT_URL}
+                  spellCheck={false}
+                />
+              </FormField>
+
+              <FormField label="默认运维目标" hint="构建与远程指令的默认执行环境">
+                <select value={target} onChange={(e) => setTarget(e.target.value)}>
+                  <option value="local">本机（Local Agent）</option>
+                  <option value="cloud">云 VPS（SSH 远程）</option>
+                </select>
+              </FormField>
+            </div>
+
+            <div>
+              <button
+                type="button"
+                className="btn btn-ghost btn-sm"
+                onClick={() => setShowAdvanced((v) => !v)}
+              >
+                {showAdvanced ? '收起高级 Token 配置' : '展开高级 · Agent Token（可选）'}
+              </button>
+              {showAdvanced ? (
+                <div style={{ marginTop: 10 }}>
+                  <FormField
+                    label="Deploy Token"
+                    hint="仅当修改过 backend/deploy/config.yaml 中的 token 时需要填写"
+                  >
+                    <input
+                      type="password"
+                      value={tok}
+                      onChange={(e) => setTok(e.target.value)}
+                      placeholder={DEFAULT_DEPLOY_TOKEN}
+                      spellCheck={false}
+                      autoComplete="off"
+                    />
+                  </FormField>
+                </div>
+              ) : null}
+            </div>
+          </section>
+
+          <section className="drawer-section">
+            <div className="drawer-section-head">
+              <div className="btn-row" style={{ gap: 8, alignItems: 'center' }}>
+                <span className="drawer-section-title">2. 状态与连通性诊断</span>
+                <AdminTag
+                  label={
+                    agentOnline === null
+                      ? 'Agent 检测中'
+                      : agentOnline
+                        ? 'Agent 在线'
+                        : 'Agent 离线'
+                  }
+                  tone={agentOnline === null ? 'neutral' : agentOnline ? 'ok' : 'fail'}
+                  dot
+                />
+                <AdminTag
+                  label={authOk ? '鉴权通过' : authOk === false ? '鉴权失败' : '鉴权待测'}
+                  tone={authOk ? 'ok' : authOk === false ? 'fail' : 'neutral'}
+                />
+              </div>
+              <div className="btn-row" style={{ gap: 6 }}>
                 <button
                   type="button"
                   className="btn btn-ghost btn-sm"
-                  onClick={() => setUrl(AGENT_URL)}
+                  disabled={probing}
+                  onClick={() => void handleVerify()}
                 >
-                  恢复默认
-                </button>
-              </p>
-
-              <label>默认目标</label>
-              <select value={target} onChange={(e) => setTarget(e.target.value)}>
-                <option value="local">本机</option>
-                <option value="cloud">云 VPS</option>
-              </select>
-
-              <div className="btn-row">
-                <button type="button" className="btn btn-primary" onClick={() => void handleSave()}>
-                  保存
-                </button>
-                <button type="button" className="btn btn-ghost" onClick={() => void handleVerify()}>
                   检测连接
                 </button>
-              </div>
-
-              <details className="settings-advanced">
-                <summary>高级 · Agent Token（可选）</summary>
-                <label>Deploy Token</label>
-                <input
-                  type="password"
-                  value={tok}
-                  onChange={(e) => setTok(e.target.value)}
-                  placeholder={DEFAULT_DEPLOY_TOKEN}
-                  spellCheck={false}
-                  autoComplete="off"
-                />
-                <p className="settings-muted">
-                  仅当你改过 <code>backend/deploy/config.yaml</code> 的 <code>token</code> 时才需要改这里。
-                  默认与 Agent 的 <code>{DEFAULT_DEPLOY_TOKEN}</code> 一致。
-                </p>
-              </details>
-
-              <p className="settings-status">
-                Agent：{' '}
-                {agentOnline === null ? '检测中…' : agentOnline ? '在线' : '离线'}
-                {' · '}
-                鉴权：{authOk ? '通过' : authOk === false ? '失败' : '—'}
-              </p>
-              <div className="btn-row btn-row-spaced">
-                <button type="button" className="btn btn-ghost" onClick={() => void probeAgent()}>
-                  检测 Agent
+                <button
+                  type="button"
+                  className="btn btn-ghost btn-sm"
+                  disabled={probing}
+                  onClick={() => void handleProbeAgent()}
+                >
+                  刷新状态
                 </button>
-                <button type="button" className="btn btn-mint" onClick={() => void handleSsh()}>
-                  测试 SSH
+                <button
+                  type="button"
+                  className="btn btn-primary btn-sm"
+                  disabled={probing}
+                  onClick={() => void handleSsh()}
+                >
+                  测试云端 SSH
                 </button>
               </div>
-              <pre className="log-pre settings-log">{authLog}</pre>
-            </>
-          )}
-        </div>
-      </aside>
-    </div>
+            </div>
+
+            <pre
+              className="log-pre settings-log"
+              style={{
+                margin: 0,
+                maxHeight: 160,
+                padding: '10px 12px',
+                borderRadius: 10,
+                background: 'var(--surface-soft)',
+                border: '1px solid var(--hairline)',
+                fontSize: 12,
+                whiteSpace: 'pre-wrap',
+                wordBreak: 'break-word',
+              }}
+            >
+              {authLog}
+            </pre>
+          </section>
+        </>
+      )}
+    </AdminFormDrawer>
   )
 }

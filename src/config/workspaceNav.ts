@@ -41,7 +41,7 @@ export type WorkspaceMeta = {
 
 export const WORKSPACES: WorkspaceMeta[] = [
   { id: 'biz', label: '运营', home: '/biz', caption: '用户 · 内容 · 触达' },
-  { id: 'ai', label: 'AI', home: '/ai/moe-brain', caption: 'Bot · 大脑 · 工具' },
+  { id: 'ai', label: 'AI', home: '/ai/models', caption: '模型 · 酒馆 · Bot · 审计' },
   { id: 'infra', label: '运维', home: '/infra/deploy', caption: '后端发布 · 配置 · 审计' },
 ]
 
@@ -141,38 +141,35 @@ export const NAV_BY_WORKSPACE: Record<WorkspaceId, NavEntry[]> = {
   ai: [
     {
       kind: 'item',
-      to: '/ai/moe-brain',
-      label: 'AI 大脑',
-      icon: 'brain',
-      title: '脑图与推理监控',
-    },
-    {
-      kind: 'item',
       to: '/ai/models',
-      label: '模型与 Modelfile',
+      label: '模型与推理工作台',
       icon: 'data',
-      title: '小主机模型总览、拉取、定制与 Modelfile',
-    },
-    {
-      kind: 'item',
-      to: '/ai/playground',
-      label: '模型与角色试聊',
-      icon: 'bot',
-      title: 'Ollama 模型与酒馆角色流式试聊台',
+      title: '小主机 Ollama 模型管理、拉取、Modelfile 定制与试聊',
     },
     {
       kind: 'group',
       id: 'ai-bots',
-      label: '角色与 Bot',
+      label: '角色与社区 Bot',
       icon: 'bot',
-      caption: '酒馆 · 社区 Bot',
+      caption: '酒馆角色 · 试聊 · 大脑编排',
       defaultOpen: true,
       children: [
-        { kind: 'item', to: '/ai/agents', label: 'AI 角色酒馆', title: 'AI 角色管理' },
-        { kind: 'item', to: '/ai/moe-bots', label: '社区 AI Bot', title: 'Bot 配置' },
-        { kind: 'item', to: '/ai/moe-flow', label: 'Bot 编排画布', title: 'Bot 流程编排' },
-        { kind: 'item', to: '/ai/moe-tools', label: 'Moe 工具与 Bot', title: 'Moe 工具总览' },
-        { kind: 'item', to: '/ai/chat-logs', label: 'AI 对话日志', title: 'AI 审计日志' },
+        { kind: 'item', to: '/ai/agents', label: 'AI 角色酒馆', title: '角色卡管理与 Ollama 模型同步' },
+        { kind: 'item', to: '/ai/playground', label: '模型与角色试聊', title: 'Ollama 模型与酒馆角色流式试聊台' },
+        { kind: 'item', to: '/ai/moe-bots', label: '社区发帖 Bot', title: '发帖 Bot 调度与规则配置' },
+        { kind: 'item', to: '/ai/moe-brain', label: 'AI 大脑与编排', title: '标签策略 · 图谱 · 记忆 RPG · 流程画布' },
+      ],
+    },
+    {
+      kind: 'group',
+      id: 'ai-audit',
+      label: '工具与会话审计',
+      icon: 'brain',
+      caption: '工具调用 · 对话日志',
+      defaultOpen: true,
+      children: [
+        { kind: 'item', to: '/ai/moe-tools', label: '工具目录与调用', title: 'Moe 工具目录与执行埋点审计' },
+        { kind: 'item', to: '/ai/chat-logs', label: 'AI 对话日志', title: '用户 AI 会话与消息审计导出' },
       ],
     },
   ],

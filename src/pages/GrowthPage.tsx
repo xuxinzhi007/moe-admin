@@ -510,6 +510,22 @@ export function GrowthPage() {
         <FormField label="名称">
           <input value={achForm.name} onChange={(e) => setAchForm((f) => ({ ...f, name: e.target.value }))} />
         </FormField>
+        <div className="form-grid-2">
+          <FormField label="经验奖励">
+            <input
+              type="number"
+              value={achForm.exp_reward}
+              onChange={(e) => setAchForm((f) => ({ ...f, exp_reward: e.target.value }))}
+            />
+          </FormField>
+          <FormField label="排序">
+            <input
+              type="number"
+              value={achForm.sort_order}
+              onChange={(e) => setAchForm((f) => ({ ...f, sort_order: e.target.value }))}
+            />
+          </FormField>
+        </div>
         <FormField label="描述">
           <textarea
             rows={3}
@@ -517,27 +533,13 @@ export function GrowthPage() {
             onChange={(e) => setAchForm((f) => ({ ...f, description: e.target.value }))}
           />
         </FormField>
-        <FormField label="经验奖励">
-          <input
-            type="number"
-            value={achForm.exp_reward}
-            onChange={(e) => setAchForm((f) => ({ ...f, exp_reward: e.target.value }))}
-          />
-        </FormField>
-        <FormField label="排序">
-          <input
-            type="number"
-            value={achForm.sort_order}
-            onChange={(e) => setAchForm((f) => ({ ...f, sort_order: e.target.value }))}
-          />
-        </FormField>
-        <label className="checkbox-row form-field">
+        <label className="ai-switch-row">
+          <span>启用该成就</span>
           <input
             type="checkbox"
             checked={achForm.enabled}
             onChange={(e) => setAchForm((f) => ({ ...f, enabled: e.target.checked }))}
           />
-          <span>启用</span>
         </label>
       </AdminFormDrawer>
 
@@ -549,35 +551,39 @@ export function GrowthPage() {
         onClose={() => setEditLevel(null)}
         onSave={() => void saveLevel()}
       >
-        <FormField label="称号">
-          <input value={levelForm.title} onChange={(e) => setLevelForm((f) => ({ ...f, title: e.target.value }))} />
-        </FormField>
-        <FormField label="最低经验">
-          <input
-            type="number"
-            value={levelForm.min_exp}
-            onChange={(e) => setLevelForm((f) => ({ ...f, min_exp: e.target.value }))}
-          />
-        </FormField>
-        <FormField label="最高经验">
-          <input
-            type="number"
-            value={levelForm.max_exp}
-            onChange={(e) => setLevelForm((f) => ({ ...f, max_exp: e.target.value }))}
-          />
-        </FormField>
+        <div className="form-grid-2">
+          <FormField label="称号">
+            <input value={levelForm.title} onChange={(e) => setLevelForm((f) => ({ ...f, title: e.target.value }))} />
+          </FormField>
+          <FormField label="徽章 URL">
+            <input
+              value={levelForm.badge_url}
+              onChange={(e) => setLevelForm((f) => ({ ...f, badge_url: e.target.value }))}
+              spellCheck={false}
+            />
+          </FormField>
+        </div>
+        <div className="form-grid-2">
+          <FormField label="最低经验">
+            <input
+              type="number"
+              value={levelForm.min_exp}
+              onChange={(e) => setLevelForm((f) => ({ ...f, min_exp: e.target.value }))}
+            />
+          </FormField>
+          <FormField label="最高经验">
+            <input
+              type="number"
+              value={levelForm.max_exp}
+              onChange={(e) => setLevelForm((f) => ({ ...f, max_exp: e.target.value }))}
+            />
+          </FormField>
+        </div>
         <FormField label="特权 JSON">
           <textarea
             rows={3}
             value={levelForm.privileges}
             onChange={(e) => setLevelForm((f) => ({ ...f, privileges: e.target.value }))}
-          />
-        </FormField>
-        <FormField label="徽章 URL">
-          <input
-            value={levelForm.badge_url}
-            onChange={(e) => setLevelForm((f) => ({ ...f, badge_url: e.target.value }))}
-            spellCheck={false}
           />
         </FormField>
       </AdminFormDrawer>
@@ -590,20 +596,22 @@ export function GrowthPage() {
         onClose={() => setEditReward(null)}
         onSave={() => void saveReward()}
       >
-        <FormField label="连续签到天数">
-          <input
-            type="number"
-            value={rewardForm.consecutive_days}
-            onChange={(e) => setRewardForm((f) => ({ ...f, consecutive_days: e.target.value }))}
-          />
-        </FormField>
-        <FormField label="经验奖励">
-          <input
-            type="number"
-            value={rewardForm.exp_reward}
-            onChange={(e) => setRewardForm((f) => ({ ...f, exp_reward: e.target.value }))}
-          />
-        </FormField>
+        <div className="form-grid-2">
+          <FormField label="连续签到天数">
+            <input
+              type="number"
+              value={rewardForm.consecutive_days}
+              onChange={(e) => setRewardForm((f) => ({ ...f, consecutive_days: e.target.value }))}
+            />
+          </FormField>
+          <FormField label="经验奖励">
+            <input
+              type="number"
+              value={rewardForm.exp_reward}
+              onChange={(e) => setRewardForm((f) => ({ ...f, exp_reward: e.target.value }))}
+            />
+          </FormField>
+        </div>
         <FormField label="额外奖励 JSON">
           <textarea
             rows={3}

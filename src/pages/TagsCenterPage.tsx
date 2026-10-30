@@ -489,41 +489,43 @@ export function TagsCenterPage() {
           </>
         ) : (
           <>
-            <FormField label="分类" required>
-              <select
-                value={dictForm.category}
-                onChange={(e) => setDictForm((f) => ({ ...f, category: e.target.value }))}
-              >
-                <option value="bot_forbidden">bot_forbidden（禁止）</option>
-                <option value="bot_preferred">bot_preferred（偏好）</option>
-              </select>
-            </FormField>
-            <FormField label="Tag 标识" required>
-              <input value={dictForm.tag} onChange={(e) => setDictForm((f) => ({ ...f, tag: e.target.value }))} />
-            </FormField>
-            <FormField label="展示名">
-              <input value={dictForm.label} onChange={(e) => setDictForm((f) => ({ ...f, label: e.target.value }))} />
-            </FormField>
+            <div className="form-grid-2">
+              <FormField label="分类" required>
+                <select
+                  value={dictForm.category}
+                  onChange={(e) => setDictForm((f) => ({ ...f, category: e.target.value }))}
+                >
+                  <option value="bot_forbidden">bot_forbidden（禁止）</option>
+                  <option value="bot_preferred">bot_preferred（偏好）</option>
+                </select>
+              </FormField>
+              <FormField label="排序">
+                <input
+                  type="number"
+                  value={dictForm.sort_order}
+                  onChange={(e) => setDictForm((f) => ({ ...f, sort_order: e.target.value }))}
+                />
+              </FormField>
+            </div>
+            <div className="form-grid-2">
+              <FormField label="Tag 标识" required>
+                <input value={dictForm.tag} onChange={(e) => setDictForm((f) => ({ ...f, tag: e.target.value }))} />
+              </FormField>
+              <FormField label="展示名">
+                <input value={dictForm.label} onChange={(e) => setDictForm((f) => ({ ...f, label: e.target.value }))} />
+              </FormField>
+            </div>
             <FormField label="备注">
               <textarea value={dictForm.note} onChange={(e) => setDictForm((f) => ({ ...f, note: e.target.value }))} rows={3} />
             </FormField>
-            <FormField label="排序">
+            <label className="ai-switch-row">
+              <span>启用此策略标签条目</span>
               <input
-                type="number"
-                value={dictForm.sort_order}
-                onChange={(e) => setDictForm((f) => ({ ...f, sort_order: e.target.value }))}
+                type="checkbox"
+                checked={dictForm.enabled}
+                onChange={(e) => setDictForm((f) => ({ ...f, enabled: e.target.checked }))}
               />
-            </FormField>
-            <FormField label="启用">
-              <label className="checkbox-inline">
-                <input
-                  type="checkbox"
-                  checked={dictForm.enabled}
-                  onChange={(e) => setDictForm((f) => ({ ...f, enabled: e.target.checked }))}
-                />
-                启用此条目
-              </label>
-            </FormField>
+            </label>
           </>
         )}
       </AdminFormDrawer>

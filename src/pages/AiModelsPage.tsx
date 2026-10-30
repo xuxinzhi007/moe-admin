@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useSearchParams } from 'react-router-dom'
 import { AdminTag } from '../components/AdminTag'
 import { FormField } from '../components/FormField'
 import { InferenceStatusBar } from '../components/InferenceStatusBar'
@@ -9,6 +9,7 @@ import { useDeploy } from '../context/DeployContext'
 import { DeployApiError } from '../api/deployClient'
 import type { MoeInferenceModelInfoData, MoeInferenceStatusData } from '../api/aiClient'
 import { AdminPanel, TabbedPageLayout } from '../ui'
+import { AiPlaygroundWorkbench } from './AiPlaygroundPage'
 
 const MODELFILE_KEY = 'Modelfile'
 
@@ -40,7 +41,7 @@ const PROMPT_TEMPLATES = [
   },
 ]
 
-type ModelTab = 'overview' | 'builder' | 'remote'
+type ModelTab = 'overview' | 'builder' | 'remote' | 'playground'
 
 type BuilderParams = {
   temperature: number
@@ -88,10 +89,17 @@ function buildModelfileText(baseModel: string, systemPrompt: string, params: Bui
 
 export function AiModelsPage() {
   const navigate = useNavigate()
+  const [searchParams, setSearchParams] = useSearchParams()
   const { client: adminClient } = useAdminAuth()
   const { client: deployClient, showToast } = useDeploy()
 
-  const [activeTab, setActiveTab] = useState<ModelTab>('overview')
+  const tabFromUrl = searchParams.get('tab') as ModelTab | null
+  const [activeTab, setActiveTab] = useState<ModelTab>(
+    tabFromUrl && ['overview', 'builder', 'remote', 'playground'].includes(tabFromUrl)
+      ? tabFromUrl
+      : 'overview',
+  )
+  const [playgroundModel, setPlaygroundModel] = useState(searchParams.get('model') || '')
   const [status, setStatus] = useState<MoeInferenceStatusData | null>(null)
   const [statusLoading, setStatusLoading] = useState(false)
   const [refreshKey, setRefreshKey] = useState(0)
@@ -457,10 +465,21 @@ export function AiModelsPage() {
   }
 
   const tabs: PageTabItem<ModelTab>[] = [
-    { key: 'overview', label: '模型管理与拉取', hint: `${models.length}` },
-    { key: 'builder', label: '在线创建 / 定制模型' },
-    { key: 'remote', label: 'Modelfile 源码编辑' },
+    { key: 'overview', label: '模型管理与拉取', hint: `${models.length} 个` },
+    { key: 'builder', label: '在线创建 / 定制', hint: 'Modelfile 参数' },
+    { key: 'remote', label: 'Modelfile 源码', hint: 'HTTP / 本地' },
+    { key: 'playground', label: '流式试聊台', hint: '模型 · 角色调试' },
   ]
+
+  function switchTab(next: ModelTab, modelForPlay?: string) {
+    setActiveTab(next)
+    if (modelForPlay) {
+      setPlaygroundModel(modelForPlay)
+      setSearchParams({ tab: next, model: modelForPlay })
+    } else {
+      setSearchParams({ tab: next })
+    }
+  }
 
   function renderModelCard(name: string, isBase: boolean) {
     const isEffective = name === effectiveModel
@@ -484,7 +503,7 @@ export function AiModelsPage() {
           <button
             type="button"
             className="btn btn-primary btn-sm"
-            onClick={() => navigate(`/ai/playground?model=${encodeURIComponent(name)}`)}
+            onClick={() => switchTab('playground', name)}
           >
             试聊
           </button>
@@ -519,20 +538,26 @@ export function AiModelsPage() {
 
   return (
     <TabbedPageLayout
-      title="模型与 Modelfile"
-      description="统一管理小主机 Ollama 底座模型、在线拉取、参数定制与 Modelfile；LoRA 离线微调仍保持在外部 ollama_web/finetune"
+      title="模型与推理工作台"
+      description="统一管理小主机 Ollama 模型库、在线拉取、Modelfile 定制与流式试聊；LoRA 离线微调保持在外部 ollama_web/finetune"
       envNote="llm_inference · 统一经管理台鉴权操作 Ollama 模型；角色人设统一由「AI 角色酒馆」维护"
+      metrics={[
+        { label: '在线模型总数', value: statusLoading ? '…' : models.length },
+        { label: '底座模型', value: baseModels.length },
+        { label: '自定义/派生模型', value: customModels.length },
+        { label: '当前生效模型', value: effectiveModel || '未挂载' },
+      ]}
       tabs={tabs}
       activeTab={activeTab}
-      onTabChange={setActiveTab}
+      onTabChange={(next) => switchTab(next)}
       headActions={
         <div className="btn-row">
           <button
             type="button"
             className="btn btn-ghost"
-            onClick={() => navigate('/ai/playground')}
+            onClick={() => navigate('/ai/agents')}
           >
-            打开模型试聊台
+            AI 角色酒馆
           </button>
           <button
             type="button"
@@ -553,7 +578,7 @@ export function AiModelsPage() {
       {activeTab === 'overview' ? (
         <>
           <AdminPanel title="拉取新模型（ollama pull）">
-            <div className="form-grid" style={{ gap: 12 }}>
+            <div className="ai-config-stack" style={{ gap: 12 }}>
               <FormField label="模型名称（如 qwen2.5:7b、gemma3:1b、llama3.1:8b）">
                 <div className="btn-row" style={{ gap: 8, flexWrap: 'wrap' }}>
                   <input
@@ -698,7 +723,7 @@ export function AiModelsPage() {
               {inspectLoading ? (
                 <p className="muted">正在从 Ollama 读取 /api/show 元数据…</p>
               ) : inspectInfo ? (
-                <div className="form-grid" style={{ gap: 12 }}>
+                <div className="ai-config-stack" style={{ gap: 12 }}>
                   <FormField label="System Prompt（系统提示词）">
                     <textarea
                       rows={4}
@@ -760,7 +785,7 @@ export function AiModelsPage() {
             </div>
           }
         >
-          <div className="form-grid" style={{ gap: 14 }}>
+          <div className="ai-config-stack" style={{ gap: 14 }}>
             <div className="ai-param-grid">
               <FormField label="新模型名称（英文/数字/:tag）">
                 <input
@@ -1031,6 +1056,13 @@ export function AiModelsPage() {
             </p>
           </div>
         </div>
+      ) : null}
+
+      {activeTab === 'playground' ? (
+        <AiPlaygroundWorkbench
+          key={`play-${playgroundModel || effectiveModel}-${refreshKey}`}
+          initialModel={playgroundModel || effectiveModel}
+        />
       ) : null}
     </TabbedPageLayout>
   )

@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
+import { createPortal } from 'react-dom'
 import { Link } from 'react-router-dom'
 import { AdminTag } from '../components/AdminTag'
 import { IdCell } from '../components/IdCell'
@@ -205,109 +206,112 @@ export function ReportsPage() {
         />
       </ListPageLayout>
 
-      {detailRow ? (
-        <div className="drawer-backdrop" role="presentation" onClick={() => setDetailRow(null)}>
-          <p className="drawer-backdrop-hint">点击空白处或按 Esc 关闭</p>
-          <aside
-            className="drawer"
-            role="dialog"
-            aria-modal="true"
-            aria-label="举报详情"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <div className="drawer-head">
-              <div>
-                <h3>举报详情</h3>
-                <p className="drawer-subtitle">
-                  举报 #{detailRow.id} · 动态 #{detailRow.post_id}
-                </p>
-              </div>
-              <button type="button" className="btn btn-ghost drawer-close" onClick={() => setDetailRow(null)}>
-                ✕
-              </button>
-            </div>
-            <div className="drawer-body">
-              <dl className="moe-call-detail-grid">
-                <div>
-                  <dt>举报时间</dt>
-                  <dd>{formatDateTime(detailRow.created_at)}</dd>
-                </div>
-                <div>
-                  <dt>举报原因</dt>
-                  <dd>
-                    <AdminTag spec={reportReasonTag(detailRow.reason)} />
-                  </dd>
-                </div>
-                <div>
-                  <dt>举报人</dt>
-                  <dd>
-                    <UserCell
-                      name={detailRow.reporter_user_name}
-                      avatar={detailRow.reporter_user_avatar}
-                      sub={detailRow.reporter_user_id ? `UID ${detailRow.reporter_user_id}` : undefined}
-                      size="md"
-                    />
-                    {detailRow.reporter_user_id ? (
-                      <p className="muted" style={{ marginTop: 8 }}>
-                        <Link to="/biz/users">打开用户详情</Link>
-                      </p>
-                    ) : null}
-                  </dd>
-                </div>
-                <div>
-                  <dt>动态作者</dt>
-                  <dd>
-                    <UserCell
-                      name={detailRow.post_author_name}
-                      avatar={detailRow.post_author_avatar}
-                      sub={detailRow.post_author_id ? `UID ${detailRow.post_author_id}` : undefined}
-                      size="md"
-                    />
-                    {detailRow.post_author_id ? (
-                      <p className="muted" style={{ marginTop: 8 }}>
-                        <Link to="/biz/users">打开用户详情</Link>
-                      </p>
-                    ) : null}
-                  </dd>
-                </div>
-                <div style={{ gridColumn: '1 / -1' }}>
-                  <dt>动态内容</dt>
-                  <dd>
-                    <PostContentPreview
-                      content={detailRow.post_content || detailRow.post_content_preview}
-                      images={detailRow.post_images}
-                      handDrawThumbUrl={detailRow.hand_draw_thumb_url}
-                    />
-                  </dd>
-                </div>
-              </dl>
-            </div>
-            <div className="drawer-foot">
-              <button type="button" className="btn btn-ghost" onClick={() => setDetailRow(null)}>
-                关闭
-              </button>
-              <Link to="/biz/content/posts" className="btn btn-ghost">
-                动态审核
-              </Link>
-              <button
-                type="button"
-                className="btn btn-primary"
-                onClick={async () => {
-                  if (!confirm('删除被举报动态？')) return
-                  const res = await client.deletePost(detailRow.post_id)
-                  if (!res.success) setError(res.message || '删除失败')
-                  else {
-                    setDetailRow(null)
-                    await load()
-                  }
-                }}
+      {detailRow && typeof document !== 'undefined'
+        ? createPortal(
+            <div className="drawer-backdrop" role="presentation" onClick={() => setDetailRow(null)}>
+              <p className="drawer-backdrop-hint">点击空白处或按 Esc 关闭</p>
+              <aside
+                className="drawer drawer--wide"
+                role="dialog"
+                aria-modal="true"
+                aria-label="举报详情"
+                onClick={(e) => e.stopPropagation()}
               >
-                删动态
-              </button>
-            </div>
-          </aside>
-        </div>
-      ) : null}
+                <div className="drawer-head">
+                  <div>
+                    <h3>举报详情</h3>
+                    <p className="drawer-subtitle">
+                      举报 #{detailRow.id} · 动态 #{detailRow.post_id}
+                    </p>
+                  </div>
+                  <button type="button" className="btn btn-ghost drawer-close" onClick={() => setDetailRow(null)}>
+                    ✕
+                  </button>
+                </div>
+                <div className="drawer-body">
+                  <dl className="moe-call-detail-grid">
+                    <div>
+                      <dt>举报时间</dt>
+                      <dd>{formatDateTime(detailRow.created_at)}</dd>
+                    </div>
+                    <div>
+                      <dt>举报原因</dt>
+                      <dd>
+                        <AdminTag spec={reportReasonTag(detailRow.reason)} />
+                      </dd>
+                    </div>
+                    <div>
+                      <dt>举报人</dt>
+                      <dd>
+                        <UserCell
+                          name={detailRow.reporter_user_name}
+                          avatar={detailRow.reporter_user_avatar}
+                          sub={detailRow.reporter_user_id ? `UID ${detailRow.reporter_user_id}` : undefined}
+                          size="md"
+                        />
+                        {detailRow.reporter_user_id ? (
+                          <p className="muted" style={{ marginTop: 8 }}>
+                            <Link to="/biz/users">打开用户详情</Link>
+                          </p>
+                        ) : null}
+                      </dd>
+                    </div>
+                    <div>
+                      <dt>动态作者</dt>
+                      <dd>
+                        <UserCell
+                          name={detailRow.post_author_name}
+                          avatar={detailRow.post_author_avatar}
+                          sub={detailRow.post_author_id ? `UID ${detailRow.post_author_id}` : undefined}
+                          size="md"
+                        />
+                        {detailRow.post_author_id ? (
+                          <p className="muted" style={{ marginTop: 8 }}>
+                            <Link to="/biz/users">打开用户详情</Link>
+                          </p>
+                        ) : null}
+                      </dd>
+                    </div>
+                    <div style={{ gridColumn: '1 / -1' }}>
+                      <dt>动态内容</dt>
+                      <dd>
+                        <PostContentPreview
+                          content={detailRow.post_content || detailRow.post_content_preview}
+                          images={detailRow.post_images}
+                          handDrawThumbUrl={detailRow.hand_draw_thumb_url}
+                        />
+                      </dd>
+                    </div>
+                  </dl>
+                </div>
+                <div className="drawer-foot">
+                  <button type="button" className="btn btn-ghost" onClick={() => setDetailRow(null)}>
+                    关闭
+                  </button>
+                  <Link to="/biz/content/posts" className="btn btn-ghost">
+                    动态审核
+                  </Link>
+                  <button
+                    type="button"
+                    className="btn btn-primary"
+                    onClick={async () => {
+                      if (!confirm('删除被举报动态？')) return
+                      const res = await client.deletePost(detailRow.post_id)
+                      if (!res.success) setError(res.message || '删除失败')
+                      else {
+                        setDetailRow(null)
+                        await load()
+                      }
+                    }}
+                  >
+                    删动态
+                  </button>
+                </div>
+              </aside>
+            </div>,
+            document.body,
+          )
+        : null}
     </>
   )
 }

@@ -2,21 +2,9 @@ import { useCallback, useEffect, useState } from 'react'
 import { AdminTag } from './AdminTag'
 import { useAdminAuth } from '../context/AdminAuthContext'
 import { DeployApiError } from '../api/deployClient'
+import type { MoeInferenceStatusData } from '../api/aiClient'
 
-export type InferenceStatus = {
-  online: boolean
-  base_url: string
-  models: string[]
-  default_post_model: string
-  preferred_model?: string
-  runtime_model?: string
-  effective_model?: string
-  auto_discovered?: boolean
-  model_loaded: boolean
-  context_limit?: number
-  context_source?: string
-  message?: string
-}
+export type InferenceStatus = MoeInferenceStatusData
 
 type Props = {
   agentKey: string
@@ -53,7 +41,10 @@ export function InferenceStatusBar({ agentKey, refreshKey = 0 }: Props) {
   }, [agentKey, client])
 
   useEffect(() => {
-    void load()
+    const timer = window.setTimeout(() => {
+      void load()
+    }, 0)
+    return () => window.clearTimeout(timer)
   }, [load, refreshKey])
 
   if (!status && !loading) return null
@@ -131,8 +122,12 @@ export function InferenceStatusBar({ agentKey, refreshKey = 0 }: Props) {
       >
         重新检测
       </button>
-      {status?.message ? (
-        <span className="text-danger inference-status-msg">{status.message}</span>
+      {status?.message && !(status.online && status.model_loaded && status.auto_discovered) ? (
+        <span
+          className={`${status.online ? 'muted' : 'text-danger'} inference-status-msg`}
+        >
+          {status.message}
+        </span>
       ) : null}
     </div>
   )
