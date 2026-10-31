@@ -38,15 +38,33 @@ type PlatformContextValue = {
 
 const PlatformContext = createContext<PlatformContextValue | null>(null)
 
+function normalizeApiHealth(h: ApiHealth | undefined, fallbackTarget: string): ApiHealth {
+  if (!h) {
+    return {
+      target: fallbackTarget,
+      base_url: fallbackTarget === 'local' ? 'http://127.0.0.1:8888' : '',
+      online: false,
+    }
+  }
+  const reachableByStatus =
+    typeof h.status_code === 'number' && h.status_code >= 200 && h.status_code < 500
+  const isOnline = Boolean(h.online || reachableByStatus)
+  return {
+    ...h,
+    online: isOnline,
+    message: isOnline && h.status_code === 401 ? 'ok (auth required)' : h.message,
+  }
+}
+
 export function PlatformProvider({ children }: { children: ReactNode }) {
-  const { baseUrl } = loadConn()
+  const { baseUrl, token } = loadConn()
   const [apiTarget, setApiTargetState] = useState<ApiTarget>(loadApiTarget)
   const [health, setHealth] = useState<PlatformHealth | null>(null)
   const [healthLoading, setHealthLoading] = useState(false)
 
   const client = useMemo(
-    () => createDeployClient({ baseUrl, token: '' }),
-    [baseUrl],
+    () => createDeployClient({ baseUrl, token }),
+    [baseUrl, token],
   )
 
   const setApiTarget = useCallback((t: ApiTarget) => {
@@ -58,9 +76,32 @@ export function PlatformProvider({ children }: { children: ReactNode }) {
     setHealthLoading(true)
     try {
       const data = await client.platformHealth()
-      setHealth(data)
+      setHealth({
+        ...data,
+        local_api: normalizeApiHealth(data.local_api, 'local'),
+        cloud_api: normalizeApiHealth(data.cloud_api, 'cloud'),
+      })
     } catch {
-      setHealth(null)
+      try {
+        const res = await fetch('/api/public/client-config')
+        const localOnline = res.status >= 200 && res.status < 500
+        setHealth({
+          success: true,
+          local_api: {
+            target: 'local',
+            base_url: 'http://127.0.0.1:8888',
+            online: localOnline,
+            status_code: res.status,
+          },
+          cloud_api: {
+            target: 'cloud',
+            base_url: '',
+            online: false,
+          },
+        })
+      } catch {
+        setHealth(null)
+      }
     } finally {
       setHealthLoading(false)
     }

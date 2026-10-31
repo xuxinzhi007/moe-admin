@@ -12,6 +12,9 @@
 @import './tokens/spacing.css';
 @import './tokens/motion.css';
 
+/* legacy monolith — loaded before V3 modules so V3 rules win cleanly */
+@import './legacy/moe-admin-theme.css';
+
 /* base */
 @import './base/reset.css';
 @import './base/utilities.css';
@@ -43,6 +46,3 @@
 @import './pages/landing-feedback.css';
 @import './pages/analytics.css';
 @import './pages/ai-workbench.css';
-
-/* legacy monolith — remaining shell / platform / data-catalog / moe-tools */
-@import './legacy/moe-admin-theme.css';

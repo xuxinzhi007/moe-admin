@@ -207,10 +207,6 @@ a.btn {
   flex-shrink: 0;
 }
 
-.admin-panel {
-  padding: 14px 16px 0;
-}
-
 .admin-panel > .admin-toolbar:first-child {
   margin-top: 0;
 }
@@ -220,11 +216,13 @@ a.btn {
 }
 
 .admin-panel > .pager {
-  padding: 0 16px 14px;
+  padding: 12px 4px 2px;
+  margin-top: 8px;
+  border-top: 1px solid var(--hairline);
 }
 
 .admin-panel > .text-danger {
-  margin: 0 16px 12px;
+  margin: 0 0 12px;
 }
 
 @media (prefers-reduced-motion: reduce) {

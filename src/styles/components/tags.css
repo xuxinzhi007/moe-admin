@@ -1,76 +1,88 @@
 /* tags · extracted from legacy · Sprint D */
-.tag {
-  display: inline-block;
-  padding: 2px 8px;
+.tag,
+.admin-tag,
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 2px 9px;
   border-radius: 999px;
   font-size: 11px;
   font-weight: 600;
+  line-height: 1.4;
   white-space: nowrap;
+  border: 1px solid transparent;
 }
 
-.tag-ok {
-  background: rgba(74, 222, 128, 0.15);
-  color: var(--ok);
+.tag-ok,
+.tag-published {
+  background: rgba(52, 195, 143, 0.13);
+  border-color: rgba(52, 195, 143, 0.24);
+  color: #1f8a62;
 }
 
 .tag-fail {
-  background: rgba(255, 107, 107, 0.15);
-  color: var(--danger);
+  background: rgba(255, 107, 107, 0.12);
+  border-color: rgba(255, 107, 107, 0.24);
+  color: #d63636;
 }
 
-.tag-run {
-  background: rgba(134, 168, 231, 0.2);
-  color: var(--accent2);
+.tag-run,
+.pill-primary {
+  background: rgba(107, 95, 193, 0.13);
+  border-color: rgba(107, 95, 193, 0.24);
+  color: var(--brand-violet-deep);
 }
 
-.tag-pending {
-  background: rgba(139, 144, 168, 0.2);
-  color: var(--muted);
+.tag-pending,
+.tag-neutral,
+.pill-muted {
+  background: var(--surface-soft);
+  border-color: var(--hairline);
+  color: var(--ink-muted);
 }
 
 .tag-warn {
-  background: rgba(230, 162, 60, 0.18);
-  color: var(--warn);
+  background: rgba(255, 182, 72, 0.16);
+  border-color: rgba(255, 182, 72, 0.3);
+  color: #b87312;
 }
 
 .tag-info {
-  background: rgba(91, 141, 239, 0.18);
-  color: #4a7fd4;
+  background: rgba(61, 139, 253, 0.12);
+  border-color: rgba(61, 139, 253, 0.24);
+  color: #2563eb;
 }
 
 .tag-vip {
-  background: linear-gradient(135deg, rgba(255, 193, 7, 0.22), rgba(255, 152, 0, 0.18));
-  color: #c77d00;
+  background: linear-gradient(135deg, rgba(243, 183, 79, 0.22), rgba(255, 152, 0, 0.14));
+  border-color: rgba(243, 183, 79, 0.35);
+  color: #b46900;
 }
 
 .tag-admin {
-  background: rgba(127, 127, 213, 0.28);
+  background: rgba(107, 95, 193, 0.16);
+  border-color: rgba(107, 95, 193, 0.28);
   color: #4f46b5;
 }
 
 .tag-purple {
-  background: rgba(147, 112, 219, 0.2);
-  color: #7c3aed;
+  background: rgba(147, 112, 219, 0.15);
+  border-color: rgba(147, 112, 219, 0.28);
+  color: #6d28d9;
 }
 
-.tag-mint {
-  background: rgba(91, 141, 239, 0.14);
-  color: #2d8a8a;
-}
-
-.tag-neutral {
-  background: rgba(144, 147, 153, 0.16);
-  color: var(--muted);
+.tag-mint,
+.admin-tag-mint {
+  background: rgba(52, 211, 200, 0.14);
+  border-color: rgba(52, 211, 200, 0.28);
+  color: #15827b;
 }
 
 .tag-draft {
-  background: rgba(144, 147, 153, 0.14);
+  background: rgba(144, 147, 153, 0.12);
+  border-color: rgba(144, 147, 153, 0.22);
   color: #606266;
-}
-
-.tag-published {
-  background: rgba(103, 194, 58, 0.18);
-  color: var(--ok);
 }
 
 .tag-dot {
@@ -79,9 +91,8 @@
   height: 6px;
   border-radius: 50%;
   background: currentColor;
-  margin-right: 5px;
-  vertical-align: middle;
-  opacity: 0.85;
+  flex-shrink: 0;
+  opacity: 0.9;
 }
 
 .tag-row {
@@ -90,3 +101,14 @@
   align-items: center;
   gap: 6px;
 }
+
+.form-error {
+  margin: 0 0 14px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 13px;
+  color: #d63636;
+  background: rgba(255, 107, 107, 0.08);
+  border: 1px solid rgba(255, 107, 107, 0.25);
+}
+

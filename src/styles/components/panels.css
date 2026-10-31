@@ -1,10 +1,11 @@
 /* panels · extracted from legacy · Sprint D */
 .panel {
-  background: var(--panel);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
+  background: var(--surface);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-md);
   margin-bottom: 16px;
   overflow: hidden;
+  box-shadow: var(--shadow-card);
 }
 
 .panel-head {
@@ -12,19 +13,31 @@
   flex-wrap: wrap;
   align-items: center;
   gap: 10px;
-  padding: 12px 16px;
-  border-bottom: 1px solid var(--border);
+  padding: 13px 18px;
+  border-bottom: 1px solid var(--hairline);
+  background: linear-gradient(180deg, #ffffff 0%, #fbfcfe 100%);
 }
 
 .panel-head h3 {
   margin: 0;
   font-size: 14px;
+  font-weight: 600;
+  color: var(--ink);
   flex: 1;
 }
 
 .panel-body {
-  padding: 14px 16px;
+  padding: 16px 18px;
 }
+
+.admin-panel {
+  padding: 16px 18px;
+}
+
+.admin-panel:has(> .panel-head) {
+  padding: 0;
+}
+
 
 .env-grid {
   display: grid;

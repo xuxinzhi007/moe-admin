@@ -16,7 +16,68 @@
   margin-bottom: 0;
 }
 
-/* —— 下划线 Tab —— */
+/* —— 卡片式 Tab (pill) 与下划线 Tab (line) —— */
+.platform-tab-rail {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 150px), 1fr));
+  gap: 10px;
+  margin-bottom: 18px;
+  width: 100%;
+}
+
+.platform-tab-pill {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3px;
+  width: 100%;
+  min-width: 0;
+  padding: 11px 16px;
+  border: 1px solid var(--hairline, var(--border));
+  border-radius: 12px;
+  background: var(--surface, #fff);
+  cursor: pointer;
+  text-align: left;
+  transition:
+    border-color 0.16s ease,
+    box-shadow 0.16s ease,
+    background-color 0.16s ease,
+    transform 0.16s ease;
+  overflow: hidden;
+}
+
+.platform-tab-pill:hover {
+  border-color: rgba(107, 95, 193, 0.38);
+  background: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.04);
+}
+
+.platform-tab-pill.is-active {
+  border-color: var(--brand-violet);
+  background: linear-gradient(135deg, rgba(107, 95, 193, 0.09) 0%, rgba(52, 211, 200, 0.05) 100%), #ffffff;
+  box-shadow:
+    inset 0 0 0 1px rgba(107, 95, 193, 0.12),
+    0 4px 14px rgba(107, 95, 193, 0.12);
+}
+
+.platform-tab-pill.is-active .platform-tab-label {
+  color: var(--brand-violet-deep);
+}
+
+.platform-tab-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.platform-tab-hint {
+  font-size: 11px;
+  color: var(--ink-muted);
+  line-height: 1.35;
+}
+
 .platform-tab-rail--line {
   display: flex;
   flex-wrap: wrap;
