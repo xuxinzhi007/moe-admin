@@ -1,1 +1,1 @@
-export * from '../../../../moe-avatar/core/src/types'
+export * from './core/types'

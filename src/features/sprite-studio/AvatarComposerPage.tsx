@@ -12,7 +12,7 @@ import {
   type MoeAvatarManifest,
   type PreviewAnimation,
   type TemplateSelection,
-} from '../../../../moe-avatar/core/src'
+} from '../moe-avatar/core'
 
 import './avatar-composer.css'
 

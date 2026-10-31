@@ -9,9 +9,9 @@ import { createAnimationSheetDocument, type AnimationSheetDocument, type Documen
 import { SpriteLayerPanel, type SpriteLayerEditorItem } from './SpriteLayerPanel'
 import { SpriteStudioToolsPanel, type MaskMode, type PreviewBackgroundOption } from './SpriteStudioToolsPanel'
 import { DEFAULT_FRAME_TRANSFORM, normalizeFrameTransform, type FrameTransform, updateFrameTransforms } from './animationTuner'
-import { SPRITE_TEMPLATES } from '../../../../moe-avatar/core/src/spriteTemplates'
-import { validateSpriteResource, type SpriteValidationResult } from '../../../../moe-avatar/core/src/spriteValidation'
-import type { SpriteResource } from '../../../../moe-avatar/core/src/spriteTypes'
+import { SPRITE_TEMPLATES } from '../moe-avatar/core/spriteTemplates'
+import { validateSpriteResource, type SpriteValidationResult } from '../moe-avatar/core/spriteValidation'
+import type { SpriteResource } from '../moe-avatar/core/spriteTypes'
 
 gsap.registerPlugin(useGSAP)
 import {
